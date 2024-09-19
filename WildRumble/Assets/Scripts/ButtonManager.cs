@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ButtonManager : MonoBehaviour
+public class ButtonManager: MonoBehaviour
 {
 
 
@@ -16,7 +16,7 @@ public class ButtonManager : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("LevelOne");
     }
 
     public void QuitGame()
