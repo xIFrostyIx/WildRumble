@@ -5,6 +5,7 @@ using UnityEngine;
 /*Created By; Joshua Guerrero
  * This script sets up the X and Y movement 
  * of the first person camera
+ * using the mouse
  */
 public class CameraMovement : MonoBehaviour
 {
@@ -24,14 +25,14 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        //Mouse Input
+        //Mouse Input and sensitivity
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
         yRotation += mouseX;
 
         xRotation -= mouseY;
-        //Locks the angle og looking up and down
+        //Locks the angle of looking up and down 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
