@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 494278642}
   - component: {fileID: 494278641}
   - component: {fileID: 494278640}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,6 +986,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5.91
+  groundDrag: 0
+  jumpForce: 0
+  jumpCooldown: 0
+  airMultiplier: 0
+  jumpKey: 32
+  playerHeight: 0
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
   orientation: {fileID: 1567751779}
 --- !u!54 &603887242
 Rigidbody:
