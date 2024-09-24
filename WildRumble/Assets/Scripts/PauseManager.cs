@@ -40,6 +40,7 @@ public class PauseManager : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0f;
+            ShowCursor(); //This is where I add to show the cursor
             pauseMenuUI.SetActive(true);
             optionsMenuUI.SetActive(false);
         }
@@ -55,6 +56,7 @@ public class PauseManager : MonoBehaviour
         Debug.Log("Resume button clicked");
         isPaused = false;
         Time.timeScale = 1f;
+        HideCursor(); //This is where we make sure to hide the cursor
         pauseMenuUI.SetActive(false);
     }
 
@@ -96,5 +98,17 @@ public class PauseManager : MonoBehaviour
         {
             clickSound.Play(); // Play the click sound
         }
+    }
+    private void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+
+    //Sets the cursor to be hidden and in a locked state to the center of the screen
+    private void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
