@@ -19,10 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    bool readyToJump;
-
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
+    bool readyToJump = true;
    
     [Header("Ground Check")]
     //set to 2
@@ -73,8 +70,10 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if(Input.GetKeyDown(KeyCode.Space) && readyToJump && grounded)
         {
+            Debug.Log("Is Jumping");
+
             readyToJump = false;
 
             Jump();
