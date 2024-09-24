@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /*
- * Created By Joshua Guerrero
- * This script allows the player to
- * interact with an object using E
- * to switch scenes
- */
+ 
+Created By Joshua Guerrero
+This script allows the player to
+interact with an object using E
+to switch scenes*/
 
 public class SceneSwitcher : MonoBehaviour
 {
@@ -22,11 +22,18 @@ public class SceneSwitcher : MonoBehaviour
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3.75f))
             {
                 //checks if prop has a "Switch" tag
-                if (hit.collider.CompareTag("Switch"))
+                if (hit.collider.CompareTag("SwitchTwo"))
                 {
                     //loads LevelTwo
                     Debug.Log("Scene is Switching");
                     SceneManager.LoadScene("LevelTwo");
+                }
+
+                if (hit.collider.CompareTag("SwitchThree"))
+                {
+                    //loads LevelTwo
+                    Debug.Log("Scene is Switching");
+                    SceneManager.LoadScene("LevelThree");
                 }
             }
         }
