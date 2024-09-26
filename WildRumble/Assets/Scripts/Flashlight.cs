@@ -21,10 +21,10 @@ public class Flashlight : MonoBehaviour
         {
             if (ThisLight.intensity == 0)
             {
-                ThisLight.intensity = 1;
+                ThisLight.intensity = 25;
                 LightToggle = true;
             }
-            else if (ThisLight.intensity == 1)
+            else if (ThisLight.intensity == 25)
             {
                 ThisLight.intensity = 0;
                 LightToggle = false;
