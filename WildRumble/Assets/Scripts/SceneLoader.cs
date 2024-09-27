@@ -1,13 +1,29 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Optional for loading UI
+using UnityEngine.UI; 
+
+/*
+ * Created by: Joshua Guerrero
+ * This script adds asynchronous loading
+ * to allow the next scene to load in the background 
+ * to improve performance
+ */
 
 public class SceneLoader : MonoBehaviour
 {
     public string sceneToLoad; // Name of the scene to load
     public GameObject loadingScreen; // UI element for loading screen
     public Slider loadingBar; // a slider to show loading progress
+
+    void Update()
+    {
+        // Check for the "E" key press
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            LoadScene();
+        }
+    }
 
     public void LoadScene()
     {
