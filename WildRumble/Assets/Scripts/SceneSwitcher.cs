@@ -16,6 +16,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         // Checks if the player is pressing E
         if (Input.GetKeyDown(KeyCode.E))
+            Debug.Log("Is Pressing E");
         {
             RaycastHit hit;
             //Player has to be a certain distance and looking at the object
@@ -31,7 +32,7 @@ public class SceneSwitcher : MonoBehaviour
 
                 if (hit.collider.CompareTag("SwitchThree"))
                 {
-                    //loads LevelTwo
+                    //loads LevelThree
                     Debug.Log("Scene is Switching");
                     SceneManager.LoadScene("LevelThree");
                 }

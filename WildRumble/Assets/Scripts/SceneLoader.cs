@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
     public string sceneToLoad; // Name of the scene to load
     public GameObject loadingScreen; // UI element for loading screen
     public Slider loadingBar; // a slider to show loading progress
-
+/*
     void Update()
     {
         // Check for the "E" key press
@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
             LoadScene();
         }
     }
-
+*/
     public void LoadScene()
     {
         StartCoroutine(LoadSceneAsync(sceneToLoad));
