@@ -1954,6 +1954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190909221}
   - component: {fileID: 1190909220}
+  - component: {fileID: 1190909222}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2038,6 +2039,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1190909222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190909219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1263106613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2758520219389302856, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
@@ -2219,6 +2243,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1316835364850168814, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
+      propertyPath: m_text
+      value: "Jump: \nMove Left:\nMove Right:\nMove Forward\nMove Backward"
+      objectReference: {fileID: 0}
     - target: {fileID: 1768782839805196731, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2305,11 +2333,16 @@ PrefabInstance:
 
         A     ||    Left Arrow
 
-        D     ||    Right Arrow'
+        D     ||    Right Arrow
+
+        W   
+        ||    Up Arrow
+
+        S     ||     Down Arrow   '
       objectReference: {fileID: 0}
     - target: {fileID: 3907324442097308730, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -556
+      value: -601.6
       objectReference: {fileID: 0}
     - target: {fileID: 3957701969304629740, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2364,11 +2397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4900457935565252714, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -95.999985
+      value: -48.3
       objectReference: {fileID: 0}
     - target: {fileID: 5309549210389780540, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 187
+      value: 246.2
       objectReference: {fileID: 0}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2424,7 +2457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6970477357331463833, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -96
+      value: -51.6
       objectReference: {fileID: 0}
     - target: {fileID: 7726967841093549288, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_text
