@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /*
  
@@ -12,6 +11,9 @@ to switch scenes*/
 
 public class SceneSwitcher : MonoBehaviour
 {
+    //references the SceneLoader script
+    public SceneLoader sceneLoader;
+
     private void Update()
     {
         // Checks if the player is pressing E
@@ -27,14 +29,14 @@ public class SceneSwitcher : MonoBehaviour
                 {
                     //loads LevelTwo
                     Debug.Log("Scene is Switching");
-                    SceneManager.LoadScene("LevelTwo");
+                    sceneLoader.LoadScene("LevelTwo");
                 }
 
                 if (hit.collider.CompareTag("SwitchThree"))
                 {
                     //loads LevelThree
                     Debug.Log("Scene is Switching");
-                    SceneManager.LoadScene("LevelThree");
+                    sceneLoader.LoadScene("LevelThree");
                 }
             }
         }

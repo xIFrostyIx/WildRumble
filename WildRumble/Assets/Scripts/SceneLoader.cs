@@ -25,9 +25,9 @@ public class SceneLoader : MonoBehaviour
         }
     }
 */
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneAsync(sceneToLoad));
+        StartCoroutine(LoadSceneAsync(sceneName));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName)
