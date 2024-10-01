@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     // Set to 5
     public float groundDrag;
-    public float sprintSpeed; // New sprint speed variable
+    public float sprintSpeed;
 
     public float jumpForce;
     public float jumpCooldown;
