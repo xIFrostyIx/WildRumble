@@ -2417,8 +2417,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319067484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.09, y: 3.653, z: -26.35}
+  m_LocalRotation: {x: -0, y: 0.44133127, z: -0, w: 0.8973443}
+  m_LocalPosition: {x: 5.640462, y: 3.653, z: -1.9781035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2427,7 +2427,7 @@ Transform:
   - {fileID: 1999633997}
   - {fileID: 2091728519}
   - {fileID: 621875192}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 829784933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328576540
 GameObject:
@@ -3112,15 +3112,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b1a308b5fbd29b4f9c9d1a8b3c671c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -80.16
+      value: -78.945
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b1a308b5fbd29b4f9c9d1a8b3c671c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.332
+      value: 0.678
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b1a308b5fbd29b4f9c9d1a8b3c671c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 70.057
+      value: 56.015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b1a308b5fbd29b4f9c9d1a8b3c671c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3672,6 +3672,7 @@ GameObject:
   - component: {fileID: 524865242}
   - component: {fileID: 524865244}
   - component: {fileID: 524865243}
+  - component: {fileID: 524865245}
   m_Layer: 5
   m_Name: Background_Concept_1
   m_TagString: Untagged
@@ -3736,6 +3737,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524865241}
   m_CullTransparentMesh: 1
+--- !u!65 &524865245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524865241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3000, y: 1000, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &540605868
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,10 +6434,11 @@ Transform:
   m_GameObject: {fileID: 829784932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.44133127, z: -0, w: 0.8973443}
-  m_LocalPosition: {x: 1.5802155, y: 0, z: 2.8569975}
+  m_LocalPosition: {x: -22.1, y: 0, z: -39.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 319067491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -52.378, z: 0}
 --- !u!1 &849653201
@@ -11541,6 +11564,8 @@ GameObject:
   - component: {fileID: 1724741360}
   - component: {fileID: 1724741362}
   - component: {fileID: 1724741361}
+  - component: {fileID: 1724741363}
+  - component: {fileID: 1724741364}
   m_Layer: 5
   m_Name: Background_Concept_1
   m_TagString: Untagged
@@ -11605,6 +11630,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724741359}
   m_CullTransparentMesh: 1
+--- !u!65 &1724741363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724741359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3000, y: 1000, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!205 &1724741364
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724741359}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 0}
+  m_Enabled: 1
 --- !u!1 &1728386861
 GameObject:
   m_ObjectHideFlags: 0
@@ -11979,6 +12052,7 @@ GameObject:
   - component: {fileID: 1828801043}
   - component: {fileID: 1828801045}
   - component: {fileID: 1828801044}
+  - component: {fileID: 1828801046}
   m_Layer: 5
   m_Name: Background_Concept_1
   m_TagString: Untagged
@@ -12043,6 +12117,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828801042}
   m_CullTransparentMesh: 1
+--- !u!65 &1828801046
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828801042}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3000, y: 1000, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1001 &1863333391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12662,6 +12757,7 @@ GameObject:
   - component: {fileID: 1937491931}
   - component: {fileID: 1937491933}
   - component: {fileID: 1937491932}
+  - component: {fileID: 1937491934}
   m_Layer: 5
   m_Name: Background_Concept_1
   m_TagString: Untagged
@@ -12726,6 +12822,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937491930}
   m_CullTransparentMesh: 1
+--- !u!65 &1937491934
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937491930}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3000, y: 1000, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1974436401
 GameObject:
   m_ObjectHideFlags: 0
@@ -14132,4 +14249,3 @@ SceneRoots:
   - {fileID: 621753730}
   - {fileID: 2001273494}
   - {fileID: 1522542952}
-  - {fileID: 319067491}
