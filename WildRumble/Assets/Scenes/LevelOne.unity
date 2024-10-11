@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150111887}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4125e43bc74340469e09a3b67996c70, type: 3}
   m_Name: 
@@ -1290,26 +1290,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150111887}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navAgent: {fileID: 150111891}
   player: {fileID: 319067491}
-  Ground:
-    serializedVersion: 2
-    m_Bits: 8
-  Player:
-    serializedVersion: 2
-    m_Bits: 64
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttack: 0.5
-  sightRange: 20
-  attackRange: 16.1
-  playerInSightRange: 1
-  playerInAttackRange: 1
+  chaseRange: 30
+  stoppingDistance: 1
+  wanderRange: 10
+  wanderTimer: 3
+  speed: 20
 --- !u!195 &150111891
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11022,7 +11013,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490405407}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4125e43bc74340469e09a3b67996c70, type: 3}
   m_Name: 
@@ -11035,26 +11026,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490405407}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navAgent: {fileID: 1490405411}
   player: {fileID: 319067491}
-  Ground:
-    serializedVersion: 2
-    m_Bits: 8
-  Player:
-    serializedVersion: 2
-    m_Bits: 64
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttack: 0.5
-  sightRange: 20
-  attackRange: 16.1
-  playerInSightRange: 1
-  playerInAttackRange: 1
+  chaseRange: 20
+  stoppingDistance: 2
+  wanderRange: 5
+  wanderTimer: 2
+  speed: 10
 --- !u!195 &1490405411
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12331,7 +12313,6 @@ GameObject:
   - component: {fileID: 1746512425}
   - component: {fileID: 1746512424}
   - component: {fileID: 1746512428}
-  - component: {fileID: 1746512429}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -12456,39 +12437,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746512422}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navAgent: {fileID: 1746512424}
   player: {fileID: 319067491}
-  Ground:
-    serializedVersion: 2
-    m_Bits: 8
-  Player:
-    serializedVersion: 2
-    m_Bits: 64
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttack: 0.5
-  sightRange: 20
-  attackRange: 16.1
-  playerInSightRange: 1
-  playerInAttackRange: 1
---- !u!114 &1746512429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746512422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4125e43bc74340469e09a3b67996c70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 319067484}
+  chaseRange: 10
+  stoppingDistance: 1
+  wanderRange: 15
+  wanderTimer: 4
+  speed: 5
 --- !u!1 &1757911719
 GameObject:
   m_ObjectHideFlags: 0
