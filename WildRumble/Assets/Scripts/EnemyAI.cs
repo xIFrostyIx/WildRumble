@@ -52,7 +52,7 @@ public class EnemyAI : MonoBehaviour
             Wander();
         }
     }
-
+    
     void Wander()
     {
         // Update the timer
