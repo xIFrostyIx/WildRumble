@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     // Audio components for the gunshot sound
     public AudioClip gunShotSound; // The sound clip for the gunshot
     private AudioSource audioSource; // AudioSource to play the sound
+    public float gunShotVolume = 1f; // Volume control for the gunshot sound, default to full volume
 
     void Start()
     {
@@ -86,7 +87,8 @@ public class Weapon : MonoBehaviour
     {
         if (gunShotSound != null)
         {
-            audioSource.PlayOneShot(gunShotSound);
+            // Play the gunshot sound with the specified volume
+            audioSource.PlayOneShot(gunShotSound, gunShotVolume);
         }
     }
 
