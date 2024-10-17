@@ -14,9 +14,23 @@ public class Weapon : MonoBehaviour
     private int currentAmmo; // Current ammo left in the weapon
     private bool isReloading = false; // Flag to indicate if the weapon is reloading
 
+    // Audio components for the gunshot sound
+    public AudioClip gunShotSound; // The sound clip for the gunshot
+    private AudioSource audioSource; // AudioSource to play the sound
+    public float gunShotVolume = 1f; // Volume control for the gunshot sound, default to full volume
+
     void Start()
     {
         currentAmmo = maxAmmo; // Initialize the weapon with full ammo
+
+        // Initialize the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+
+        // If there's no AudioSource on the weapon object, add one
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -64,6 +78,18 @@ public class Weapon : MonoBehaviour
 
         // Reduce the ammo count
         currentAmmo--;
+
+        // Play the gunshot sound
+        PlayGunShotSound();
+    }
+
+    void PlayGunShotSound()
+    {
+        if (gunShotSound != null)
+        {
+            // Play the gunshot sound with the specified volume
+            audioSource.PlayOneShot(gunShotSound, gunShotVolume);
+        }
     }
 
     IEnumerator Reload()
