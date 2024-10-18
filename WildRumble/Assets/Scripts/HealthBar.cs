@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider healthSlider;   // Reference to the UI Slider
-    public int maxHealth = 100;   // Maximum health value
-    private int currentHealth;     // Current health value
+    public Slider healthSlider;   
+    public int maxHealth = 100;   
+    private int currentHealth;     
 
-    public int damageAmount = 10;  // Amount of damage taken on collision with an enemy
-    public int healAmount = 20;    // Amount of health restored from health pickups
+    public int damageAmount = 10; 
+    public int healAmount = 20;    
 
-    public GameObject losePanel;   // Reference to the Lose panel
+    public GameObject losePanel;   
 
     void Start()
     {
@@ -19,23 +19,23 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = currentHealth;
 
         Debug.Log("Health initialized: " + currentHealth);
-        losePanel.SetActive(false); // Ensure the Lose panel is not active at the start
+        losePanel.SetActive(false); 
     }
 
     public void TakeDamage(int damage)
     {
         Debug.Log("TakeDamage called.");
         currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Ensure health stays between 0 and maxHealth
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
 
         healthSlider.value = currentHealth;
         Debug.Log("Health after damage: " + currentHealth);
 
-        // Check if the player has died
+        
         if (currentHealth <= 0)
         {
             Debug.Log("Player has died.");
-            ShowLosePanel(); // Call the method to show the Lose panel
+            ShowLosePanel(); 
         }
     }
 
@@ -43,7 +43,7 @@ public class HealthBar : MonoBehaviour
     {
         Debug.Log("Heal called.");
         currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Ensure health stays between 0 and maxHealth
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
 
         healthSlider.value = currentHealth;
         Debug.Log("Health after healing: " + currentHealth);
@@ -53,7 +53,7 @@ public class HealthBar : MonoBehaviour
     {
         Debug.Log("OnTriggerEnter called. Collided with: " + other.gameObject.name);
 
-        if (other.gameObject.CompareTag("Enemy")) // Using CompareTag for efficiency
+        if (other.gameObject.CompareTag("Enemy")) 
         {
             Debug.Log("Enemy collision detected: " + other.gameObject.name);
             TakeDamage(damageAmount);
@@ -69,10 +69,10 @@ public class HealthBar : MonoBehaviour
 
     private void ShowLosePanel()
     {
-        losePanel.SetActive(true); // Activate the Lose panel
-        Time.timeScale = 0; // Pause the game
+        losePanel.SetActive(true); 
+        Time.timeScale = 0; 
 
-        // Make the cursor visible and unlock it
+        
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
