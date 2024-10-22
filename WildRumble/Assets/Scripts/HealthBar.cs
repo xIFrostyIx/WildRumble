@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider healthSlider;   
-    public int maxHealth = 100;   
-    private int currentHealth;     
+    public Slider healthSlider;
+    public int maxHealth = 100;
+    private int currentHealth;
 
-    public int damageAmount = 10; 
-    public int healAmount = 20;    
+    public int damageAmount = 10;
+    public int healAmount = 20;
 
-    public GameObject losePanel;   
+    public GameObject losePanel;
+    private bool isInvulnerable = false;  
 
     void Start()
     {
@@ -19,31 +21,44 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = currentHealth;
 
         Debug.Log("Health initialized: " + currentHealth);
-        losePanel.SetActive(false); 
+        losePanel.SetActive(false);
     }
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("TakeDamage called.");
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
-
-        healthSlider.value = currentHealth;
-        Debug.Log("Health after damage: " + currentHealth);
-
-        
-        if (currentHealth <= 0)
+        if (!isInvulnerable)  
         {
-            Debug.Log("Player has died.");
-            ShowLosePanel(); 
+            Debug.Log("TakeDamage called.");
+            currentHealth -= damage;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+            healthSlider.value = currentHealth;
+            Debug.Log("Health after damage: " + currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                Debug.Log("Player has died.");
+                ShowLosePanel();
+            }
+            else
+            {
+                StartCoroutine(InvulnerabilityPeriod());  
+            }
         }
+    }
+
+    IEnumerator InvulnerabilityPeriod()
+    {
+        isInvulnerable = true;  
+        yield return new WaitForSeconds(1f);  
+        isInvulnerable = false;  
     }
 
     public void Heal(int healAmount)
     {
         Debug.Log("Heal called.");
         currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         healthSlider.value = currentHealth;
         Debug.Log("Health after healing: " + currentHealth);
@@ -53,7 +68,7 @@ public class HealthBar : MonoBehaviour
     {
         Debug.Log("OnTriggerEnter called. Collided with: " + other.gameObject.name);
 
-        if (other.gameObject.CompareTag("Enemy")) 
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Enemy collision detected: " + other.gameObject.name);
             TakeDamage(damageAmount);
@@ -69,10 +84,9 @@ public class HealthBar : MonoBehaviour
 
     private void ShowLosePanel()
     {
-        losePanel.SetActive(true); 
-        Time.timeScale = 0; 
+        losePanel.SetActive(true);
+        Time.timeScale = 0;
 
-        
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
