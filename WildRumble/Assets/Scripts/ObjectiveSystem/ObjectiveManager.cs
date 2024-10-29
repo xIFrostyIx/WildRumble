@@ -18,7 +18,7 @@ public class ObjectiveManager : MonoBehaviour
     private void Start()
     {
         // Initialize objectives
-        objectives.Add(new Objective("Eliminate 5 deer", 5));
+        objectives.Add(new Objective("Eliminate 5 Animals", 5));
         objectives.Add(new Objective("Get in the truck", 1));
         UpdateObjectiveText();
     }
