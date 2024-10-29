@@ -12,7 +12,15 @@ public class HealthBar : MonoBehaviour
     public int healAmount = 20;
 
     public GameObject losePanel;
-    private bool isInvulnerable = false;  
+    private bool isInvulnerable = false;
+
+    public AudioClip damageSound;
+    public AudioClip loseSound;
+    public AudioClip pickupSound; 
+    private AudioSource audioSource;
+    public float damageVolume = 1f;
+    public float loseVolume = 1f;
+    public float pickupVolume = 1f; 
 
     void Start()
     {
@@ -20,63 +28,85 @@ public class HealthBar : MonoBehaviour
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
 
-        Debug.Log("Health initialized: " + currentHealth);
         losePanel.SetActive(false);
-    }
 
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
+    //Added by Darcy
     public void TakeDamage(int damage)
     {
-        if (!isInvulnerable)  
+        if (!isInvulnerable)
         {
-            Debug.Log("TakeDamage called.");
             currentHealth -= damage;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
             healthSlider.value = currentHealth;
-            Debug.Log("Health after damage: " + currentHealth);
 
             if (currentHealth <= 0)
             {
-                Debug.Log("Player has died.");
+                PlayLoseSound();
                 ShowLosePanel();
             }
             else
             {
-                StartCoroutine(InvulnerabilityPeriod());  
+                PlayDamageSound();
+                StartCoroutine(InvulnerabilityPeriod());
             }
         }
     }
 
     IEnumerator InvulnerabilityPeriod()
     {
-        isInvulnerable = true;  
-        yield return new WaitForSeconds(1f);  
-        isInvulnerable = false;  
+        isInvulnerable = true;
+        yield return new WaitForSeconds(1f);
+        isInvulnerable = false;
+    }
+
+    void PlayDamageSound()
+    {
+        if (damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound, damageVolume);
+        }
+    }
+
+    void PlayLoseSound()
+    {
+        if (loseSound != null)
+        {
+            audioSource.PlayOneShot(loseSound, loseVolume);
+        }
+    }
+
+    void PlayPickupSound() 
+    {
+        if (pickupSound != null)
+        {
+            audioSource.PlayOneShot(pickupSound, pickupVolume);
+        }
     }
 
     public void Heal(int healAmount)
     {
-        Debug.Log("Heal called.");
         currentHealth += healAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
         healthSlider.value = currentHealth;
-        Debug.Log("Health after healing: " + currentHealth);
+
+        PlayPickupSound(); 
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter called. Collided with: " + other.gameObject.name);
-
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy collision detected: " + other.gameObject.name);
             TakeDamage(damageAmount);
         }
 
         if (other.gameObject.CompareTag("HealthPickup"))
         {
-            Debug.Log("Health pickup collision detected: " + other.gameObject.name);
             Heal(healAmount);
             Destroy(other.gameObject);
         }
@@ -89,5 +119,12 @@ public class HealthBar : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void SetDamageAndLoseVolume(float volume)
+    {
+        damageVolume = volume;
+        loseVolume = volume;
+        pickupVolume = volume; 
     }
 }

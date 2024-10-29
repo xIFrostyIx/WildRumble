@@ -21114,6 +21114,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 24aa3f3918993294a9333ed1ce90fa2c, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.2
   fleeingEnemyManager: {fileID: 0}
 --- !u!1 &248722788
@@ -40737,6 +40738,12 @@ MonoBehaviour:
   damageAmount: 10
   healAmount: 20
   losePanel: {fileID: 1109341074}
+  damageSound: {fileID: 0}
+  loseSound: {fileID: 0}
+  pickupSound: {fileID: 0}
+  damageVolume: 1
+  loseVolume: 1
+  pickupVolume: 1
 --- !u!65 &486595805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43934,6 +43941,12 @@ MonoBehaviour:
   damageAmount: 10
   healAmount: 20
   losePanel: {fileID: 1109341074}
+  damageSound: {fileID: 8300000, guid: 78c8ec36c0f02e346a50177dc3a83d46, type: 3}
+  loseSound: {fileID: 8300000, guid: 301f76a4bafcb21438693cdb429efc7b, type: 3}
+  pickupSound: {fileID: 8300000, guid: 4b719ee678add6a44af7d41166defe8f, type: 3}
+  damageVolume: 1
+  loseVolume: 1
+  pickupVolume: 1
 --- !u!114 &533886048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44031,6 +44044,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   orientation: {fileID: 1330795318}
+  footstepSound: {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
+  footstepVolume: 1
+  footstepInterval: 0.5
 --- !u!54 &533886053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60333,6 +60349,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.7
   gunShotSound: {fileID: 8300000, guid: 651aecae58e028c47b1f12469ebd1f9b, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 1
   fleeingEnemyManager: {fileID: 0}
 --- !u!1 &726206278
@@ -150335,6 +150352,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1884593388
@@ -150356,6 +150374,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1884593389
@@ -150377,6 +150396,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1884593390
@@ -150398,6 +150418,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: 28dd1068c0f6faf4f9fa34ade1850a31, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!1001 &1885998406
