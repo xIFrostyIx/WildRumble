@@ -1536,6 +1536,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.7
   gunShotSound: {fileID: 8300000, guid: 651aecae58e028c47b1f12469ebd1f9b, type: 3}
+  reloadSound: {fileID: 8300000, guid: 44f242764aebb1d498bcbfcca6d975dd, type: 3}
   gunShotVolume: 1
   fleeingEnemyManager: {fileID: 0}
 --- !u!1 &158876825
@@ -4412,6 +4413,12 @@ MonoBehaviour:
   damageAmount: 10
   healAmount: 20
   losePanel: {fileID: 587592685}
+  damageSound: {fileID: 0}
+  loseSound: {fileID: 0}
+  pickupSound: {fileID: 0}
+  damageVolume: 1
+  loseVolume: 1
+  pickupVolume: 1
 --- !u!1 &472679969
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,6 +5521,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   orientation: {fileID: 884350427}
+  footstepSound: {fileID: 8300000, guid: 551d550ab98e3cc4bb7793e752fe8628, type: 3}
+  footstepVolume: 1
+  footstepInterval: 0.5
 --- !u!54 &528803673
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5578,6 +5588,12 @@ MonoBehaviour:
   damageAmount: 10
   healAmount: 20
   losePanel: {fileID: 587592685}
+  damageSound: {fileID: 8300000, guid: 78c8ec36c0f02e346a50177dc3a83d46, type: 3}
+  loseSound: {fileID: 8300000, guid: 301f76a4bafcb21438693cdb429efc7b, type: 3}
+  pickupSound: {fileID: 8300000, guid: 4b719ee678add6a44af7d41166defe8f, type: 3}
+  damageVolume: 1
+  loseVolume: 1
+  pickupVolume: 1
 --- !u!1 &533814518
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,6 +6705,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1188066980161944018, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: optionsMenuUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2253889322797350203, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6969,6 +6989,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   orientation: {fileID: 0}
+  footstepSound: {fileID: 0}
+  footstepVolume: 1
+  footstepInterval: 0.5
 --- !u!54 &603887242
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12621,6 +12644,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1173842221
@@ -12642,6 +12666,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1173842222
@@ -12663,6 +12688,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1173842223
@@ -12684,6 +12710,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: 28dd1068c0f6faf4f9fa34ade1850a31, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!1 &1184590310
@@ -13594,6 +13621,10 @@ PrefabInstance:
       propertyPath: ambAudioSource
       value: 
       objectReference: {fileID: 1980308217}
+    - target: {fileID: 4492413880035278401, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 528803672}
     - target: {fileID: 4925922039193921967, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14330,7 +14361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1305333571
 Transform:
   m_ObjectHideFlags: 0
@@ -15753,6 +15784,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 24aa3f3918993294a9333ed1ce90fa2c, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.2
   fleeingEnemyManager: {fileID: 0}
 --- !u!65 &1459403039

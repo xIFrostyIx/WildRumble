@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//Made by Darcy
 public class ButtonManager : MonoBehaviour
 {
     public GameObject optionsMenuUI;
     public Slider sfxVolumeSlider;
     public Slider bgmVolumeSlider;
-    public Slider gunShotSoundSlider; // New slider for gunshot sound
+    public Slider gunShotSoundSlider;
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
+
+    public HealthBar healthBar; 
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class ButtonManager : MonoBehaviour
         // Gunshot Sound Volume Slider
         if (gunShotSoundSlider != null)
         {
-            gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f); // Load previous volume setting
+            gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f);
             gunShotSoundSlider.onValueChanged.AddListener(SetGunShotVolume);
         }
     }
@@ -52,14 +54,18 @@ public class ButtonManager : MonoBehaviour
         PlayerPrefs.SetFloat("BGMVolume", volume);
     }
 
-    public void SetGunShotVolume(float volume) // New method for gunshot sound volume
+    public void SetGunShotVolume(float volume)
     {
-        // Assuming you have a reference to the Weapon script on the player or weapon object
-        Weapon weaponScript = FindObjectOfType<Weapon>(); // Adjust this to find your weapon script correctly
+        Weapon weaponScript = FindObjectOfType<Weapon>();
         if (weaponScript != null)
         {
-            weaponScript.gunShotVolume = volume; // Set the gunshot volume in the Weapon script
-            PlayerPrefs.SetFloat("GunShotVolume", volume); // Save the new volume setting
+            weaponScript.gunShotVolume = volume;
+            PlayerPrefs.SetFloat("GunShotVolume", volume);
+        }
+
+        if (healthBar != null)
+        {
+            healthBar.SetDamageAndLoseVolume(volume);
         }
     }
 
