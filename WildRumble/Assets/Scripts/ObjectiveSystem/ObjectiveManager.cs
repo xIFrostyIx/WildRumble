@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 /*
  * Created by Joshua Guerrero
@@ -11,55 +12,37 @@ using System.Collections.Generic;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    private List<Objective> objectives;
+    public List<Objective> objectives = new List<Objective>();
+    public TextMeshProUGUI objectiveText;
 
     private void Start()
     {
-        objectives = new List<Objective>
-        {
-            new Objective("Kill 5 Deer", 5),
-            new Objective("Walk to the cabin"),
-            new Objective("Kill 10 wild animals", 10),
-            new Objective("Get in the truck")
-        };
+        // Initialize objectives
+        objectives.Add(new Objective("Eliminate 5 deer", 5));
+        objectives.Add(new Objective("Get in the truck", 1));
+        UpdateObjectiveText();
     }
 
-    private void Update()
-    {
-        CheckObjectives();
-    }
-
-    public void CheckObjectives()
+    public void UpdateObjective(string objectiveDescription)
     {
         foreach (var objective in objectives)
         {
-            if (objective.IsCompleted)
-                continue;
-
-            //Obective 1: Kill 5 Deer
-            /*void OnTriggerEnter(Collider other)
+            if (objective.description == objectiveDescription)
             {
-                if (other.CompareTag("Enemy"))
-                {
-                    KillAnimal(other.gameObject);
-                    FindObjectOfType<ObjectiveManager>().CompleteObjective(0); //Update Kill Count
-                }
+                objective.currentCount++;
+                objective.UpdateObjective();
+                UpdateObjectiveText();
+                break;
             }
-            */
-            //Objective 2: Walk To the Cabin
-
-            //Objective 3: Kill Wild Animals
-
-            //Objective 4: Get in the truck
         }
     }
 
-    public void CompleteObjective(int index)
+    private void UpdateObjectiveText()
     {
-        if (index < 0 || index >= objectives.Count)
-            return;
-
-        objectives[index].CompleteObjective();
-        Debug.Log($"Objective Completed: {objectives[index].Description}");
+        objectiveText.text = "";
+        foreach (var objective in objectives)
+        {
+            objectiveText.text += $"{objective.description}: {objective.currentCount}/{objective.targetCount} - {(objective.isCompleted ? "Completed" : "Pending")}\n";
+        }
     }
 }

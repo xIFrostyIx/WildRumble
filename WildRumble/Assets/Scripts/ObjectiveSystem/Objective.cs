@@ -9,25 +9,24 @@ using UnityEngine;
  */
 public class Objective : MonoBehaviour
 {
-    public string Description { get; private set; }
-    public bool IsCompleted { get; private set; }
-    public int RequiredCount { get; private set; }
-    public int CurrentCount { get; private set; }
+    public string description;
+    public bool isCompleted;
+    public int targetCount;
+    public int currentCount;
 
-    public Objective(string description, int requiredCount = 1)
+    public Objective(string description, int targetCount)
     {
-        Description = description;
-        RequiredCount = requiredCount;
-        CurrentCount = 0;
-        IsCompleted = false;
+        this.description = description;
+        this.targetCount = targetCount;
+        this.currentCount = 0;
+        this.isCompleted = false;
     }
 
-    public void CompleteObjective()
+    public void UpdateObjective()
     {
-        CurrentCount++;
-        if (CurrentCount >= RequiredCount)
+        if (currentCount >= targetCount)
         {
-            IsCompleted = true;
+            isCompleted = true;
         }
     }
 }
