@@ -41,6 +41,13 @@ public class SceneSwitcher : MonoBehaviour
                     Debug.Log("Scene is Switching");
                     sceneLoader.LoadScene("LevelThree");
                 }
+
+                if (hit.collider.CompareTag("SwitchMain"))
+                {
+                    //loads MainMenu
+                    Debug.Log("Scene is Switching");
+                    sceneLoader.LoadScene("MainMenu");
+                }
             }
         }
 
@@ -55,7 +62,7 @@ public class SceneSwitcher : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInteractable, 3.75f)) // Distance is the same as interaction distance
         {
             // Show the interaction text if the object has the Scene Switch tags
-            if (hitInteractable.collider.CompareTag("SwitchTwo") || hitInteractable.collider.CompareTag("SwitchThree"))
+            if (hitInteractable.collider.CompareTag("SwitchTwo") || hitInteractable.collider.CompareTag("SwitchThree") || hitInteractable.collider.CompareTag("SwitchMain"))
             {
                 interactionText.text = "(E) Enter Truck"; // Set the interaction text
                 interactionText.gameObject.SetActive(true); // Show the text
