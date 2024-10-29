@@ -42,7 +42,7 @@ public class ObjectiveManager : MonoBehaviour
         objectiveText.text = "";
         foreach (var objective in objectives)
         {
-            objectiveText.text += $"{objective.description}: {objective.currentCount}/{objective.targetCount} - {(objective.isCompleted ? "Completed" : "Pending")}\n";
+            objectiveText.text += $"{objective.description}: {objective.currentCount}/{objective.targetCount} - {(objective.isCompleted ? "Completed" : "In Progress")}\n";
         }
     }
 }
