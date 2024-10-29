@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.7158656
+      value: -300.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3122736
+      value: 3.4509544
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.100117
+      value: -275.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7d83677f3f85bf4888102e32ae4cf9a, type: 2}
     - target: {fileID: 919132149155446097, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
       propertyPath: m_Name
       value: Treetyp2_1
@@ -82,15 +98,15 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.023155132
+  - screenRelativeHeight: 0.49676055
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6634047081299752829}
-  - screenRelativeHeight: 0.013557483
+  - screenRelativeHeight: 0.2459419
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6634047081299752829}
-  - screenRelativeHeight: 0.0020486657
+  - screenRelativeHeight: 0.032874066
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6634047081299752829}
@@ -111,11 +127,11 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 3.6745992
+  m_Radius: 0.2
+  m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 1.7191465, z: 0}
 --- !u!23 &6634047081299752829 stripped
