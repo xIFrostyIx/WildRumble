@@ -7567,6 +7567,10 @@ PrefabInstance:
       value: Flee
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -14865,6 +14869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1638638063}
+  objectiveManager: {fileID: 297038752}
 --- !u!114 &170462330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24950,6 +24955,7 @@ GameObject:
   - component: {fileID: 297038751}
   - component: {fileID: 297038750}
   - component: {fileID: 297038749}
+  - component: {fileID: 297038752}
   m_Layer: 0
   m_Name: Objectives
   m_TagString: Untagged
@@ -25041,6 +25047,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &297038752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297038747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070e5a49851cd0f46a5886ed2b76814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: []
+  objectiveText: {fileID: 1603201351}
 --- !u!1001 &297716384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33189,6 +33209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1851828212}
+  objectiveManager: {fileID: 297038752}
 --- !u!114 &395845853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63714,6 +63735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 2126097230}
+  objectiveManager: {fileID: 297038752}
 --- !u!114 &757763884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83608,6 +83630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 2059290895}
+  objectiveManager: {fileID: 297038752}
 --- !u!114 &997708304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121317,6 +121340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1292054695}
+  objectiveManager: {fileID: 297038752}
 --- !u!114 &1484522018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124940,6 +124964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 566359093}
+  objectiveManager: {fileID: 297038752}
 --- !u!114 &1536056131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129912,7 +129937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -153}
+  m_AnchoredPosition: {x: 75, y: -222}
   m_SizeDelta: {x: 272.8, y: 44.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1603201351
@@ -166142,7 +166167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087649892}
   m_Layer: 0
-  m_Name: AI
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

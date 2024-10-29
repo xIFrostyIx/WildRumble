@@ -8,7 +8,9 @@ public class ObjectWithHealthBar : MonoBehaviour
     public int maxHealth = 100;  
     private int currentHealth;
 
-    public Slider healthBar;  
+    public Slider healthBar;
+
+    public ObjectiveManager objectiveManager;
 
     void Start()
     {
@@ -61,6 +63,8 @@ public class ObjectWithHealthBar : MonoBehaviour
     {
       
         Debug.Log("Object destroyed!");
-        Destroy(gameObject);  
+        Destroy(gameObject);
+
+        objectiveManager.UpdateObjective("Eliminate 5 deer");
     }
 }
