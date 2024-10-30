@@ -672,6 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 568955962}
+  objectiveManager: {fileID: 0}
 --- !u!114 &65384692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3482,6 +3483,12 @@ MonoBehaviour:
   damageAmount: 10
   healAmount: 20
   losePanel: {fileID: 348205586}
+  damageSound: {fileID: 0}
+  loseSound: {fileID: 0}
+  pickupSound: {fileID: 0}
+  damageVolume: 1
+  loseVolume: 1
+  pickupVolume: 1
 --- !u!114 &361440885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3579,6 +3586,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   orientation: {fileID: 1876897496}
+  footstepSound: {fileID: 0}
+  footstepVolume: 1
+  footstepInterval: 0.5
 --- !u!54 &361440890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9045,6 +9055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1699244632}
+  objectiveManager: {fileID: 0}
 --- !u!114 &932355813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11121,6 +11132,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.7
   gunShotSound: {fileID: 8300000, guid: 651aecae58e028c47b1f12469ebd1f9b, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 1
   fleeingEnemyManager: {fileID: 0}
 --- !u!65 &1118847826
@@ -11163,6 +11175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 251198745}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1130733800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12861,6 +12874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 477081950}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1308267701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13600,6 +13614,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1366600235
@@ -13621,6 +13636,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1366600236
@@ -13642,6 +13658,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &1366600237
@@ -13663,6 +13680,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: 28dd1068c0f6faf4f9fa34ade1850a31, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!1 &1368824052 stripped
@@ -13684,6 +13702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1865321926}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1368824054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14333,6 +14352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1676158391}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1393245083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15130,6 +15150,12 @@ MonoBehaviour:
   damageAmount: 10
   healAmount: 20
   losePanel: {fileID: 348205586}
+  damageSound: {fileID: 0}
+  loseSound: {fileID: 0}
+  pickupSound: {fileID: 0}
+  damageVolume: 1
+  loseVolume: 1
+  pickupVolume: 1
 --- !u!65 &1467962429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16747,6 +16773,63 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &1631490546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 37.143803
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100.55197
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
+      propertyPath: m_Name
+      value: Rabbit 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c83d9040fe21f73479645f81b10706e5, type: 3}
 --- !u!1 &1633002827
 GameObject:
   m_ObjectHideFlags: 0
@@ -17994,6 +18077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1928309580}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1764269697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18506,6 +18590,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 24aa3f3918993294a9333ed1ce90fa2c, type: 3}
+  reloadSound: {fileID: 0}
   gunShotVolume: 0.2
   fleeingEnemyManager: {fileID: 0}
 --- !u!65 &1823131101
@@ -18747,6 +18832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 2048493465}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1857991704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18899,6 +18985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 832980696}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1860833608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20078,6 +20165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1165187595}
+  objectiveManager: {fileID: 0}
 --- !u!114 &1987656201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21123,6 +21211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1038835864}
+  objectiveManager: {fileID: 0}
 --- !u!114 &2123623249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21411,6 +21500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 1115972119}
+  objectiveManager: {fileID: 0}
 --- !u!114 &2140881344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21660,3 +21750,4 @@ SceneRoots:
   - {fileID: 361440891}
   - {fileID: 1205080999}
   - {fileID: 1850680024}
+  - {fileID: 1631490546}
