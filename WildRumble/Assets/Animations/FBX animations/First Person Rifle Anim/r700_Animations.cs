@@ -16,15 +16,42 @@ public class r700_Animations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //bools for ads and ads firing 
+        bool rifleADSin = myAnimator.GetBool("rifleADSin");
+        bool adsPress = Input.GetButton("Fire2");
+
+            //rifle animations
         if (Input.GetButtonDown("Fire1"))
         {
-            myAnimator.SetBool("rifleShoot", true);
+            myAnimator.SetTrigger("rifleShoot");
         }
 
-        if (!Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            myAnimator.SetBool("rifleShoot", false);
+            myAnimator.SetTrigger("rifleReload");
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            myAnimator.SetTrigger("rifleDown");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            myAnimator.SetTrigger("rifleUp");
+        }
+
+        //ADS aniamtions
+        if (!rifleADSin && adsPress)
+        {
+            myAnimator.SetBool("rifleADSin", true);
+        }
+
+        if (rifleADSin && !adsPress)
+        {
+            myAnimator.SetBool("rifleADSin", false);
+        }
+
 
     }
 }
