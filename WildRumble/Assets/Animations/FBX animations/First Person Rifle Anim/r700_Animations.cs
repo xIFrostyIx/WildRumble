@@ -16,16 +16,6 @@ public class r700_Animations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            myAnimator.SetBool("rifleADS", true);
-        }
-
-        if (!Input.GetButtonDown("Fire2"))
-        {
-            myAnimator.SetBool("rifleADS", false);
-        }
-
         if (Input.GetButtonDown("Fire1"))
         {
             myAnimator.SetBool("rifleShoot", true);
