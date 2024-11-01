@@ -19,8 +19,9 @@ public class r700_Animations : MonoBehaviour
         //bools for ads and ads firing 
         bool rifleADSin = myAnimator.GetBool("rifleADSin");
         bool adsPress = Input.GetButton("Fire2");
+        bool shootPress = Input.GetButton("Fire1");
 
-            //rifle animations
+        //rifle animations
         if (Input.GetButtonDown("Fire1"))
         {
             myAnimator.SetTrigger("rifleShoot");
@@ -50,6 +51,11 @@ public class r700_Animations : MonoBehaviour
         if (rifleADSin && !adsPress)
         {
             myAnimator.SetBool("rifleADSin", false);
+        }
+
+        if (shootPress && adsPress)
+        {
+            myAnimator.SetTrigger("rifleADSshoot");
         }
 
 
