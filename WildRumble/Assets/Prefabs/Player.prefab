@@ -445,6 +445,52 @@ CapsuleCollider:
   m_Height: 1.0127454
   m_Direction: 2
   m_Center: {x: -2.6856975e-11, y: 0.0027865008, z: -0.0042265295}
+--- !u!1 &1467631577845797939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7873136494231174227}
+  - component: {fileID: 7094252011703848047}
+  m_Layer: 0
+  m_Name: Raycast Bullet Correction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7873136494231174227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467631577845797939}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.037640687, y: 0.13211884, z: -0.15188001}
+  m_LocalScale: {x: 0.18820342, y: 0.18820342, z: 0.18820342}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 538962446032064166}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7094252011703848047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467631577845797939}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5e91b752f2ed3428ab17cdb6c40e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Firepoint: {fileID: 228334893904818188}
+  LookHere: {fileID: 2522619481975994314}
 --- !u!1 &1726484642105822590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2967916098200420481}
+  - component: {fileID: 346907037403496353}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -1111,6 +1158,19 @@ Transform:
   - {fileID: 1270968727594536205}
   m_Father: {fileID: 2313770792214069523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346907037403496353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101149330279532303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d8e4110224e594db2e9e7d48469cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentWeapon: 0
 --- !u!1 &4775582047794288513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1235,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 228334893904818188}
   - {fileID: 2967916098200420481}
   - {fileID: 6757235067948389662}
   m_Father: {fileID: 5921589993455575043}
@@ -1788,6 +1849,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6548775079443289968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228334893904818188}
+  m_Layer: 0
+  m_Name: Raycast Aimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228334893904818188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548775079443289968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2313770792214069523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6951958792049588758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,18 +2789,21 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
       insertIndex: 0
-      addedObject: {fileID: 1393026735911970278}
+      addedObject: {fileID: 7873136494231174227}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 7119767295701266781}
+      addedObject: {fileID: 1393026735911970278}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 2369426380802429318}
+      addedObject: {fileID: 7119767295701266781}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 2522619481975994314}
+      addedObject: {fileID: 2369426380802429318}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
       insertIndex: 4
+      addedObject: {fileID: 2522619481975994314}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
+      insertIndex: 5
       addedObject: {fileID: 2852683200867283358}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6f5da51f18b8542835c9524f706722, type: 3}
       insertIndex: -1
@@ -3336,7 +3431,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: 28dd1068c0f6faf4f9fa34ade1850a31, type: 3}
-  reloadSound: {fileID: 0}
+  reloadSound: {fileID: 8300000, guid: 2cd9b962738e6034aa38f29c76d353cd, type: 3}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &4355455341700155064
