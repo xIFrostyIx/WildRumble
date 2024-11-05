@@ -5,7 +5,7 @@ using UnityEngine.UI;  // For the health bar UI
 
 public class ObjectWithHealthBar : MonoBehaviour
 {
-    public int maxHealth = 100;  
+    public int maxHealth = 100;
     private int currentHealth;
 
     public Slider healthBar;
@@ -14,57 +14,56 @@ public class ObjectWithHealthBar : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
         if (healthBar != null)
         {
-            healthBar.maxValue = maxHealth; 
-            healthBar.value = currentHealth; 
+            healthBar.maxValue = maxHealth;
+            healthBar.value = currentHealth;
         }
     }
 
-   
     private void OnCollisionEnter(Collision collision)
     {
-        
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            TakeDamage(20);  
+            TakeDamage(20);  // Assuming a fixed damage of 20 per bullet
         }
     }
 
-   
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            TakeDamage(20);  
+            TakeDamage(20);  // Assuming a fixed damage of 20 per bullet
         }
     }
 
-   
     private void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
 
         if (healthBar != null)
         {
-            healthBar.value = currentHealth;  
+            healthBar.value = currentHealth;
         }
 
-      
         if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    
     private void Die()
     {
-      
+        // Assuming the enemy has the "Enemy" tag
+        if (gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Animal eliminated!");
+            objectiveManager.UpdateObjective("Eliminate 5 Animals");  // Update the objective progress
+        }
+
+        // Destroy the object after death
         Debug.Log("Object destroyed!");
         Destroy(gameObject);
-
-        objectiveManager.UpdateObjective("Eliminate 5 deer");
     }
 }
