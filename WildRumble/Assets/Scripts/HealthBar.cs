@@ -23,6 +23,8 @@ public class HealthBar : MonoBehaviour
     public float damageVolume = 1f;
     public float loseVolume = 1f;
     public float pickupVolume = 1f;
+    public static bool isGameOver = false;
+
 
     void Start()
     {
@@ -123,10 +125,12 @@ public class HealthBar : MonoBehaviour
     {
         losePanel.SetActive(true);
         Time.timeScale = 0;
-
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        isGameOver = true; 
     }
+
 
     public void SetDamageAndLoseVolume(float volume)
     {

@@ -37,7 +37,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (isReloading)
+        if (HealthBar.isGameOver || isReloading) // Added by Darcy
             return;
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -58,6 +58,7 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
 
     void Shoot()
     {

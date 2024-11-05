@@ -6,19 +6,30 @@ public class PauseManager : MonoBehaviour
     private bool isPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
-    public btnFX buttonFX; 
-
+    public GameObject losePanel; 
+    public btnFX buttonFX;
+    //made by Darcy
     void Update()
     {
+        if (HealthBar.isGameOver)
+            return; 
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PlayClickSound(); 
+            PlayClickSound();
             TogglePause();
         }
     }
 
+
     public void TogglePause()
     {
+        
+        if (losePanel != null && losePanel.activeSelf)
+        {
+            return; 
+        }
+
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
         ShowCursor(isPaused);
@@ -36,9 +47,14 @@ public class PauseManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        
         Time.timeScale = 1f;
+        HealthBar.isGameOver = false;
+
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 
     public void OpenOptions()
     {
@@ -62,7 +78,7 @@ public class PauseManager : MonoBehaviour
     {
         if (buttonFX != null)
         {
-            buttonFX.ClickSound(); 
+            buttonFX.ClickSound();
         }
     }
 

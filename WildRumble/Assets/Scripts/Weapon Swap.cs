@@ -16,6 +16,8 @@ public class WeaponSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (HealthBar.isGameOver)
+            return; //added by Darcy
         int LastWeapon = CurrentWeapon;
 
        if (Input.GetAxis("Mouse ScrollWheel") > 0f)               //scroll wheel switching
