@@ -44,9 +44,8 @@ public class SceneSwitcher : MonoBehaviour
 
                 if (hit.collider.CompareTag("SwitchMain"))
                 {
-                    //loads MainMenu
-                    Debug.Log("Scene is Switching");
-                    sceneLoader.LoadScene("MainMenu");
+                    Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
+                    Application.Quit();
                 }
             }
         }
