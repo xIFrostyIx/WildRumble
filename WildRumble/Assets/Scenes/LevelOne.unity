@@ -34540,6 +34540,7 @@ GameObject:
   - component: {fileID: 1184590311}
   - component: {fileID: 1184590313}
   - component: {fileID: 1184590312}
+  - component: {fileID: 1184590314}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -34663,6 +34664,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184590310}
   m_CullTransparentMesh: 1
+--- !u!114 &1184590314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184590310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070e5a49851cd0f46a5886ed2b76814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: []
+  objectiveText: {fileID: 1692149585}
 --- !u!1001 &1187104331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49141,7 +49156,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1433589093330381325, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
