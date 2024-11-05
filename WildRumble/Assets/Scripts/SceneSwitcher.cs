@@ -4,55 +4,64 @@ using UnityEngine;
 using TMPro;
 
 /*
- * Created by Joshua Guerrero
- * This script allows the player to
- * interact with the truck using E
- * to switch scenes
- */
+ 
+Created By Joshua Guerrero
+This script allows the player to
+interact with an object using E
+to switch scenes*/
 
 public class SceneSwitcher : MonoBehaviour
 {
-    // Reference to the SceneLoader script
+    //references the SceneLoader script
     public SceneLoader sceneLoader;
+
     public TextMeshProUGUI interactionText;
-    public ObjectiveManager objectiveManager;
 
     private void Update()
     {
-        // Disable interaction with the truck until the first objective is completed
-        if (!objectiveManager.IsObjectiveComplete("Eliminate 5 Animals"))
-        {
-            interactionText.gameObject.SetActive(false);
-            return;
-        }
-
-        // Check if the player is pressing E and is close to an interactable object
+        // Checks if the player is pressing E
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("Is Pressing E");
             RaycastHit hit;
+            //Player has to be a certain distance and looking at the object
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3.75f))
             {
+                //checks if prop has a "Switch" tag
                 if (hit.collider.CompareTag("SwitchTwo"))
                 {
+                    //loads LevelTwo
+                    Debug.Log("Scene is Switching");
                     sceneLoader.LoadScene("LevelTwo");
                 }
 
                 if (hit.collider.CompareTag("SwitchThree"))
                 {
+                    //loads LevelThree
+                    Debug.Log("Scene is Switching");
                     sceneLoader.LoadScene("LevelThree");
                 }
 
                 if (hit.collider.CompareTag("SwitchMain"))
                 {
+                    //loads MainMenu
+                    Debug.Log("Scene is Switching");
                     sceneLoader.LoadScene("MainMenu");
                 }
             }
         }
 
+        else
+        {
+            // Hide the interaction text when not interacting
+            interactionText.gameObject.SetActive(false);
+        }
+
         // Perform a raycast to check for the interactable object
         RaycastHit hitInteractable;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInteractable, 3.75f))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInteractable, 3.75f)) // Distance is the same as interaction distance
         {
+            // Show the interaction text if the object has the Scene Switch tags
             if (hitInteractable.collider.CompareTag("SwitchTwo") || hitInteractable.collider.CompareTag("SwitchThree") || hitInteractable.collider.CompareTag("SwitchMain"))
             {
                 interactionText.text = "(E) Enter Truck"; // Set the interaction text
@@ -68,4 +77,5 @@ public class SceneSwitcher : MonoBehaviour
             interactionText.gameObject.SetActive(false); // Hide the text if nothing is hit
         }
     }
+
 }

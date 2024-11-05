@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
 
 /*
  * Created by Joshua Guerrero
- * This script handles the list of
+ * This script handles the lsit of
  * objectives and their completion logic
  */
 
@@ -14,14 +15,11 @@ public class ObjectiveManager : MonoBehaviour
     public List<Objective> objectives = new List<Objective>();
     public TextMeshProUGUI objectiveText;
 
-    private int currentObjectiveIndex = 0; // Keeps track of the current objective
-
     private void Start()
     {
         // Initialize objectives
         objectives.Add(new Objective("Eliminate 5 Animals", 5));
-        objectives.Add(new Objective("Get in the truck", 1));  // This objective will be shown only after the first is complete
-
+        objectives.Add(new Objective("Get in the truck", 1));
         UpdateObjectiveText();
     }
 
@@ -33,14 +31,7 @@ public class ObjectiveManager : MonoBehaviour
             {
                 objective.currentCount++;
                 objective.UpdateObjective();
-
-                // If objective is complete, update to the next objective
-                if (objective.isCompleted && currentObjectiveIndex < objectives.Count - 1)
-                {
-                    currentObjectiveIndex++; // Move to next objective
-                    UpdateObjectiveText(); // Update UI
-                }
-
+                UpdateObjectiveText();
                 break;
             }
         }
@@ -48,13 +39,10 @@ public class ObjectiveManager : MonoBehaviour
 
     private void UpdateObjectiveText()
     {
-        // Show only the current objective
-        objectiveText.text = $"{objectives[currentObjectiveIndex].description}: {objectives[currentObjectiveIndex].currentCount}/{objectives[currentObjectiveIndex].targetCount} - {(objectives[currentObjectiveIndex].isCompleted ? "Completed" : "In Progress")}";
-    }
-
-    public bool IsObjectiveComplete(string description)
-    {
-        var objective = objectives.Find(o => o.description == description);
-        return objective != null && objective.isCompleted;
+        objectiveText.text = "";
+        foreach (var objective in objectives)
+        {
+            objectiveText.text += $"{objective.description}: {objective.currentCount}/{objective.targetCount} - {(objective.isCompleted ? "Completed" : "In Progress")}\n";
+        }
     }
 }
