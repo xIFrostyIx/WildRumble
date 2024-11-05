@@ -70,9 +70,17 @@ public class PauseManager : MonoBehaviour
 
     public void BackToMenu()
     {
+        
         Time.timeScale = 1f;
+        HealthBar.isGameOver = false;
+
+        
         SceneManager.LoadScene("MainMenu");
+
+        
+        Debug.Log("Returning to Main Menu and resetting game state");
     }
+
 
     private void PlayClickSound()
     {
