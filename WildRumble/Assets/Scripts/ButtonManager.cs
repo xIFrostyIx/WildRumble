@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-//Made by Darcy
+
 public class ButtonManager : MonoBehaviour
 {
     public GameObject optionsMenuUI;
@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
 
-    public HealthBar healthBar; 
+    public HealthBar healthBar;
 
     void Start()
     {
@@ -37,6 +37,12 @@ public class ButtonManager : MonoBehaviour
             gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f);
             gunShotSoundSlider.onValueChanged.AddListener(SetGunShotVolume);
         }
+
+        // Link the BGM audio source to HealthBar
+        if (healthBar != null)
+        {
+            healthBar.bgmAudioSource = bgmAudioSource;
+        }
     }
 
     public void SetButtonFXVolume(float volume)
@@ -59,7 +65,7 @@ public class ButtonManager : MonoBehaviour
         Weapon weaponScript = FindObjectOfType<Weapon>();
         if (weaponScript != null)
         {
-            weaponScript.gunShotVolume = volume;
+            weaponScript.gunShotVolume = volume; // Set the gunshot volume
             PlayerPrefs.SetFloat("GunShotVolume", volume);
         }
 
