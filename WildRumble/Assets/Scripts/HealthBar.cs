@@ -15,12 +15,16 @@ public class HealthBar : MonoBehaviour
     private bool isInvulnerable = false;
 
     public AudioClip damageSound;
-    public AudioClip loseSound;
-    public AudioClip pickupSound; 
-    private AudioSource audioSource;
+    public AudioClip loseSound; 
+    public AudioClip pickupSound;
+    public AudioClip losingMusic; 
+    public AudioSource bgmAudioSource; 
+
     public float damageVolume = 1f;
     public float loseVolume = 1f;
-    public float pickupVolume = 1f; 
+    public float pickupVolume = 1f;
+    public static bool isGameOver = false;
+
 
     void Start()
     {
@@ -29,14 +33,8 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = currentHealth;
 
         losePanel.SetActive(false);
-
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
     }
-    //Added by Darcy
+
     public void TakeDamage(int damage)
     {
         if (!isInvulnerable)
@@ -47,7 +45,7 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                PlayLoseSound();
+                StopBGMAndPlayLosingMusic(); 
                 ShowLosePanel();
             }
             else
@@ -55,6 +53,17 @@ public class HealthBar : MonoBehaviour
                 PlayDamageSound();
                 StartCoroutine(InvulnerabilityPeriod());
             }
+        }
+    }
+//Added by Darcy
+    private void StopBGMAndPlayLosingMusic()
+    {
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.Stop(); 
+            bgmAudioSource.clip = losingMusic; 
+            bgmAudioSource.volume = PlayerPrefs.GetFloat("BGMVolume", 1f); 
+            bgmAudioSource.Play(); 
         }
     }
 
@@ -69,7 +78,7 @@ public class HealthBar : MonoBehaviour
     {
         if (damageSound != null)
         {
-            audioSource.PlayOneShot(damageSound, damageVolume);
+            AudioSource.PlayClipAtPoint(damageSound, transform.position, damageVolume);
         }
     }
 
@@ -77,15 +86,15 @@ public class HealthBar : MonoBehaviour
     {
         if (loseSound != null)
         {
-            audioSource.PlayOneShot(loseSound, loseVolume);
+            AudioSource.PlayClipAtPoint(loseSound, transform.position, loseVolume);
         }
     }
 
-    void PlayPickupSound() 
+    void PlayPickupSound()
     {
         if (pickupSound != null)
         {
-            audioSource.PlayOneShot(pickupSound, pickupVolume);
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, pickupVolume);
         }
     }
 
@@ -95,7 +104,7 @@ public class HealthBar : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         healthSlider.value = currentHealth;
 
-        PlayPickupSound(); 
+        PlayPickupSound();
     }
 
     void OnTriggerEnter(Collider other)
@@ -116,15 +125,17 @@ public class HealthBar : MonoBehaviour
     {
         losePanel.SetActive(true);
         Time.timeScale = 0;
-
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        isGameOver = true; 
     }
+
 
     public void SetDamageAndLoseVolume(float volume)
     {
         damageVolume = volume;
         loseVolume = volume;
-        pickupVolume = volume; 
+        pickupVolume = volume;
     }
 }

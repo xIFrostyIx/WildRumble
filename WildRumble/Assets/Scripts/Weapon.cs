@@ -15,9 +15,9 @@ public class Weapon : MonoBehaviour
     private bool isReloading = false;
 
     public AudioClip gunShotSound;
-    public AudioClip reloadSound; // New reload sound variable
+    public AudioClip reloadSound;
     private AudioSource audioSource;
-    public float gunShotVolume = 1f;
+    public float gunShotVolume = 1f; // Gunshot volume
 
     public FleeingEnemyManager fleeingEnemyManager;
 
@@ -26,16 +26,18 @@ public class Weapon : MonoBehaviour
         currentAmmo = maxAmmo;
 
         audioSource = GetComponent<AudioSource>();
-
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+
+        // Load gunShotVolume from PlayerPrefs
+        gunShotVolume = PlayerPrefs.GetFloat("GunShotVolume", 1f);
     }
 
     void Update()
     {
-        if (isReloading)
+        if (HealthBar.isGameOver || isReloading) // Added by Darcy
             return;
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -56,6 +58,7 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
 
     void Shoot()
     {
@@ -90,8 +93,7 @@ public class Weapon : MonoBehaviour
     {
         isReloading = true;
         Debug.Log("Reloading...");
-        // Edited by Darcy
-        PlayReloadSound(); 
+        PlayReloadSound();
 
         yield return new WaitForSeconds(reloadTime);
 
