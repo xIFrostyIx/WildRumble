@@ -11,6 +11,8 @@ public class ButtonManager : MonoBehaviour
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
 
+    public SceneLoader sceneLoader;
+
     public HealthBar healthBar;
 
     void Start()
@@ -82,12 +84,12 @@ public class ButtonManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        sceneLoader.LoadScene("Menu");
     }
 
     public void Play()
     {
-        SceneManager.LoadScene("LevelOne");
+        sceneLoader.LoadScene("LevelOne");
     }
 
     public void QuitGame()
