@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -10,14 +11,19 @@ public class ButtonManager : MonoBehaviour
     public Slider gunShotSoundSlider;
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
+    public AudioSource combatAudioSource;
+
+    public float combatRange = 10f;
+    public Transform combatModeTrigger;
+    public LayerMask enemyLayer;
 
     public SceneLoader sceneLoader;
-
     public HealthBar healthBar;
 
-    void Start()
+    private bool isInCombat = false; // Track if in combat mode
+
+    private void Start()
     {
-        // SFX Volume Slider
         if (sfxVolumeSlider != null && buttonFXScript != null)
         {
             sfxVolumeSlider.value = PlayerPrefs.GetFloat("ButtonFXVolume", 1f);
@@ -25,25 +31,82 @@ public class ButtonManager : MonoBehaviour
             sfxVolumeSlider.onValueChanged.AddListener(SetButtonFXVolume);
         }
 
-        // BGM Volume Slider
         if (bgmVolumeSlider != null && bgmAudioSource != null)
         {
             bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
             bgmAudioSource.volume = bgmVolumeSlider.value;
+            combatAudioSource.volume = bgmVolumeSlider.value;
             bgmVolumeSlider.onValueChanged.AddListener(SetBGMVolume);
         }
 
-        // Gunshot Sound Volume Slider
         if (gunShotSoundSlider != null)
         {
             gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f);
             gunShotSoundSlider.onValueChanged.AddListener(SetGunShotVolume);
         }
 
-        // Link the BGM audio source to HealthBar
         if (healthBar != null)
         {
             healthBar.bgmAudioSource = bgmAudioSource;
+        }
+
+        if (combatAudioSource != null)
+        {
+            combatAudioSource.loop = true;
+            combatAudioSource.mute = true; // Start muted
+        }
+    }
+
+    private void Update()
+    {
+        CheckForCombat();
+    }
+
+    private void CheckForCombat()
+    {
+        Collider[] enemiesInRange = Physics.OverlapSphere(combatModeTrigger.position, combatRange, enemyLayer);
+
+        if (enemiesInRange.Length > 0)
+        {
+            // Combat starts
+            if (!isInCombat)
+            {
+                isInCombat = true;
+                StartCombat();
+            }
+        }
+        else
+        {
+            // No enemies in range, start the coroutine to exit combat after delay
+            if (isInCombat)
+            {
+                StartCoroutine(ExitCombatAfterDelay());
+            }
+        }
+    }
+
+    private void StartCombat()
+    {
+        if (combatAudioSource != null && !combatAudioSource.isPlaying)
+        {
+            combatAudioSource.Play();
+        }
+
+        combatAudioSource.mute = false;
+        bgmAudioSource.mute = true; // Mute BGM when in combat
+    }
+
+    private IEnumerator ExitCombatAfterDelay()
+    {
+        // Wait for 3 seconds to ensure no enemies are in range
+        yield return new WaitForSeconds(2f);
+
+        Collider[] enemiesInRange = Physics.OverlapSphere(combatModeTrigger.position, combatRange, enemyLayer);
+        if (enemiesInRange.Length == 0)
+        {
+            isInCombat = false;
+            combatAudioSource.mute = true;
+            bgmAudioSource.mute = false; // Unmute BGM after 3 seconds of no enemies in range
         }
     }
 
@@ -59,6 +122,10 @@ public class ButtonManager : MonoBehaviour
         {
             bgmAudioSource.volume = volume;
         }
+        if (combatAudioSource != null)
+        {
+            combatAudioSource.volume = volume;
+        }
         PlayerPrefs.SetFloat("BGMVolume", volume);
     }
 
@@ -67,7 +134,7 @@ public class ButtonManager : MonoBehaviour
         Weapon weaponScript = FindObjectOfType<Weapon>();
         if (weaponScript != null)
         {
-            weaponScript.gunShotVolume = volume; // Set the gunshot volume
+            weaponScript.gunShotVolume = volume;
             PlayerPrefs.SetFloat("GunShotVolume", volume);
         }
 
