@@ -4,6 +4,7 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour
 {
+    //Edited by Darcy
     public Slider healthSlider;
     public int maxHealth = 100;
     private int currentHealth;
@@ -15,16 +16,17 @@ public class HealthBar : MonoBehaviour
     private bool isInvulnerable = false;
 
     public AudioClip damageSound;
-    public AudioClip loseSound; 
+    public AudioClip loseSound;
     public AudioClip pickupSound;
-    public AudioClip losingMusic; 
-    public AudioSource bgmAudioSource; 
+    public AudioClip losingMusic;
+    public AudioSource bgmAudioSource;
 
     public float damageVolume = 1f;
     public float loseVolume = 1f;
     public float pickupVolume = 1f;
     public static bool isGameOver = false;
 
+    private CameraMovement cameraMovement;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = currentHealth;
 
         losePanel.SetActive(false);
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
     }
 
     public void TakeDamage(int damage)
@@ -45,17 +48,23 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                StopBGMAndPlayLosingMusic(); 
+                StopBGMAndPlayLosingMusic();
                 ShowLosePanel();
             }
             else
             {
                 PlayDamageSound();
                 StartCoroutine(InvulnerabilityPeriod());
+
+               
+                if (cameraMovement != null)
+                {
+                    StartCoroutine(cameraMovement.CameraShake());
+                }
             }
         }
     }
-//Added by Darcy
+    
     private void StopBGMAndPlayLosingMusic()
     {
         if (bgmAudioSource != null)
@@ -123,6 +132,7 @@ public class HealthBar : MonoBehaviour
 
     private void ShowLosePanel()
     {
+        Debug.Log("ShowLosePanel called");
         losePanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
