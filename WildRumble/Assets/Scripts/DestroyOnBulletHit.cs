@@ -38,7 +38,7 @@ public class ObjectWithHealthBar : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
 

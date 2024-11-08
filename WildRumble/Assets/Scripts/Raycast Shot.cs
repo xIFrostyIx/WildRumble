@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class RaycastShot : MonoBehaviour
 {
-    public Transform Firepoint;
-    public Transform LookHere;
+    public float WeaponRange = 50f;
+    public Camera Camera;
 
-    // Update is called once per frame
+
+    private void Start()
+    {
+        Camera = GetComponentInParent<Camera>();
+    }
+
     void Update()
     {
-        Shooting();
+        Vector3 LineOrigin = Camera.ViewportToWorldPoint(new Vector3(.5f, .5f, 0));          //Center screen
+        Debug.DrawRay(LineOrigin, Camera.transform.forward * WeaponRange, Color.cyan);
     }
 
-    public void Shooting()
-    { 
-        RaycastHit hit;
-
-        if (Physics.Raycast(Firepoint.position, transform.TransformDirection(Vector3.forward), out hit,1000))               //send out raycast forward from base object
-        {
-            Debug.DrawRay(Firepoint.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.cyan);    //if it hits show a cyan line
-            LookHere.transform.LookAt(hit.transform.position);                                                              //have where bullet comes out look at where the raycast hits
-        }
-        //The idea is to have the raycast correct where the bullet is supposed to go
-    }
 }
