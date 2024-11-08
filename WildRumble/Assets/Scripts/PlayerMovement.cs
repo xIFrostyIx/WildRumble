@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Created by Joshua Guerrero
+ * This script adds player movement 
+ * 
+ * Edited by: Darcy 50-70
+ */
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
