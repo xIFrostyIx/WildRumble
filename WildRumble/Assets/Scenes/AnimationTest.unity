@@ -7286,6 +7286,7 @@ MonoBehaviour:
   pickupSound: {fileID: 0}
   losingMusic: {fileID: 0}
   bgmAudioSource: {fileID: 0}
+  combatAudioSource: {fileID: 0}
   damageVolume: 1
   loseVolume: 1
   pickupVolume: 1
@@ -8062,8 +8063,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933449616}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0063100806, y: -0.0039017077, z: 0.000013942045, w: -0.9999725}
-  m_LocalPosition: {x: 69.75886, y: -11.509979, z: 706.8445}
+  m_LocalRotation: {x: 0.0026898875, y: 0.0035982977, z: -0.0000009456136, w: -0.9999899}
+  m_LocalPosition: {x: 164.1, y: 19.975647, z: 703.902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11259,6 +11260,8 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 1320829195}
+  shakeDuration: 0.05
+  shakeMagnitude: 0.02
 --- !u!81 &1353935865
 AudioListener:
   m_ObjectHideFlags: 0
@@ -15991,6 +15994,7 @@ MonoBehaviour:
   pickupSound: {fileID: 0}
   losingMusic: {fileID: 0}
   bgmAudioSource: {fileID: 0}
+  combatAudioSource: {fileID: 0}
   damageVolume: 1
   loseVolume: 1
   pickupVolume: 1
@@ -19537,6 +19541,8 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 1320829195}
+  shakeDuration: 0.05
+  shakeMagnitude: 0.02
 --- !u!1 &5893406361258185906
 GameObject:
   m_ObjectHideFlags: 0
@@ -20343,6 +20349,8 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 1320829195}
+  shakeDuration: 0.05
+  shakeMagnitude: 0.02
 --- !u!1 &7739706157134991513
 GameObject:
   m_ObjectHideFlags: 0
