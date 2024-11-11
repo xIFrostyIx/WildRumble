@@ -78,12 +78,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5173304581647227721}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 388325184752493046}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2612432901346636563}
   m_SourcePrefab: {fileID: 100100000, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
 --- !u!1 &5120631103781672616 stripped
 GameObject:
@@ -133,51 +127,13 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.3
   m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 1.7191465, z: 0}
---- !u!64 &388325184752493046
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120631103781672616}
-  m_Material: {fileID: 13400000, guid: c1d68257b7e49214d96ded6316e983d6, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4567362644451937249, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
---- !u!208 &2612432901346636563
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120631103781672616}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.18, y: 2.44, z: 0.18}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.03, y: 1.7190001, z: -0.01}
-  m_TimeToStationary: 0.5
+  m_Center: {x: 0, y: 1.3, z: 0}
 --- !u!23 &6634047081299752829 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 548cc1324cabe1b4590971dee7a9f729, type: 3}
