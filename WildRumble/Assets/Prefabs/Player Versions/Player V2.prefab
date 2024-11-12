@@ -564,7 +564,6 @@ GameObject:
   - component: {fileID: 762064364982565725}
   - component: {fileID: 8147188875534022017}
   - component: {fileID: 5554896450241294351}
-  - component: {fileID: 313491986945414778}
   - component: {fileID: 7177409938454604219}
   - component: {fileID: 8474519680736895408}
   - component: {fileID: 6161440252818768505}
@@ -648,20 +647,6 @@ MonoBehaviour:
   footstepSound: {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
   footstepVolume: 0.1
   footstepInterval: 0.5
---- !u!114 &313491986945414778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796018305486296993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f7ac2dbc21cfe4ea4d915ca358c492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneLoader: {fileID: 0}
-  interactionText: {fileID: 0}
 --- !u!114 &7177409938454604219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,13 +723,13 @@ MonoBehaviour:
   maxHealth: 100
   damageAmount: 10
   healAmount: 20
-  losePanel: {fileID: 0}
+  losePanel: {fileID: 8489224005799125096, guid: 2a9247e60c31c124191944cec9f3d636, type: 3}
   damageSound: {fileID: 8300000, guid: 78c8ec36c0f02e346a50177dc3a83d46, type: 3}
   loseSound: {fileID: 8300000, guid: 301f76a4bafcb21438693cdb429efc7b, type: 3}
   pickupSound: {fileID: 8300000, guid: 4b719ee678add6a44af7d41166defe8f, type: 3}
   losingMusic: {fileID: 0}
   bgmAudioSource: {fileID: 0}
-  combatAudioSource: {fileID: 0}
+  combatMusicAudioSource: {fileID: 0}
   damageVolume: 1
   loseVolume: 1
   pickupVolume: 1
@@ -4653,7 +4638,7 @@ MonoBehaviour:
   pickupSound: {fileID: 0}
   losingMusic: {fileID: 0}
   bgmAudioSource: {fileID: 0}
-  combatAudioSource: {fileID: 0}
+  combatMusicAudioSource: {fileID: 0}
   damageVolume: 1
   loseVolume: 1
   pickupVolume: 1

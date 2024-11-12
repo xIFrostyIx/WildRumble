@@ -37,7 +37,7 @@ public class r700_Animations : MonoBehaviour
             myAnimator.SetTrigger("rifleDown");
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             myAnimator.SetTrigger("rifleUp");
         }
