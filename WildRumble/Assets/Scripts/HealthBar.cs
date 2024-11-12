@@ -4,7 +4,6 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour
 {
-    // Edited by Darcy
     public Slider healthSlider;
     public int maxHealth = 100;
     private int currentHealth;
@@ -20,7 +19,7 @@ public class HealthBar : MonoBehaviour
     public AudioClip pickupSound;
     public AudioClip losingMusic;
     public AudioSource bgmAudioSource;
-    public AudioSource combatAudioSource;
+    public AudioSource combatMusicAudioSource; // Reference to combat music audio source
 
     public float damageVolume = 1f;
     public float loseVolume = 1f;
@@ -49,8 +48,7 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                StopBGMAndPlayLosingMusic();
-                ShowLosePanel();
+                HandleGameOver();
             }
             else
             {
@@ -65,26 +63,32 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    private void StopBGMAndPlayLosingMusic()
+    private void HandleGameOver()
+    {
+        StopAllMusic();
+        PlayLosingMusic();
+        ShowLosePanel();
+    }
+
+    private void StopAllMusic()
     {
         if (bgmAudioSource != null)
         {
-            bgmAudioSource.Stop(); 
-            Debug.Log("BGM stopped");
+            bgmAudioSource.Stop();
+        }
+        if (combatMusicAudioSource != null)
+        {
+            combatMusicAudioSource.Stop();
+        }
+    }
 
-            
-            if (losingMusic != null)
-            {
-                bgmAudioSource.clip = losingMusic; 
-                bgmAudioSource.volume = PlayerPrefs.GetFloat("BGMVolume", 1f); 
-                bgmAudioSource.mute = false; 
-                bgmAudioSource.Play(); 
-                Debug.Log("Losing music started");
-            }
-            else
-            {
-                Debug.LogWarning("Losing music clip is not assigned!");
-            }
+    private void PlayLosingMusic()
+    {
+        if (bgmAudioSource != null && losingMusic != null)
+        {
+            bgmAudioSource.clip = losingMusic;
+            bgmAudioSource.volume = PlayerPrefs.GetFloat("BGMVolume", 1f);
+            bgmAudioSource.Play();
         }
     }
 
@@ -146,59 +150,12 @@ public class HealthBar : MonoBehaviour
     {
         Debug.Log("ShowLosePanel called");
 
-        
         losePanel.SetActive(true);
-        Time.timeScale = 0; 
+        Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         isGameOver = true;
-
-        
-        MuteAllSounds();
-
-        
-        PlayLosingMusic();
-    }
-
-    private void PlayLosingMusic()
-    {
-        if (bgmAudioSource != null)
-        {
-            bgmAudioSource.Stop(); 
-            Debug.Log("BGM stopped");
-
-            
-            if (losingMusic != null)
-            {
-                bgmAudioSource.clip = losingMusic; 
-                bgmAudioSource.volume = PlayerPrefs.GetFloat("BGMVolume", 1f); 
-                bgmAudioSource.mute = false; 
-                bgmAudioSource.Play(); 
-                Debug.Log("Losing music started");
-            }
-            else
-            {
-                Debug.LogWarning("Losing music clip is not assigned!");
-            }
-        }
-    }
-
-
-    private void MuteAllSounds()
-    {
-        if (bgmAudioSource != null)
-        {
-            bgmAudioSource.Stop(); // Stop the BGM
-            bgmAudioSource.mute = true; // Mute the BGM
-        }
-
-        
-        if (combatAudioSource != null)
-        {
-            combatAudioSource.Stop(); // Stop combat sound
-            combatAudioSource.mute = true; // Mute combat sound
-        }
     }
 
     public void SetDamageAndLoseVolume(float volume)

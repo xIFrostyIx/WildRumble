@@ -11,7 +11,7 @@ using UnityEngine.AI;
  * NOTE: Stats can be changed based off enemy type
  */
 
-public class EnemyAI_Raccoon : MonoBehaviour
+public class EnemyAI_Gorilla : MonoBehaviour
 {
     Animator myAnimator; // Used for animations
     public Transform player; // Assign the player object in the Inspector

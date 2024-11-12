@@ -1,8 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
-//Created by Darcy
+using UnityEngine.UI;
+
 public class ButtonManager : MonoBehaviour
 {
     public GameObject optionsMenuUI;
@@ -11,20 +10,95 @@ public class ButtonManager : MonoBehaviour
     public Slider gunShotSoundSlider;
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
-    public AudioSource combatAudioSource;
-
-    public float combatRange = 10f;
-    public Transform combatModeTrigger;
-    public LayerMask enemyLayer;
+    public AudioSource combatMusicAudioSource; // Added by Darcy: Combat music audio source
 
     public SceneLoader sceneLoader;
     public HealthBar healthBar;
+    public GameObject combatModeObject; // Added by Darcy: Reference to the CombatMode object
 
-    public AudioClip losingMusic; 
+    private bool isInCombat = false; // Track if in combat
+    private float combatExitTimer = 0f; // Timer to delay combat music stop
+    private const float combatExitDelay = 2f; // 2-second delay before stopping combat music
 
-    private bool isInCombat = false; 
+    void Start()
+    {
+        // Initialize volume sliders
+        InitializeVolumeSliders();
 
-    private void Start()
+        // Set initial combat music volume to match BGM slider
+        if (combatMusicAudioSource != null)
+        {
+            combatMusicAudioSource.volume = bgmVolumeSlider.value;
+        }
+    }
+
+    void Update()
+    {
+        // Check if there are any enemies within range of the CombatMode object
+        bool enemyInRange = CheckForEnemyInRange();
+
+        // Start combat music if enemies are in range
+        if (enemyInRange)
+        {
+            if (!isInCombat)
+            {
+                isInCombat = true;
+                StartCombatMusic();
+            }
+            combatExitTimer = 0f; // Reset timer as enemies are in range
+        }
+        else if (isInCombat)
+        {
+            // Increment timer if no enemies are in range
+            combatExitTimer += Time.deltaTime;
+
+            // Stop combat music after delay
+            if (combatExitTimer >= combatExitDelay)
+            {
+                isInCombat = false;
+                StopCombatMusic();
+            }
+        }
+    }
+
+    private void StartCombatMusic()
+    {
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.Pause();
+        }
+        if (combatMusicAudioSource != null && !combatMusicAudioSource.isPlaying)
+        {
+            combatMusicAudioSource.Play();
+        }
+    }
+
+    private void StopCombatMusic()
+    {
+        if (combatMusicAudioSource != null && combatMusicAudioSource.isPlaying)
+        {
+            combatMusicAudioSource.Stop();
+        }
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.UnPause();
+        }
+    }
+
+    bool CheckForEnemyInRange()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(combatModeObject.transform.position, 10f);
+        foreach (var collider in hitColliders)
+        {
+            if (collider.GetComponent<EnemyAI>() != null)
+            {
+                return true; // Found an enemy within range
+            }
+        }
+        return false; // No enemies within range
+    }
+
+    private void InitializeVolumeSliders()
     {
         if (sfxVolumeSlider != null && buttonFXScript != null)
         {
@@ -37,7 +111,6 @@ public class ButtonManager : MonoBehaviour
         {
             bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
             bgmAudioSource.volume = bgmVolumeSlider.value;
-            combatAudioSource.volume = bgmVolumeSlider.value;
             bgmVolumeSlider.onValueChanged.AddListener(SetBGMVolume);
         }
 
@@ -50,65 +123,7 @@ public class ButtonManager : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.bgmAudioSource = bgmAudioSource;
-        }
-
-        if (combatAudioSource != null)
-        {
-            combatAudioSource.loop = true;
-            combatAudioSource.mute = true; 
-        }
-    }
-
-    private void Update()
-    {
-        CheckForCombat();
-    }
-
-    private void CheckForCombat()
-    {
-        Collider[] enemiesInRange = Physics.OverlapSphere(combatModeTrigger.position, combatRange, enemyLayer);
-
-        if (enemiesInRange.Length > 0)
-        {
-            
-            if (!isInCombat)
-            {
-                isInCombat = true;
-                StartCombat();
-            }
-        }
-        else
-        {
-            
-            if (isInCombat)
-            {
-                StartCoroutine(ExitCombatAfterDelay());
-            }
-        }
-    }
-
-    private void StartCombat()
-    {
-        if (combatAudioSource != null && !combatAudioSource.isPlaying)
-        {
-            combatAudioSource.Play();
-        }
-
-        combatAudioSource.mute = false;
-        bgmAudioSource.mute = true; 
-    }
-
-    private IEnumerator ExitCombatAfterDelay()
-    {
-        
-        yield return new WaitForSeconds(3f);
-
-        Collider[] enemiesInRange = Physics.OverlapSphere(combatModeTrigger.position, combatRange, enemyLayer);
-        if (enemiesInRange.Length == 0)
-        {
-            isInCombat = false;
-            combatAudioSource.mute = true;
-            bgmAudioSource.mute = false; 
+            healthBar.combatMusicAudioSource = combatMusicAudioSource; // Pass the combat audio source
         }
     }
 
@@ -124,9 +139,9 @@ public class ButtonManager : MonoBehaviour
         {
             bgmAudioSource.volume = volume;
         }
-        if (combatAudioSource != null)
+        if (combatMusicAudioSource != null) // Added by Darcy: Adjust combat music volume as well
         {
-            combatAudioSource.volume = volume;
+            combatMusicAudioSource.volume = volume;
         }
         PlayerPrefs.SetFloat("BGMVolume", volume);
     }
@@ -136,82 +151,13 @@ public class ButtonManager : MonoBehaviour
         Weapon weaponScript = FindObjectOfType<Weapon>();
         if (weaponScript != null)
         {
-            weaponScript.gunShotVolume = volume;
+            weaponScript.gunShotVolume = volume; // Set the gunshot volume
             PlayerPrefs.SetFloat("GunShotVolume", volume);
         }
 
         if (healthBar != null)
         {
             healthBar.SetDamageAndLoseVolume(volume);
-        }
-    }
-
-    
-    public void ShowLosePanel()
-    {
-        
-        Debug.Log("Game Over! Stopping combat music.");
-
-        
-        StopCombatAudio();
-
-        
-        MuteBGM();
-
-        
-        if (bgmAudioSource != null && losingMusic != null)
-        {
-            bgmAudioSource.clip = losingMusic;  
-            bgmAudioSource.volume = 1f;  
-            bgmAudioSource.mute = false; 
-            bgmAudioSource.Play(); 
-            Debug.Log("Losing music started.");
-        }
-        else
-        {
-            Debug.LogWarning("Losing music clip is not assigned!");
-        }
-    }
-
-    private void StopCombatAudio()
-    {
-        if (combatAudioSource != null)
-        {
-            if (combatAudioSource.isPlaying)
-            {
-                combatAudioSource.Stop();  
-                combatAudioSource.mute = true;  
-                Debug.Log("Combat music stopped.");
-            }
-            else
-            {
-                Debug.Log("Combat audio is already stopped.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("combatAudioSource is null.");
-        }
-    }
-
-    private void MuteBGM()
-    {
-        if (bgmAudioSource != null)
-        {
-            if (bgmAudioSource.isPlaying)
-            {
-                bgmAudioSource.Stop();  
-                bgmAudioSource.mute = true;  
-                Debug.Log("Background music stopped.");
-            }
-            else
-            {
-                Debug.Log("BGM audio is already stopped.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("bgmAudioSource is null.");
         }
     }
 
@@ -236,24 +182,33 @@ public class ButtonManager : MonoBehaviour
         Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
     }
 
-    public void OpenOptions()
+    public void OptionsMenu()
     {
-        if (optionsMenuUI != null)
-        {
-            optionsMenuUI.SetActive(true);
-        }
+        optionsMenuUI.SetActive(true);
     }
 
-    public void CloseOptions()
+    public void CloseOptionsMenu()
     {
-        if (optionsMenuUI != null)
-        {
-            optionsMenuUI.SetActive(false);
-        }
+        optionsMenuUI.SetActive(false);
     }
 
-    public void LoadScene(string sceneName)
+    // New load level function
+    public void LoadLevel(string levelName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(levelName);
+    }
+
+    // New function to load the next level by build index
+    public void LoadNextLevel()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.LogWarning("No next level found in build settings.");
+        }
     }
 }
