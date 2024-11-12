@@ -4023,37 +4023,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39932327}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &40656866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 40656867}
-  m_Layer: 0
-  m_Name: Combat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &40656867
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40656866}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1330795318}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &41459750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8709,7 +8678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 15
   hearingDistance: 20
   speed: 7
@@ -8725,7 +8694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   chaseRange: 10
   stoppingDistance: 1
   wanderRange: 15
@@ -9136,11 +9105,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4943233486613410644, guid: 8ea6002ce16cf6c428162f41c042c9c9, type: 3}
---- !u!1 &74937537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8489224005799125096, guid: 2a9247e60c31c124191944cec9f3d636, type: 3}
-  m_PrefabInstance: {fileID: 478147776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &75349634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b5868bfb76911f14b9cd366d5a88f39c, type: 3}
@@ -15936,7 +15900,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -32639,7 +32603,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -37691,7 +37655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -37707,7 +37671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -44206,7 +44170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad278a346626242986ce2ab8948813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1330795318}
+  player: {fileID: 0}
   icon: {fileID: 430644920}
 --- !u!1 &433285730
 GameObject:
@@ -44337,7 +44301,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -51590,7 +51554,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -54459,11 +54423,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533241136}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &533886054 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-  m_PrefabInstance: {fileID: 6164816930538020971}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &533934162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55998,7 +55957,7 @@ PrefabInstance:
     - target: {fileID: 1657375340122567282, guid: 0cfc8b150bb80884e9cd20b69c886a47, type: 3}
       propertyPath: combatModeTrigger
       value: 
-      objectReference: {fileID: 40656867}
+      objectReference: {fileID: 0}
     - target: {fileID: 1657375340122567282, guid: 0cfc8b150bb80884e9cd20b69c886a47, type: 3}
       propertyPath: enemyLayer.m_Bits
       value: 256
@@ -66258,7 +66217,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -79114,7 +79073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -79157,7 +79116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 10
   stoppingDistance: 1.5
   wanderRange: 15
@@ -81311,7 +81270,7 @@ PrefabInstance:
     - target: {fileID: 699281923918528034, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 0}
     - target: {fileID: 1322955018601672945, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3
@@ -81372,6 +81331,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4532035714007451622, guid: 83bf8848d393606409c4c615690255ac, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6231506994351027573, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -81391,7 +81354,7 @@ PrefabInstance:
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 1818647049}
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: chaseRange
       value: 8
@@ -90798,7 +90761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -90814,7 +90777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 8
   stoppingDistance: 1
   wanderRange: 15
@@ -96008,6 +95971,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon_Enemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840209727001495532, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 297038752}
+    - target: {fileID: 5155695391418886263, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1818647049}
+    - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97929,7 +97904,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -99085,7 +99060,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -104970,7 +104945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -104986,7 +104961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 8
   stoppingDistance: 1
   wanderRange: 15
@@ -112475,7 +112450,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -113794,10 +113769,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon_Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840209727001495532, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 297038752}
     - target: {fileID: 5155695391418886263, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1330795318}
+      objectReference: {fileID: 1818647049}
+    - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -119536,7 +119519,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -120197,10 +120180,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4840209727001495532, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 297038752}
     - target: {fileID: 5155695391418886263, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1330795318}
+      objectReference: {fileID: 1818647049}
+    - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -120973,7 +120964,7 @@ PrefabInstance:
     - target: {fileID: 494798143433346950, guid: 75f72aeb232ee3a429939eab681e8242, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 0}
     - target: {fileID: 2212003997114645986, guid: 75f72aeb232ee3a429939eab681e8242, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -121009,7 +121000,7 @@ PrefabInstance:
     - target: {fileID: 8086859580364133467, guid: 75f72aeb232ee3a429939eab681e8242, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 1818647049}
     - target: {fileID: 8086859580364133467, guid: 75f72aeb232ee3a429939eab681e8242, type: 3}
       propertyPath: chaseRange
       value: 15
@@ -121034,6 +121025,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8515560371500142449, guid: 75f72aeb232ee3a429939eab681e8242, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 8869451029040276963, guid: 75f72aeb232ee3a429939eab681e8242, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.176
@@ -121975,7 +121970,7 @@ PrefabInstance:
     - target: {fileID: 699281923918528034, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 0}
     - target: {fileID: 1322955018601672945, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 86.079
@@ -122036,6 +122031,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4532035714007451622, guid: 83bf8848d393606409c4c615690255ac, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6231506994351027573, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -122055,7 +122054,7 @@ PrefabInstance:
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 1818647049}
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: chaseRange
       value: 8
@@ -123439,7 +123438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -123455,7 +123454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -134166,11 +134165,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f61d14f30c114d44386409b0e75d6398, type: 3}
   m_PrefabInstance: {fileID: 1722816287}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1330795318 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1621939638630810514, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-  m_PrefabInstance: {fileID: 6164816930538020971}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1332030149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141200,10 +141194,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon_Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840209727001495532, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 297038752}
     - target: {fileID: 5155695391418886263, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1330795318}
+      objectReference: {fileID: 1818647049}
+    - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -141780,7 +141782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -141796,7 +141798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 12
   stoppingDistance: 0.9
   wanderRange: 15
@@ -141938,7 +141940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -141954,7 +141956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 12
   stoppingDistance: 0.9
   wanderRange: 15
@@ -148980,10 +148982,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon_Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840209727001495532, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 297038752}
     - target: {fileID: 5155695391418886263, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1330795318}
+      objectReference: {fileID: 1818647049}
+    - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -157631,7 +157641,7 @@ PrefabInstance:
     - target: {fileID: 699281923918528034, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 0}
     - target: {fileID: 1322955018601672945, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.422333
@@ -157692,6 +157702,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4532035714007451622, guid: 83bf8848d393606409c4c615690255ac, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6231506994351027573, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -157711,7 +157725,7 @@ PrefabInstance:
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 1818647049}
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: chaseRange
       value: 8
@@ -159317,7 +159331,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -160025,11 +160039,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
   m_PrefabInstance: {fileID: 2142701539}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1596024982 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2313770792214069523, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-  m_PrefabInstance: {fileID: 6164816930538020971}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1596264338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160492,7 +160501,7 @@ PrefabInstance:
     - target: {fileID: 699281923918528034, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 0}
     - target: {fileID: 1322955018601672945, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 109.46
@@ -160553,6 +160562,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4532035714007451622, guid: 83bf8848d393606409c4c615690255ac, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6231506994351027573, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -160572,7 +160585,7 @@ PrefabInstance:
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 533886054}
+      objectReference: {fileID: 1818647049}
     - target: {fileID: 8443224285660656089, guid: 83bf8848d393606409c4c615690255ac, type: 3}
       propertyPath: chaseRange
       value: 8
@@ -166232,7 +166245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -166248,7 +166261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 8
   stoppingDistance: 1
   wanderRange: 15
@@ -170144,6 +170157,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon_Enemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840209727001495532, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 297038752}
+    - target: {fileID: 5155695391418886263, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1818647049}
+    - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1893241925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -173389,7 +173414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -173405,7 +173430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -180100,7 +180125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -180116,7 +180141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -180962,6 +180987,11 @@ MeshCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0e83227fb7a8fc43920fefd99deb95f, type: 3}
   m_PrefabInstance: {fileID: 1716812319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1818647049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 2133843558}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819239378
 GameObject:
@@ -187687,6 +187717,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f61d14f30c114d44386409b0e75d6398, type: 3}
+--- !u!4 &1893241925 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6665087654072961424, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 2133843558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1897214106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5731229141766309534, guid: a682e3a7292e0fd47aa27d83325b2210, type: 3}
@@ -198189,7 +198224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -198205,7 +198240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -204442,7 +204477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 0}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -204458,7 +204493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533886054}
+  player: {fileID: 1818647049}
   chaseRange: 8
   stoppingDistance: 1
   wanderRange: 15
@@ -207294,7 +207329,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -213627,7 +213662,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1596024982}
+      objectReference: {fileID: 1893241925}
     - target: {fileID: 6880698621285215536, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -214154,17 +214189,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146831723}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &463364797080984941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3470429746456790694, guid: 60a1503a1a4f4e54180736ecd8feaf95, type: 3}
-  m_PrefabInstance: {fileID: 1378705015374251611}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1373854920231499323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214416,126 +214440,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e17ab8367198f34aa8ed49b6f4420fb, type: 3}
---- !u!1001 &6164816930538020971
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 346907037403496353, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: CurrentWeapon
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 525270897125024099, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0082
-      objectReference: {fileID: 0}
-    - target: {fileID: 878509591643821084, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938997545004390327, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -40.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.698
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -78.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236436142337926315, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5496657805894058045, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: maxAmmo
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6500064273326141328, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: losePanel
-      value: 
-      objectReference: {fileID: 74937537}
-    - target: {fileID: 6500064273326141328, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: losingMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 2bb566d21bfaba14da0e64fba3b0be76, type: 3}
-    - target: {fileID: 6500064273326141328, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 463364797080984941}
-    - target: {fileID: 6500064273326141328, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: bgmAudioSource
-      value: 
-      objectReference: {fileID: 1955998589}
-    - target: {fileID: 6500064273326141328, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: combatAudioSource
-      value: 
-      objectReference: {fileID: 194285597}
-    - target: {fileID: 6820323394409201497, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: losePanel
-      value: 
-      objectReference: {fileID: 74937537}
-    - target: {fileID: 6820323394409201497, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 463364797080984941}
-    - target: {fileID: 7675400524325076169, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7984680791011990437, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8280057204652888995, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8280057204652888995, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1621939638630810514, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 40656867}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
 --- !u!224 &8021109211962985205 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8521978855497345619, guid: 60a1503a1a4f4e54180736ecd8feaf95, type: 3}
@@ -214550,7 +214454,6 @@ SceneRoots:
   - {fileID: 562436839}
   - {fileID: 100188963}
   - {fileID: 2087649892}
-  - {fileID: 6164816930538020971}
   - {fileID: 1081972202}
   - {fileID: 1182125310}
   - {fileID: 382839961}
