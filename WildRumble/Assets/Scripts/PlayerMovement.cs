@@ -34,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip footstepSound; // Footstep sound
     private AudioSource audioSource;
-    public float footstepVolume = 1f; 
-    public float footstepInterval = 0.5f; 
+    public float footstepVolume = 1f; // Volume controlled by ambience slider
+    public float footstepInterval = 0.5f; // Interval between footstep sounds
     private float footstepTimer;
 
     private void Start()
@@ -43,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = footstepSound; 
-        audioSource.loop = false; 
+        audioSource.clip = footstepSound; // Assign footstep sound to audio source
+        audioSource.loop = false; // Make sure it doesn't loop
     }
     //Edited by Darcy
     private void Update()

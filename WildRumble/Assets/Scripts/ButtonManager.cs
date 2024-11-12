@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-//Created by Darcy
+
 public class ButtonManager : MonoBehaviour
 {
     public GameObject optionsMenuUI;
@@ -20,9 +20,7 @@ public class ButtonManager : MonoBehaviour
     public SceneLoader sceneLoader;
     public HealthBar healthBar;
 
-    public AudioClip losingMusic; 
-
-    private bool isInCombat = false; 
+    private bool isInCombat = false; // Track if in combat mode
 
     private void Start()
     {
@@ -55,7 +53,7 @@ public class ButtonManager : MonoBehaviour
         if (combatAudioSource != null)
         {
             combatAudioSource.loop = true;
-            combatAudioSource.mute = true; 
+            combatAudioSource.mute = true; // Start muted
         }
     }
 
@@ -70,7 +68,7 @@ public class ButtonManager : MonoBehaviour
 
         if (enemiesInRange.Length > 0)
         {
-            
+            // Combat starts
             if (!isInCombat)
             {
                 isInCombat = true;
@@ -79,7 +77,7 @@ public class ButtonManager : MonoBehaviour
         }
         else
         {
-            
+            // No enemies in range, start the coroutine to exit combat after delay
             if (isInCombat)
             {
                 StartCoroutine(ExitCombatAfterDelay());
@@ -95,20 +93,20 @@ public class ButtonManager : MonoBehaviour
         }
 
         combatAudioSource.mute = false;
-        bgmAudioSource.mute = true; 
+        bgmAudioSource.mute = true; // Mute BGM when in combat
     }
 
     private IEnumerator ExitCombatAfterDelay()
     {
-        
-        yield return new WaitForSeconds(3f);
+        // Wait for 3 seconds to ensure no enemies are in range
+        yield return new WaitForSeconds(2f);
 
         Collider[] enemiesInRange = Physics.OverlapSphere(combatModeTrigger.position, combatRange, enemyLayer);
         if (enemiesInRange.Length == 0)
         {
             isInCombat = false;
             combatAudioSource.mute = true;
-            bgmAudioSource.mute = false; 
+            bgmAudioSource.mute = false; // Unmute BGM after 3 seconds of no enemies in range
         }
     }
 
@@ -143,75 +141,6 @@ public class ButtonManager : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetDamageAndLoseVolume(volume);
-        }
-    }
-
-    
-    public void ShowLosePanel()
-    {
-        
-        Debug.Log("Game Over! Stopping combat music.");
-
-        
-        StopCombatAudio();
-
-        
-        MuteBGM();
-
-        
-        if (bgmAudioSource != null && losingMusic != null)
-        {
-            bgmAudioSource.clip = losingMusic;  
-            bgmAudioSource.volume = 1f;  
-            bgmAudioSource.mute = false; 
-            bgmAudioSource.Play(); 
-            Debug.Log("Losing music started.");
-        }
-        else
-        {
-            Debug.LogWarning("Losing music clip is not assigned!");
-        }
-    }
-
-    private void StopCombatAudio()
-    {
-        if (combatAudioSource != null)
-        {
-            if (combatAudioSource.isPlaying)
-            {
-                combatAudioSource.Stop();  
-                combatAudioSource.mute = true;  
-                Debug.Log("Combat music stopped.");
-            }
-            else
-            {
-                Debug.Log("Combat audio is already stopped.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("combatAudioSource is null.");
-        }
-    }
-
-    private void MuteBGM()
-    {
-        if (bgmAudioSource != null)
-        {
-            if (bgmAudioSource.isPlaying)
-            {
-                bgmAudioSource.Stop();  
-                bgmAudioSource.mute = true;  
-                Debug.Log("Background music stopped.");
-            }
-            else
-            {
-                Debug.Log("BGM audio is already stopped.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("bgmAudioSource is null.");
         }
     }
 
