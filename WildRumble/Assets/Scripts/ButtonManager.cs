@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -10,14 +10,96 @@ public class ButtonManager : MonoBehaviour
     public Slider gunShotSoundSlider;
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
+    public AudioSource combatMusicAudioSource; // Added by Darcy: Combat music audio source
 
     public SceneLoader sceneLoader;
-
     public HealthBar healthBar;
+    public GameObject combatModeObject; // Added by Darcy: Reference to the CombatMode object
+
+    private bool isInCombat = false; // Track if in combat
+    private float combatExitTimer = 0f; // Timer to delay combat music stop
+    private const float combatExitDelay = 2f; // 2-second delay before stopping combat music
 
     void Start()
     {
-        // SFX Volume Slider
+        // Initialize volume sliders
+        InitializeVolumeSliders();
+
+        // Set initial combat music volume to match BGM slider
+        if (combatMusicAudioSource != null)
+        {
+            combatMusicAudioSource.volume = bgmVolumeSlider.value;
+        }
+    }
+
+    void Update()
+    {
+        // Check if there are any enemies within range of the CombatMode object
+        bool enemyInRange = CheckForEnemyInRange();
+
+        // Start combat music if enemies are in range
+        if (enemyInRange)
+        {
+            if (!isInCombat)
+            {
+                isInCombat = true;
+                StartCombatMusic();
+            }
+            combatExitTimer = 0f; // Reset timer as enemies are in range
+        }
+        else if (isInCombat)
+        {
+            // Increment timer if no enemies are in range
+            combatExitTimer += Time.deltaTime;
+
+            // Stop combat music after delay
+            if (combatExitTimer >= combatExitDelay)
+            {
+                isInCombat = false;
+                StopCombatMusic();
+            }
+        }
+    }
+
+    private void StartCombatMusic()
+    {
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.Pause();
+        }
+        if (combatMusicAudioSource != null && !combatMusicAudioSource.isPlaying)
+        {
+            combatMusicAudioSource.Play();
+        }
+    }
+
+    private void StopCombatMusic()
+    {
+        if (combatMusicAudioSource != null && combatMusicAudioSource.isPlaying)
+        {
+            combatMusicAudioSource.Stop();
+        }
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.UnPause();
+        }
+    }
+
+    bool CheckForEnemyInRange()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(combatModeObject.transform.position, 10f);
+        foreach (var collider in hitColliders)
+        {
+            if (collider.GetComponent<EnemyAI>() != null)
+            {
+                return true; // Found an enemy within range
+            }
+        }
+        return false; // No enemies within range
+    }
+
+    private void InitializeVolumeSliders()
+    {
         if (sfxVolumeSlider != null && buttonFXScript != null)
         {
             sfxVolumeSlider.value = PlayerPrefs.GetFloat("ButtonFXVolume", 1f);
@@ -25,7 +107,6 @@ public class ButtonManager : MonoBehaviour
             sfxVolumeSlider.onValueChanged.AddListener(SetButtonFXVolume);
         }
 
-        // BGM Volume Slider
         if (bgmVolumeSlider != null && bgmAudioSource != null)
         {
             bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
@@ -33,17 +114,16 @@ public class ButtonManager : MonoBehaviour
             bgmVolumeSlider.onValueChanged.AddListener(SetBGMVolume);
         }
 
-        // Gunshot Sound Volume Slider
         if (gunShotSoundSlider != null)
         {
             gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f);
             gunShotSoundSlider.onValueChanged.AddListener(SetGunShotVolume);
         }
 
-        // Link the BGM audio source to HealthBar
         if (healthBar != null)
         {
             healthBar.bgmAudioSource = bgmAudioSource;
+            healthBar.combatMusicAudioSource = combatMusicAudioSource; // Pass the combat audio source
         }
     }
 
@@ -58,6 +138,10 @@ public class ButtonManager : MonoBehaviour
         if (bgmAudioSource != null)
         {
             bgmAudioSource.volume = volume;
+        }
+        if (combatMusicAudioSource != null) // Added by Darcy: Adjust combat music volume as well
+        {
+            combatMusicAudioSource.volume = volume;
         }
         PlayerPrefs.SetFloat("BGMVolume", volume);
     }
@@ -95,27 +179,36 @@ public class ButtonManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLScRfhtPjWDwGOMTjS4z-ZSTv0WlvOKasJFr4TOSuq6kP4tpzA/viewform");
     }
 
-    public void OpenOptions()
+    public void OptionsMenu()
     {
-        if (optionsMenuUI != null)
+        optionsMenuUI.SetActive(true);
+    }
+
+    public void CloseOptionsMenu()
+    {
+        optionsMenuUI.SetActive(false);
+    }
+
+    // New load level function
+    public void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
+    }
+
+    // New function to load the next level by build index
+    public void LoadNextLevel()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            optionsMenuUI.SetActive(true);
+            SceneManager.LoadScene(nextSceneIndex);
         }
-    }
-
-    public void CloseOptions()
-    {
-        if (optionsMenuUI != null)
+        else
         {
-            optionsMenuUI.SetActive(false);
+            Debug.LogWarning("No next level found in build settings.");
         }
-    }
-
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
     }
 }

@@ -4,7 +4,6 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour
 {
-    //Edited by Darcy
     public Slider healthSlider;
     public int maxHealth = 100;
     private int currentHealth;
@@ -20,6 +19,7 @@ public class HealthBar : MonoBehaviour
     public AudioClip pickupSound;
     public AudioClip losingMusic;
     public AudioSource bgmAudioSource;
+    public AudioSource combatMusicAudioSource; // Reference to combat music audio source
 
     public float damageVolume = 1f;
     public float loseVolume = 1f;
@@ -48,15 +48,13 @@ public class HealthBar : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                StopBGMAndPlayLosingMusic();
-                ShowLosePanel();
+                HandleGameOver();
             }
             else
             {
                 PlayDamageSound();
                 StartCoroutine(InvulnerabilityPeriod());
 
-               
                 if (cameraMovement != null)
                 {
                     StartCoroutine(cameraMovement.CameraShake());
@@ -64,15 +62,33 @@ public class HealthBar : MonoBehaviour
             }
         }
     }
-    
-    private void StopBGMAndPlayLosingMusic()
+
+    private void HandleGameOver()
+    {
+        StopAllMusic();
+        PlayLosingMusic();
+        ShowLosePanel();
+    }
+
+    private void StopAllMusic()
     {
         if (bgmAudioSource != null)
         {
-            bgmAudioSource.Stop(); 
-            bgmAudioSource.clip = losingMusic; 
-            bgmAudioSource.volume = PlayerPrefs.GetFloat("BGMVolume", 1f); 
-            bgmAudioSource.Play(); 
+            bgmAudioSource.Stop();
+        }
+        if (combatMusicAudioSource != null)
+        {
+            combatMusicAudioSource.Stop();
+        }
+    }
+
+    private void PlayLosingMusic()
+    {
+        if (bgmAudioSource != null && losingMusic != null)
+        {
+            bgmAudioSource.clip = losingMusic;
+            bgmAudioSource.volume = PlayerPrefs.GetFloat("BGMVolume", 1f);
+            bgmAudioSource.Play();
         }
     }
 
@@ -133,14 +149,14 @@ public class HealthBar : MonoBehaviour
     private void ShowLosePanel()
     {
         Debug.Log("ShowLosePanel called");
+
         losePanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        isGameOver = true; 
+        isGameOver = true;
     }
-
 
     public void SetDamageAndLoseVolume(float volume)
     {
