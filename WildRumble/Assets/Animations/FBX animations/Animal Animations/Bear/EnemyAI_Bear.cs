@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /*
- * Created by: Joshua Guerrero
- * This script sets the behavior of
- * AI enemies in the game and its animation.
+ *
  * 
  * NOTE: Stats can be changed based off enemy type
  */
