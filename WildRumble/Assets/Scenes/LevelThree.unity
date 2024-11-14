@@ -3169,6 +3169,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6800749390306525621, guid: 60b2e5730822d924eb4b5a1fdc3246ba, type: 3}
+--- !u!4 &37214990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 2118233011563112359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &37545024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6010,7 +6015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -6026,7 +6031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 3
   wanderRange: 5
@@ -15467,7 +15472,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 272976946}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22405,11 +22410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8280057204652888995, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player old
       objectReference: {fileID: 0}
     - target: {fileID: 8280057204652888995, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23873,7 +23878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -23889,7 +23894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 15
@@ -31016,7 +31021,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -31297,7 +31302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -31313,7 +31318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -33723,7 +33728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -33739,7 +33744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 3
   wanderRange: 5
@@ -36381,7 +36386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -36397,7 +36402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -50508,7 +50513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -50524,7 +50529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 15
@@ -51155,7 +51160,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -52497,7 +52502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -52513,7 +52518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 3
   wanderRange: 5
@@ -57760,7 +57765,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -62666,11 +62671,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3667845885e4d01408cbe52259b98300, type: 3}
---- !u!4 &664637139 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2313770792214069523, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-  m_PrefabInstance: {fileID: 272976945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &664870510
 GameObject:
   m_ObjectHideFlags: 0
@@ -64339,7 +64339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -64355,7 +64355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 5
@@ -65411,7 +65411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -65427,7 +65427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 5
@@ -66507,7 +66507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -66523,7 +66523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -71445,7 +71445,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -72500,7 +72500,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -72698,7 +72698,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -74061,7 +74061,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -85183,7 +85183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -85199,7 +85199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -92148,7 +92148,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -93147,7 +93147,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -93486,7 +93486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -93502,7 +93502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 5
@@ -97286,7 +97286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -97302,7 +97302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 5
@@ -97787,7 +97787,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -123131,7 +123131,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 272976946}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -123577,7 +123577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -123593,7 +123593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 15
@@ -125336,7 +125336,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -125629,7 +125629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -125645,7 +125645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 0.8
   wanderRange: 10
@@ -126100,6 +126100,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eadfb11b747139c498a09a8c8a620499, type: 3}
   m_PrefabInstance: {fileID: 1196791471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1204357483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4286619452444929304, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 2118233011563112359}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1204545921
 MeshCollider:
@@ -127855,7 +127860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -127871,7 +127876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 15
   stoppingDistance: 1
   wanderRange: 5
@@ -137943,7 +137948,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -138313,7 +138318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -138329,7 +138334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 20
   stoppingDistance: 1.5
   wanderRange: 5
@@ -146047,7 +146052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -146063,7 +146068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 15
   stoppingDistance: 1
   wanderRange: 5
@@ -149754,11 +149759,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!4 &1359566182 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1621939638630810514, guid: 6f60e6115192957448fcc674716f2f8f, type: 3}
-  m_PrefabInstance: {fileID: 272976945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1361496544
 GameObject:
   m_ObjectHideFlags: 0
@@ -151231,7 +151231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -151247,7 +151247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 3
   wanderRange: 5
@@ -167934,6 +167934,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473001575}
   m_Mesh: {fileID: 8035726003197117756, guid: c2223047aa2897e4eba43e1da287ff89, type: 3}
+--- !u!4 &1473641733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6665087654072961424, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 2118233011563112359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1474829544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186818,7 +186823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -186834,7 +186839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 10
   stoppingDistance: 2
   wanderRange: 5
@@ -194358,7 +194363,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -194849,7 +194854,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -202838,7 +202843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad278a346626242986ce2ab8948813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1359566182}
+  player: {fileID: 1473641733}
   icon: {fileID: 859445316}
 --- !u!1 &1779293941 stripped
 GameObject:
@@ -206259,7 +206264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f320c450492494180c39cdf30e81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   fleeDistance: 5
   hearingDistance: 10
   speed: 5
@@ -206275,7 +206280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485f37f1c621634ba6718920d7b42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 272976946}
+  player: {fileID: 37214990}
   chaseRange: 20
   stoppingDistance: 1.5
   wanderRange: 5
@@ -209715,6 +209720,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -210002,7 +210011,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -225631,7 +225640,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -245765,6 +245774,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -245924,7 +245937,7 @@ PrefabInstance:
     - target: {fileID: 5523508612245633690, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 664637139}
+      objectReference: {fileID: 1204357483}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -257113,6 +257126,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 112516050877703341, guid: 45b2a345a8c11fe47bc7b9e67a749bb3, type: 3}
   m_PrefabInstance: {fileID: 2147399542}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2118233011563112359
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 276108667036179462, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: gunShotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -76.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796018305486296993, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129821172390551492, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: reloadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cd9b962738e6034aa38f29c76d353cd, type: 3}
+    - target: {fileID: 5722353796556793481, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: losePanel
+      value: 
+      objectReference: {fileID: 357918433}
+    - target: {fileID: 5722353796556793481, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1730960371}
+    - target: {fileID: 8819174700961847911, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5cace171931deb41acd95db274fc426, type: 3}
 --- !u!1001 &2306143767739901608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257204,6 +257294,7 @@ SceneRoots:
   - {fileID: 412458188}
   - {fileID: 1606863115}
   - {fileID: 272976945}
+  - {fileID: 2118233011563112359}
   - {fileID: 1025806545}
   - {fileID: 984132652}
   - {fileID: 1532196817}
