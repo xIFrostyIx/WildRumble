@@ -6,7 +6,7 @@ using UnityEngine;
  * Created by Joshua Guerrero
  * This script adds player movement 
  * 
- * Edited by: Darcy 50-70
+ * Edited by: Darcy 50-70 123-137
  */
 public class PlayerMovement : MonoBehaviour
 {
