@@ -3,34 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-/*
- * Created by Joshua Guerrero
- * This script handles the list of
- * objectives and their completion logic
- */
-
 public class ObjectiveManager : MonoBehaviour
 {
     public List<Objective> objectives = new List<Objective>();
     public TextMeshProUGUI objectiveText;
 
     // Truck Icon on the mini-map
-    public GameObject truckMiniMapIcon; // Assign the truck icon in the inspector
+    public GameObject truckMiniMapIcon;
+    public Transform truckTransform; // Assign the truck transform in the inspector
+    public Transform playerTransform; // Assign the player transform in the inspector
+    public float miniMapRadius = 50f; // Radius within which the icon will stay centered on mini-map
 
     private int currentObjectiveIndex = 0; // Keeps track of the current objective
 
     private void Start()
     {
-        // Initialize objectives
         objectives.Add(new Objective("Eliminate 5 Animals", 5));
-        objectives.Add(new Objective("Get in the truck", 1));  // This objective will be shown only after the first is complete
+        objectives.Add(new Objective("Get in the truck", 1));
 
         UpdateObjectiveText();
 
-        // Initially hide the truck icon on the mini-map
         if (truckMiniMapIcon != null)
         {
             truckMiniMapIcon.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        // Update truck icon visibility based on the "Get in the truck" objective
+        if (objectives[currentObjectiveIndex].description == "Get in the truck" && !objectives[currentObjectiveIndex].isCompleted)
+        {
+            UpdateTruckIconPosition();
         }
     }
 
@@ -43,7 +47,6 @@ public class ObjectiveManager : MonoBehaviour
                 objective.currentCount++;
                 objective.UpdateObjective();
 
-                // If objective is complete, update to the next objective
                 if (objective.isCompleted && currentObjectiveIndex < objectives.Count - 1)
                 {
                     currentObjectiveIndex++;
@@ -57,22 +60,39 @@ public class ObjectiveManager : MonoBehaviour
 
     private void UpdateObjectiveText()
     {
-        // Show only the current objective
         var currentObjective = objectives[currentObjectiveIndex];
         objectiveText.text = $"{currentObjective.description}: {currentObjective.currentCount}/{currentObjective.targetCount} - {(currentObjective.isCompleted ? "Completed" : "In Progress")}";
 
-        // If the current objective is "Get in the truck", show the truck mini-map icon
+        // Show truck icon only for the "Get in the truck" objective and if it's not completed
         if (currentObjective.description == "Get in the truck" && !currentObjective.isCompleted)
         {
-            if (truckMiniMapIcon != null)
-            {
-                truckMiniMapIcon.SetActive(true);  // Show truck icon on mini-map
-            }
+            truckMiniMapIcon.SetActive(true);
         }
-        else if (truckMiniMapIcon != null)
+        else
         {
-            truckMiniMapIcon.SetActive(false);  // Hide truck icon when not needed
+            truckMiniMapIcon.SetActive(false);
         }
+    }
+
+    private void UpdateTruckIconPosition()
+    {
+        if (truckMiniMapIcon == null || truckTransform == null || playerTransform == null) return;
+
+        Vector3 truckPosition = truckTransform.position;
+        Vector3 playerPosition = playerTransform.position;
+
+        // Calculate the relative position of the truck from the player
+        Vector3 relativePosition = truckPosition - playerPosition;
+
+        // Keep the icon within the mini-map radius
+        if (relativePosition.magnitude > miniMapRadius)
+        {
+            // Move icon to the edge of the mini-map in the direction of the truck
+            relativePosition = relativePosition.normalized * miniMapRadius;
+        }
+
+        // Update the icon's position in the UI to reflect this position
+        truckMiniMapIcon.transform.localPosition = new Vector3(relativePosition.x, relativePosition.z, 0);
     }
 
     public bool IsObjectiveComplete(string description)
