@@ -31,7 +31,7 @@ BlendTree:
   m_Name: raccoonMovment_Speed
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 9067093048684652814, guid: 526b285968a8de04abb03bc40d3d3357, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: c5a17a88e46d0c842a49205e33e1f382, type: 3}
     m_Threshold: 0
     m_Position: {x: 1.36, y: 0.84}
     m_TimeScale: 1
@@ -39,15 +39,15 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -8481709605947105597, guid: 526b285968a8de04abb03bc40d3d3357, type: 3}
-    m_Threshold: 1
+    m_Motion: {fileID: -998496362607748373, guid: c5a17a88e46d0c842a49205e33e1f382, type: 3}
+    m_Threshold: 0.5257143
     m_Position: {x: -1.3, y: -1.35}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1178167638873134046, guid: 526b285968a8de04abb03bc40d3d3357, type: 3}
+    m_Motion: {fileID: 3060872287085348379, guid: c5a17a88e46d0c842a49205e33e1f382, type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -67,34 +67,34 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Giraffe Animations
+  m_Name: Rabbit Animations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: giraffeAttack
+  - m_Name: rabbitAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: giraffeWalk
+  - m_Name: rabbitWalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: giraffeIdle
+  - m_Name: rabbitIdle
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: giraffeIdle_Index
+  - m_Name: rabbitIdle_Index
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: giraffeIdle_Bool
+  - m_Name: rabbitIdle_Bool
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -126,7 +126,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: giraffeAttack
+  m_Name: rabbitAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -140,7 +140,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1950896874197824025, guid: 526b285968a8de04abb03bc40d3d3357, type: 3}
+  m_Motion: {fileID: 6641085478485924818, guid: c5a17a88e46d0c842a49205e33e1f382, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -207,7 +207,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: giraffeAttack
+    m_ConditionEvent: rabbitAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1545216088616660575}

@@ -11,7 +11,7 @@ using UnityEngine.AI;
  * NOTE: Stats can be changed based off enemy type
  */
 
-public class EnemyAI_Gorilla : MonoBehaviour
+public class EnemyAI_Rabbit : MonoBehaviour
 {
     Animator myAnimator; // Used for animations
     public Transform player; // Assign the player object in the Inspector
@@ -35,8 +35,8 @@ public class EnemyAI_Gorilla : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("gorillaIdle_Index", Random.Range(0, 3));
-            myAnimator.SetTrigger("gorillaIdle");
+            myAnimator.SetInteger("rabbitIdle_Index", Random.Range(0, 3));
+            myAnimator.SetTrigger("rabbutIdle");
         }
     }
 
@@ -53,18 +53,17 @@ public class EnemyAI_Gorilla : MonoBehaviour
             {
                 navMeshAgent.SetDestination(player.position);
 
-                myAnimator.SetBool("gorillaWalk", true);
-                myAnimator.SetBool("gorillaAttack", false);
-                myAnimator.SetBool("gorillaIdle_Bool", false);
+                myAnimator.SetBool("rabbitWalk", true);
+                myAnimator.SetBool("rabbitAttack", false);
+                myAnimator.SetBool("rabbitIdle_Bool", false);
             }
             else
             {
                 navMeshAgent.SetDestination(transform.position); // Stop moving
 
-                myAnimator.SetBool("gorillaAttack", true);
-                myAnimator.SetBool("gorillaWalk", false);
-                myAnimator.SetBool("gorillaIdle", false);
-                myAnimator.SetBool("gorillaIdle_Bool", false);
+                myAnimator.SetBool("rabbitAttack", true);
+                myAnimator.SetBool("rabbitWalk", false);
+                myAnimator.SetBool("rabbitIdle_Bool", false);
             }
         }
         else
