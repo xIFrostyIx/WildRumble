@@ -11787,6 +11787,9 @@ MonoBehaviour:
   objectives: []
   objectiveText: {fileID: 676274105}
   truckMiniMapIcon: {fileID: 0}
+  truckTransform: {fileID: 0}
+  playerTransform: {fileID: 0}
+  miniMapRadius: 50
 --- !u!114 &1494382939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15977,6 +15980,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1536195042}
   m_LocalEulerAnglesHint: {x: -3.5, y: -2, z: 0}
+--- !u!1001 &2100135075
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.334343
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.499998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.4303913
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      propertyPath: m_Name
+      value: Stop Sign With_Animations
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2100135078}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2100135077}
+  m_SourcePrefab: {fileID: 100100000, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+--- !u!1 &2100135076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_PrefabInstance: {fileID: 2100135075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &2100135077
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100135076}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 1827226128182048838, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_Animations:
+  - {fileID: 1827226128182048838, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &2100135078
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100135076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7792ffe2159c904392fea902a5886a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2108289783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3805426606148552288, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
@@ -16336,3 +16444,4 @@ SceneRoots:
   - {fileID: 914937133}
   - {fileID: 1781310145}
   - {fileID: 8335639200603718753}
+  - {fileID: 2100135075}
