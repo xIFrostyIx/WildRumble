@@ -592,9 +592,7 @@ Transform:
   - {fileID: 6665087654072961424}
   - {fileID: 9186552935207128514}
   - {fileID: 3577032787010887977}
-  - {fileID: 4640902274976284864}
-  - {fileID: 8635513952539524805}
-  - {fileID: 3653232317420427653}
+  - {fileID: 5858666508594849962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8147188875534022017
@@ -730,7 +728,7 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: 78c8ec36c0f02e346a50177dc3a83d46, type: 3}
   loseSound: {fileID: 8300000, guid: 301f76a4bafcb21438693cdb429efc7b, type: 3}
   pickupSound: {fileID: 8300000, guid: 4b719ee678add6a44af7d41166defe8f, type: 3}
-  losingMusic: {fileID: 0}
+  losingMusic: {fileID: 8300000, guid: 2bb566d21bfaba14da0e64fba3b0be76, type: 3}
   bgmAudioSource: {fileID: 0}
   combatMusicAudioSource: {fileID: 0}
   damageVolume: 1
@@ -2626,37 +2624,6 @@ Transform:
   - {fileID: 7946375220646576485}
   m_Father: {fileID: 6757370931672643576}
   m_LocalEulerAnglesHint: {x: -0.14197984, y: -1.5780736, z: -5.140097}
---- !u!1 &3084174712948712700
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8635513952539524805}
-  m_Layer: 0
-  m_Name: CombatModeDetect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8635513952539524805
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3084174712948712700}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.785759, y: 0.31099987, z: 0.21787262}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 762064364982565725}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3111938732318197937
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,37 +4123,6 @@ Transform:
   - {fileID: 6900096931176582398}
   m_Father: {fileID: 6221521877631358500}
   m_LocalEulerAnglesHint: {x: 0.39229706, y: -10.819021, z: 4.356967}
---- !u!1 &4925013413810207710
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4640902274976284864}
-  m_Layer: 0
-  m_Name: CombatModeDetect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4640902274976284864
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4925013413810207710}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.785759, y: 0.31099987, z: 0.21787262}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 762064364982565725}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5040379762877624104
 GameObject:
   m_ObjectHideFlags: 0
@@ -5886,6 +5822,37 @@ Transform:
   - {fileID: 7573621023760427811}
   m_Father: {fileID: 5368046165934670797}
   m_LocalEulerAnglesHint: {x: -90, y: 89.99992, z: 0}
+--- !u!1 &7018779018383314550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5858666508594849962}
+  m_Layer: 0
+  m_Name: CombatModeDetect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5858666508594849962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7018779018383314550}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.000000029802322, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2059176, y: 0.29800034, z: -1.0789344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762064364982565725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7022728331030432674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6273,37 +6240,6 @@ MonoBehaviour:
   orientation: {fileID: 6665087654072961424}
   shakeDuration: 0.05
   shakeMagnitude: 0.02
---- !u!1 &7503211344923955287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3653232317420427653}
-  m_Layer: 0
-  m_Name: CombatModeDetect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3653232317420427653
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7503211344923955287}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.785759, y: 0.31099987, z: 0.21787262}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 762064364982565725}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7503425753024769096
 GameObject:
   m_ObjectHideFlags: 0
@@ -8062,7 +7998,7 @@ MonoBehaviour:
   destroyTime: 2
   maxAmmo: 1
   reloadTime: 1
-  gunShotSound: {fileID: 8300000, guid: 24aa3f3918993294a9333ed1ce90fa2c, type: 3}
+  gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
   reloadSound: {fileID: 0}
   gunShotVolume: 0.2
   fleeingEnemyManager: {fileID: 0}
@@ -8579,7 +8515,7 @@ MonoBehaviour:
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: 28dd1068c0f6faf4f9fa34ade1850a31, type: 3}
-  reloadSound: {fileID: 0}
+  reloadSound: {fileID: 8300000, guid: 2cd9b962738e6034aa38f29c76d353cd, type: 3}
   gunShotVolume: 0.1
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &6372986391857713627
