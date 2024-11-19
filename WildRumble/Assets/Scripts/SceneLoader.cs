@@ -1,20 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; 
-
-/*
- * Created by: Joshua Guerrero
- * This script adds asynchronous loading
- * to allow the next scene to load in the background 
- * to improve performance
- */
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
     public string sceneToLoad; // Name of the scene to load
     public GameObject loadingScreen; // UI element for loading screen
-    public Slider loadingBar; // a slider to show loading progress
+    public Slider loadingBar; // Slider to show loading progress
+    public GameObject[] uiToHide; // Array of other UI elements to hide
 
     public void LoadScene(string sceneName)
     {
@@ -23,14 +17,19 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        // Hide other UI elements
+        foreach (GameObject ui in uiToHide)
+        {
+            if (ui != null)
+                ui.SetActive(false);
+        }
+
         // Show loading screen
         if (loadingScreen != null)
             loadingScreen.SetActive(true);
 
         // Start loading the scene asynchronously
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
-        
-        // Allow the scene to be loaded in the background
         asyncOperation.allowSceneActivation = false;
 
         // While the scene is loading
@@ -50,7 +49,7 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
 
-        // Hide loading screen
+        // Hide loading screen (optional, depending on transition style)
         if (loadingScreen != null)
             loadingScreen.SetActive(false);
     }
