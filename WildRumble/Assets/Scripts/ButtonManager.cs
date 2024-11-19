@@ -1,43 +1,66 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+//Made by Darcy
 public class ButtonManager : MonoBehaviour
 {
     public GameObject optionsMenuUI;
     public Slider sfxVolumeSlider;
     public Slider bgmVolumeSlider;
     public Slider gunShotSoundSlider;
+    public Slider mouseSensitivitySlider; 
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
-    public AudioSource combatMusicAudioSource; // Added by Darcy: Combat music audio source
+    public AudioSource combatMusicAudioSource;
+    public CameraMovement cameraMovementScript; 
 
     public SceneLoader sceneLoader;
     public HealthBar healthBar;
-    public GameObject combatModeObject; // Added by Darcy: Reference to the CombatMode object
+    public GameObject combatModeObject; 
 
-    private bool isInCombat = false; // Track if in combat
-    private float combatExitTimer = 0f; // Timer to delay combat music stop
-    private const float combatExitDelay = 2f; // 2-second delay before stopping combat music
+    private bool isInCombat = false; 
+    private float combatExitTimer = 0f; 
+    private const float combatExitDelay = 2f; 
 
     void Start()
     {
-        // Initialize volume sliders
+        
         InitializeVolumeSliders();
 
-        // Set initial combat music volume to match BGM slider
+        
         if (combatMusicAudioSource != null)
         {
             combatMusicAudioSource.volume = bgmVolumeSlider.value;
         }
+
+        
+        if (mouseSensitivitySlider != null && cameraMovementScript != null)
+        {
+            mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity", 1f);
+            SetMouseSensitivity(mouseSensitivitySlider.value);
+            mouseSensitivitySlider.onValueChanged.AddListener(SetMouseSensitivity);
+        }
     }
+
+    
+    private void SetMouseSensitivity(float sensitivity)
+    {
+        if (cameraMovementScript != null)
+        {
+            
+            float sensitivityMultiplier = 5f; 
+            cameraMovementScript.UpdateSensitivity(sensitivity * sensitivityMultiplier, sensitivity * sensitivityMultiplier);
+        }
+        PlayerPrefs.SetFloat("MouseSensitivity", sensitivity); 
+    }
+
 
     void Update()
     {
-        // Check if there are any enemies within range of the CombatMode object
+        
         bool enemyInRange = CheckForEnemyInRange();
 
-        // Start combat music if enemies are in range
+        
         if (enemyInRange)
         {
             if (!isInCombat)
@@ -45,14 +68,14 @@ public class ButtonManager : MonoBehaviour
                 isInCombat = true;
                 StartCombatMusic();
             }
-            combatExitTimer = 0f; // Reset timer as enemies are in range
+            combatExitTimer = 0f; 
         }
         else if (isInCombat)
         {
-            // Increment timer if no enemies are in range
+            
             combatExitTimer += Time.deltaTime;
 
-            // Stop combat music after delay
+            
             if (combatExitTimer >= combatExitDelay)
             {
                 isInCombat = false;
@@ -92,10 +115,10 @@ public class ButtonManager : MonoBehaviour
         {
             if (collider.GetComponent<EnemyAI>() != null)
             {
-                return true; // Found an enemy within range
+                return true;
             }
         }
-        return false; // No enemies within range
+        return false; 
     }
 
     private void InitializeVolumeSliders()
@@ -123,7 +146,7 @@ public class ButtonManager : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.bgmAudioSource = bgmAudioSource;
-            healthBar.combatMusicAudioSource = combatMusicAudioSource; // Pass the combat audio source
+            healthBar.combatMusicAudioSource = combatMusicAudioSource; 
         }
     }
 
@@ -139,7 +162,7 @@ public class ButtonManager : MonoBehaviour
         {
             bgmAudioSource.volume = volume;
         }
-        if (combatMusicAudioSource != null) // Added by Darcy: Adjust combat music volume as well
+        if (combatMusicAudioSource != null) 
         {
             combatMusicAudioSource.volume = volume;
         }
@@ -151,7 +174,7 @@ public class ButtonManager : MonoBehaviour
         Weapon weaponScript = FindObjectOfType<Weapon>();
         if (weaponScript != null)
         {
-            weaponScript.gunShotVolume = volume; // Set the gunshot volume
+            weaponScript.gunShotVolume = volume; 
             PlayerPrefs.SetFloat("GunShotVolume", volume);
         }
 
@@ -192,13 +215,13 @@ public class ButtonManager : MonoBehaviour
         optionsMenuUI.SetActive(false);
     }
 
-    // New load level function
+   
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
     }
 
-    // New function to load the next level by build index
+   
     public void LoadNextLevel()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

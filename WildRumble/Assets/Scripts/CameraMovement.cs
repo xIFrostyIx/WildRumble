@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,8 +20,8 @@ public class CameraMovement : MonoBehaviour
 
     // Added by Darcy from 21 to 25
     private Vector3 originalPosition;
-    public float shakeDuration = 0.05f; 
-    public float shakeMagnitude = 0.02f; 
+    public float shakeDuration = 0.05f;
+    public float shakeMagnitude = 0.02f;
     private bool isShaking = false;
 
     private void Start()
@@ -48,6 +49,14 @@ public class CameraMovement : MonoBehaviour
             orientation.rotation = Quaternion.Euler(0, yRotation, 0);
         }
     }
+
+    // Added by Darcy
+    public void UpdateSensitivity(float newSensX, float newSensY)
+    {
+        sensX = newSensX;
+        sensY = newSensY;
+    }
+
     // Added by Darcy
     public IEnumerator CameraShake()
     {
@@ -59,15 +68,15 @@ public class CameraMovement : MonoBehaviour
             float xOffset = Random.Range(-1f, 1f) * shakeMagnitude;
             float yOffset = Random.Range(-1f, 1f) * shakeMagnitude;
 
-            
+
             transform.localPosition = originalPosition + new Vector3(xOffset, yOffset, 0);
 
             elapsed += Time.deltaTime;
 
-            yield return null; 
+            yield return null;
         }
 
-        
+
         transform.localPosition = originalPosition;
         isShaking = false;
     }

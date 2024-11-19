@@ -35,8 +35,8 @@ public class EnemyAI_Gorilla : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("raccoonIdle_Index", Random.Range(0, 3));
-            myAnimator.SetTrigger("raccoonIdle");
+            myAnimator.SetInteger("gorillaIdle_Index", Random.Range(0, 3));
+            myAnimator.SetTrigger("gorillaIdle");
         }
     }
 
@@ -53,17 +53,18 @@ public class EnemyAI_Gorilla : MonoBehaviour
             {
                 navMeshAgent.SetDestination(player.position);
 
-                myAnimator.SetBool("raccoonWalk", true);
-                myAnimator.SetBool("raccoonAttack", false);
-                myAnimator.SetBool("raccoonIdle_Bool", false);
+                myAnimator.SetBool("gorillaWalk", true);
+                myAnimator.SetBool("gorillaAttack", false);
+                myAnimator.SetBool("gorillaIdle_Bool", false);
             }
             else
             {
                 navMeshAgent.SetDestination(transform.position); // Stop moving
 
-                myAnimator.SetBool("raccoonAttack", true);
-                myAnimator.SetBool("raccoonWalk", false);
-                myAnimator.SetBool("raccoonIdle_Bool", false);
+                myAnimator.SetBool("gorillaAttack", true);
+                myAnimator.SetBool("gorillaWalk", false);
+                myAnimator.SetBool("gorillaIdle", false);
+                myAnimator.SetBool("gorillaIdle_Bool", false);
             }
         }
         else

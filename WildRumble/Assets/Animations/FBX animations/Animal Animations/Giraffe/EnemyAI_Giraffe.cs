@@ -35,8 +35,8 @@ public class EnemyAI_Giraffe : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("raccoonIdle_Index", Random.Range(0, 3));
-            myAnimator.SetTrigger("raccoonIdle");
+            myAnimator.SetInteger("giraffeIdle_Index", Random.Range(0, 3));
+            myAnimator.SetTrigger("giraffeIdle");
         }
     }
 
@@ -53,17 +53,17 @@ public class EnemyAI_Giraffe : MonoBehaviour
             {
                 navMeshAgent.SetDestination(player.position);
 
-                myAnimator.SetBool("raccoonWalk", true);
-                myAnimator.SetBool("raccoonAttack", false);
-                myAnimator.SetBool("raccoonIdle_Bool", false);
+                myAnimator.SetBool("giraffeWalk", true);
+                myAnimator.SetBool("giraffeAttack", false);
+                myAnimator.SetBool("giraffeIdle_Bool", false);
             }
             else
             {
                 navMeshAgent.SetDestination(transform.position); // Stop moving
 
-                myAnimator.SetBool("raccoonAttack", true);
-                myAnimator.SetBool("raccoonWalk", false);
-                myAnimator.SetBool("raccoonIdle_Bool", false);
+                myAnimator.SetBool("giraffeAttack", true);
+                myAnimator.SetBool("giraffeWalk", false);
+                myAnimator.SetBool("giraffeIdle_Bool", false);
             }
         }
         else
