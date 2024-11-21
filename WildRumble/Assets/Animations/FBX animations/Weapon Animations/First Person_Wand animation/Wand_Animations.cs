@@ -19,7 +19,7 @@ public class Wand_Animations : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("wandInt", Random.Range(0, 3));
+            myAnimator.SetInteger("wandInt", Random.Range(0, 2));
             myAnimator.SetTrigger("wandIdle");
         }
     }
@@ -30,7 +30,6 @@ public class Wand_Animations : MonoBehaviour
     void Update()
     {
         //bools for ads and ads firing 
-        bool duckADSin = myAnimator.GetBool("wandADSin");
         bool adsPress = Input.GetButton("Fire2");
         bool shootPress = Input.GetButton("Fire1");
 
