@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class r700_Animations : MonoBehaviour
+public class duckGun_Animations : MonoBehaviour
 {
 
     Animator myAnimator;
@@ -22,7 +22,7 @@ public class r700_Animations : MonoBehaviour
     void Update()
     {
         //bools for ads and ads firing 
-        bool rifleADSin = myAnimator.GetBool("rifleADSin");
+        bool duckADSin = myAnimator.GetBool("duckADSin");
         bool adsPress = Input.GetButton("Fire2");
         bool shootPress = Input.GetButton("Fire1");
 
@@ -32,40 +32,36 @@ public class r700_Animations : MonoBehaviour
             NextFire = Time.time + FireRate;
             StartCoroutine(ShotEffect());
 
-            myAnimator.SetTrigger("rifleShoot");
+            myAnimator.SetTrigger("duckShoot");
 
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            myAnimator.SetTrigger("rifleReload");
-        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            myAnimator.SetTrigger("rifleDown");
+            myAnimator.SetTrigger("duckDown");
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            myAnimator.SetTrigger("rifleUp");
+            myAnimator.SetTrigger("duckUp");
         }
 
 
         //ADS aniamtions
-        if (!rifleADSin && adsPress)
+        if (!duckADSin && adsPress)
         {
-            myAnimator.SetBool("rifleADSin", true);
+            myAnimator.SetBool("duckADSin", true);
         }
 
-        if (rifleADSin && !adsPress)
+        if (duckADSin && !adsPress)
         {
-            myAnimator.SetBool("rifleADSin", false);
+            myAnimator.SetBool("duckADSin", false);
         }
 
         if (shootPress && adsPress)
         {
-            myAnimator.SetTrigger("rifleADSshoot");
+            myAnimator.SetTrigger("duckADSshoot");
         }
 
 

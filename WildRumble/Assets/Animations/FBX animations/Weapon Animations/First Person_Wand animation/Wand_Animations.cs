@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class r700_Animations : MonoBehaviour
+public class Wand_Animations : MonoBehaviour
 {
 
     Animator myAnimator;
@@ -11,9 +11,17 @@ public class r700_Animations : MonoBehaviour
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        myAnimator = GetComponent<Animator>();
+        myAnimator = GetComponent<Animator>(); //Grabs animation component/controller
+
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+
+            myAnimator.SetInteger("wandInt", Random.Range(0, 3));
+            myAnimator.SetTrigger("wandIdle");
+        }
     }
 
 
@@ -22,7 +30,7 @@ public class r700_Animations : MonoBehaviour
     void Update()
     {
         //bools for ads and ads firing 
-        bool rifleADSin = myAnimator.GetBool("rifleADSin");
+        bool duckADSin = myAnimator.GetBool("wandADSin");
         bool adsPress = Input.GetButton("Fire2");
         bool shootPress = Input.GetButton("Fire1");
 
@@ -32,40 +40,14 @@ public class r700_Animations : MonoBehaviour
             NextFire = Time.time + FireRate;
             StartCoroutine(ShotEffect());
 
-            myAnimator.SetTrigger("rifleShoot");
+            myAnimator.SetTrigger("wandShoot");
 
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            myAnimator.SetTrigger("rifleReload");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            myAnimator.SetTrigger("rifleDown");
-        }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            myAnimator.SetTrigger("rifleUp");
-        }
-
-
-        //ADS aniamtions
-        if (!rifleADSin && adsPress)
-        {
-            myAnimator.SetBool("rifleADSin", true);
-        }
-
-        if (rifleADSin && !adsPress)
-        {
-            myAnimator.SetBool("rifleADSin", false);
-        }
-
-        if (shootPress && adsPress)
-        {
-            myAnimator.SetTrigger("rifleADSshoot");
+            myAnimator.SetTrigger("wandUp");
         }
 
 
