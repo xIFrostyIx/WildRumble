@@ -2021,6 +2021,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 420627601516343152, guid: cc35cc842a18e81488d84bf3b9d060c2, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3195704101663994304, guid: cc35cc842a18e81488d84bf3b9d060c2, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.81
@@ -4039,7 +4043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4052,7 +4056,7 @@ PrefabInstance:
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 593116772}
+      objectReference: {fileID: 1062696468}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -4063,11 +4067,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5495524635534209566, guid: 8b8a0018731a15344a1170feb524ad31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
