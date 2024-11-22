@@ -18,8 +18,11 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Start()
     {
-        objectives.Add(new Objective("Eliminate 5 Animals", 5));
-        objectives.Add(new Objective("Get in the truck", 1));
+        if (objectives.Count == 0)
+        {
+            objectives.Add(new Objective("Eliminate 5 Animals", 5));
+            objectives.Add(new Objective("Get in the truck", 1));
+        }
 
         UpdateObjectiveText();
 
@@ -46,6 +49,7 @@ public class ObjectiveManager : MonoBehaviour
             {
                 objective.currentCount++;
                 objective.UpdateObjective();
+                Debug.Log($"Objective {objective.description}: {objective.currentCount}/{objective.targetCount} - Completed: {objective.isCompleted}");
 
                 if (objective.isCompleted && currentObjectiveIndex < objectives.Count - 1)
                 {
@@ -60,6 +64,13 @@ public class ObjectiveManager : MonoBehaviour
 
     private void UpdateObjectiveText()
     {
+        if(objectives.Count == 0 || currentObjectiveIndex >= objectives.Count)
+        {
+            Debug.LogError("Objective list is empty or index is out of bounds.");
+            objectiveText.text = "No objectives available.";
+            return;
+        }
+
         var currentObjective = objectives[currentObjectiveIndex];
         objectiveText.text = $"{currentObjective.description}: {currentObjective.currentCount}/{currentObjective.targetCount} - {(currentObjective.isCompleted ? "Completed" : "In Progress")}";
 

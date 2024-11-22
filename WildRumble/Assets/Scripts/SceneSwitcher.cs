@@ -3,72 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-/*
- 
-Created By Joshua Guerrero
-This script allows the player to
-interact with an object using E
-to switch scenes*/
-
 public class SceneSwitcher : MonoBehaviour
 {
-    //references the SceneLoader script
-    public SceneLoader sceneLoader;
-
+    public SceneLoader sceneLoader; // Reference to the SceneLoader script
     public TextMeshProUGUI interactionText;
+
+    // Reference to the ObjectiveManager to check objective status
+    public ObjectiveManager objectiveManager;
 
     private void Update()
     {
-        // Checks if the player is pressing E
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Is Pressing E");
-            RaycastHit hit;
-            //Player has to be a certain distance and looking at the object
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3.75f))
-            {
-                //checks if prop has a "Switch" tag
-                if (hit.collider.CompareTag("SwitchTwo"))
-                {
-                    //loads LevelTwo
-                    Debug.Log("Scene is Switching");
-                    sceneLoader.LoadScene("LevelTwo");
-                }
-
-                if (hit.collider.CompareTag("SwitchThree"))
-                {
-                    //loads LevelThree
-                    Debug.Log("Scene is Switching");
-                    sceneLoader.LoadScene("LevelThree");
-                }
-
-                if (hit.collider.CompareTag("SwitchMain"))
-                {
-                    Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
-                    Application.Quit();
-                }
-            }
-        }
-
-        else
-        {
-            // Hide the interaction text when not interacting
-            interactionText.gameObject.SetActive(false);
-        }
-
         // Perform a raycast to check for the interactable object
         RaycastHit hitInteractable;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInteractable, 3.75f)) // Distance is the same as interaction distance
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInteractable, 3.75f)) // Interaction distance
         {
-            // Show the interaction text if the object has the Scene Switch tags
-            if (hitInteractable.collider.CompareTag("SwitchTwo") || hitInteractable.collider.CompareTag("SwitchThree") || hitInteractable.collider.CompareTag("SwitchMain"))
+            // Check if the player has completed the "Eliminate 5 Animals" objective
+            if (objectiveManager.IsObjectiveComplete("Eliminate 5 Animals"))
             {
-                interactionText.text = "(E) Enter Truck"; // Set the interaction text
-                interactionText.gameObject.SetActive(true); // Show the text
+                Debug.Log("Objective 'Eliminate 5 Animals' is complete!");
+                // Show the interaction text if the object has the Scene Switch tags
+                if (hitInteractable.collider.CompareTag("SwitchTwo") || hitInteractable.collider.CompareTag("SwitchThree") || hitInteractable.collider.CompareTag("SwitchMain"))
+                {
+                    interactionText.text = "(E) Enter Truck"; // Set the interaction text
+                    interactionText.gameObject.SetActive(true); // Show the text
+
+                    // Handle the interaction when pressing E
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log($"Interacting with {hitInteractable.collider.tag}");
+                        if (hitInteractable.collider.CompareTag("SwitchTwo"))
+                        {
+                            Debug.Log("Scene is Switching");
+                            sceneLoader.LoadScene("LevelTwo");
+                        }
+                        else if (hitInteractable.collider.CompareTag("SwitchThree"))
+                        {
+                            Debug.Log("Scene is Switching");
+                            sceneLoader.LoadScene("LevelThree");
+                        }
+                        else if (hitInteractable.collider.CompareTag("SwitchMain"))
+                        {
+                            Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
+                            Application.Quit();
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Objective 'Eliminate 5 Animals' is not complete!");
+                    interactionText.gameObject.SetActive(false); // Hide the text if not interactable
+                }
             }
             else
             {
-                interactionText.gameObject.SetActive(false); // Hide the text if not interactable
+                interactionText.gameObject.SetActive(false); // Hide the text if objective is not completed
             }
         }
         else
@@ -76,5 +64,4 @@ public class SceneSwitcher : MonoBehaviour
             interactionText.gameObject.SetActive(false); // Hide the text if nothing is hit
         }
     }
-
 }

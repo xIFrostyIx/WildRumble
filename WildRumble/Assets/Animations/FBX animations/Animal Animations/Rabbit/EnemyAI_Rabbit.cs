@@ -36,7 +36,7 @@ public class EnemyAI_Rabbit : MonoBehaviour
             yield return new WaitForSeconds(3);
 
             myAnimator.SetInteger("rabbitIdle_Index", Random.Range(0, 3));
-            myAnimator.SetTrigger("rabbutIdle");
+            myAnimator.SetTrigger("rabbitIdle");
         }
     }
 

@@ -7,7 +7,7 @@ using UnityEngine;
  * This script represents the objective
  * types and will help manage objective states
  */
-public class Objective : MonoBehaviour
+public class Objective
 {
     public string description;
     public bool isCompleted;
