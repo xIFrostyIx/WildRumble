@@ -1350,8 +1350,8 @@ GameObject:
   - component: {fileID: 381130318734673691}
   - component: {fileID: 6077435876530787479}
   - component: {fileID: 3506657215850108985}
-  - component: {fileID: 5506694294550307327}
   - component: {fileID: 6930367591964942135}
+  - component: {fileID: 5506694294550307327}
   - component: {fileID: 2315736129674010847}
   - component: {fileID: 1622560685389500696}
   - component: {fileID: 436855263031642761}
@@ -1431,18 +1431,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &5506694294550307327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541788533214414569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01a04e92c4e39d42a811347d70d9517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6930367591964942135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,6 +1450,19 @@ MonoBehaviour:
   GunEnd: {fileID: 6095906022255337216}
   Camera: {fileID: 6408131565237573912}
   GunAudio: {fileID: 436855263031642761}
+--- !u!114 &5506694294550307327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541788533214414569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01a04e92c4e39d42a811347d70d9517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireRate: 1
 --- !u!120 &2315736129674010847
 LineRenderer:
   serializedVersion: 2
@@ -7876,6 +7877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01a04e92c4e39d42a811347d70d9517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireRate: 1
 --- !u!1001 &1599721674106557656
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,16 +37,16 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (HealthBar.isGameOver || isReloading) // Added by Darcy
+        if (HealthBar.isGameOver || isReloading || PauseManager.isPausedGlobal) // Added by Darcy
             return;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !isReloading)  
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))  
         {
             if (currentAmmo > 0)
             {
@@ -58,6 +58,8 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
+
 
 
     void Shoot()

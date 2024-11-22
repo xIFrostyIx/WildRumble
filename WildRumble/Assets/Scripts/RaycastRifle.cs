@@ -5,11 +5,8 @@ using UnityEngine;
 public class RaycastRifle : MonoBehaviour
 {
     // Created By Alex Wolfe for NVC fall 2024 Game sim
-    // Followed this tutoriaal and adapted existing scripts
+    // Followed this tutorial and adapted existing scripts
     // https://www.youtube.com/watch?v=AGd16aspnPA
-
-
-
 
     public int GunDamage = 20;                                                                  //Dmg Amount
     public float FireRate = .25f;                                                               //Between Shots
@@ -20,24 +17,34 @@ public class RaycastRifle : MonoBehaviour
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);                              //How long particle lasts
     public AudioSource GunAudio;                                                                //Shot Sound
     private LineRenderer LaserLine;                                                             //Line between 2 points
-    private float NextFire;                                                                     //Next shot avalible
+    private float NextFire;                                                                     //Next shot available
 
-
+    // Added by Darcy
+    private bool isPaused = false;                                                               
+    private PauseManager pauseManager;                                                           
 
     // Start is called before the first frame update
     void Start()
     {
         LaserLine = GetComponent<LineRenderer>();
         GunAudio = GetComponent<AudioSource>();
-        Camera = GetComponentInParent<Camera>();                                           
+        Camera = GetComponentInParent<Camera>();
+        pauseManager = FindObjectOfType<PauseManager>();                                       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown ("Fire1") && Time.time > NextFire)                             //Is it allowed to shoot again
+        // Added by Darcy
+        if (pauseManager != null && PauseManager.isPausedGlobal)
         {
-            NextFire = Time.time + FireRate;    
+            return; 
+        }
+
+        
+        if (Input.GetButtonDown("Fire1") && Time.time > NextFire)                             //Is it allowed to shoot again
+        {
+            NextFire = Time.time + FireRate;
             StartCoroutine(ShotEffect());
 
             Vector3 RayOrigin = Camera.ViewportToWorldPoint(new Vector3(.5f, .5f, 1));         //Center screen
@@ -67,8 +74,7 @@ public class RaycastRifle : MonoBehaviour
         }
     }
 
-
-    private IEnumerator ShotEffect() 
+    private IEnumerator ShotEffect()
     {
         GunAudio.Play();
 
@@ -77,8 +83,16 @@ public class RaycastRifle : MonoBehaviour
         LaserLine.enabled = false;
     }
 
+    // Added by Darcy
+    private IEnumerator Reload()
+    {
+       
+        if (PauseManager.isPausedGlobal)
+            yield break; 
 
-
-
-
+        
+        
+        yield return new WaitForSeconds(2f); 
+       
+    }
 }

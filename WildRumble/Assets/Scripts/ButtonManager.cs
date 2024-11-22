@@ -8,32 +8,32 @@ public class ButtonManager : MonoBehaviour
     public Slider sfxVolumeSlider;
     public Slider bgmVolumeSlider;
     public Slider gunShotSoundSlider;
-    public Slider mouseSensitivitySlider; 
+    public Slider mouseSensitivitySlider;
     public btnFX buttonFXScript;
     public AudioSource bgmAudioSource;
     public AudioSource combatMusicAudioSource;
-    public CameraMovement cameraMovementScript; 
+    public CameraMovement cameraMovementScript;
 
     public SceneLoader sceneLoader;
     public HealthBar healthBar;
-    public GameObject combatModeObject; 
+    public GameObject combatModeObject;
 
-    private bool isInCombat = false; 
-    private float combatExitTimer = 0f; 
-    private const float combatExitDelay = 2f; 
+    private bool isInCombat = false;
+    private float combatExitTimer = 0f;
+    private const float combatExitDelay = 2f;
 
     void Start()
     {
-        
+
         InitializeVolumeSliders();
 
-        
+
         if (combatMusicAudioSource != null)
         {
             combatMusicAudioSource.volume = bgmVolumeSlider.value;
         }
 
-        
+
         if (mouseSensitivitySlider != null && cameraMovementScript != null)
         {
             mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity", 1f);
@@ -42,25 +42,25 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    
+
     private void SetMouseSensitivity(float sensitivity)
     {
         if (cameraMovementScript != null)
         {
-            
-            float sensitivityMultiplier = 5f; 
+
+            float sensitivityMultiplier = 5f;
             cameraMovementScript.UpdateSensitivity(sensitivity * sensitivityMultiplier, sensitivity * sensitivityMultiplier);
         }
-        PlayerPrefs.SetFloat("MouseSensitivity", sensitivity); 
+        PlayerPrefs.SetFloat("MouseSensitivity", sensitivity);
     }
 
 
     void Update()
     {
-        
+
         bool enemyInRange = CheckForEnemyInRange();
 
-        
+
         if (enemyInRange)
         {
             if (!isInCombat)
@@ -68,14 +68,14 @@ public class ButtonManager : MonoBehaviour
                 isInCombat = true;
                 StartCombatMusic();
             }
-            combatExitTimer = 0f; 
+            combatExitTimer = 0f;
         }
         else if (isInCombat)
         {
-            
+
             combatExitTimer += Time.deltaTime;
 
-            
+
             if (combatExitTimer >= combatExitDelay)
             {
                 isInCombat = false;
@@ -113,12 +113,12 @@ public class ButtonManager : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(combatModeObject.transform.position, 10f);
         foreach (var collider in hitColliders)
         {
-            if (collider.GetComponent<EnemyAI>() != null)
+            if (collider.GetComponent<EnemyAI>() != null || collider.GetComponent<EnemyAI_Rabbit>() != null)
             {
                 return true;
             }
         }
-        return false; 
+        return false;
     }
 
     private void InitializeVolumeSliders()
@@ -146,7 +146,7 @@ public class ButtonManager : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.bgmAudioSource = bgmAudioSource;
-            healthBar.combatMusicAudioSource = combatMusicAudioSource; 
+            healthBar.combatMusicAudioSource = combatMusicAudioSource;
         }
     }
 
@@ -162,7 +162,7 @@ public class ButtonManager : MonoBehaviour
         {
             bgmAudioSource.volume = volume;
         }
-        if (combatMusicAudioSource != null) 
+        if (combatMusicAudioSource != null)
         {
             combatMusicAudioSource.volume = volume;
         }
@@ -174,7 +174,7 @@ public class ButtonManager : MonoBehaviour
         Weapon weaponScript = FindObjectOfType<Weapon>();
         if (weaponScript != null)
         {
-            weaponScript.gunShotVolume = volume; 
+            weaponScript.gunShotVolume = volume;
             PlayerPrefs.SetFloat("GunShotVolume", volume);
         }
 
@@ -215,13 +215,11 @@ public class ButtonManager : MonoBehaviour
         optionsMenuUI.SetActive(false);
     }
 
-   
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
     }
 
-   
     public void LoadNextLevel()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

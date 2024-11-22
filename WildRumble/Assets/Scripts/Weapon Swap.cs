@@ -16,11 +16,12 @@ public class WeaponSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HealthBar.isGameOver)
-            return; //added by Darcy
+        if (HealthBar.isGameOver || PauseManager.isPausedGlobal) // Added by Darcy
+            return;
+
         int LastWeapon = CurrentWeapon;
 
-       if (Input.GetAxis("Mouse ScrollWheel") > 0f)               //scroll wheel switching
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)               //scroll wheel switching
         {
             if (CurrentWeapon >= transform.childCount - 1)
                 CurrentWeapon = 0;
