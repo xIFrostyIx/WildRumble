@@ -43834,11 +43834,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!223 &374978818 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-  m_PrefabInstance: {fileID: 742522423}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &375518966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8848328214981394324, guid: 396a131326cd96842b7f15d2f447f828, type: 3}
@@ -61799,7 +61794,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit_Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1066466224223996410, guid: 1814821094684a3479c991463e8a1abb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -81130,13 +81126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit_Enemy (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1066466224223996410, guid: 1814821094684a3479c991463e8a1abb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7719824617320783906, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1410472114}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1814821094684a3479c991463e8a1abb, type: 3}
 --- !u!4 &695390950 stripped
 Transform:
@@ -86205,13 +86199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit_Enemy (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1066466224223996410, guid: 1814821094684a3479c991463e8a1abb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7719824617320783906, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1225045836}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1814821094684a3479c991463e8a1abb, type: 3}
 --- !u!4 &742522424 stripped
 Transform:
@@ -140068,26 +140060,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224674107}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1225045828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7719824617320783906, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-  m_PrefabInstance: {fileID: 742522423}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1225045836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225045828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 40
-  healthBar: {fileID: 742522425}
-  healthBarCanvas: {fileID: 374978818}
 --- !u!1 &1227939908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7063712623170955427, guid: 396a131326cd96842b7f15d2f447f828, type: 3}
@@ -153584,11 +153556,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359407078}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!223 &1359791720 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-  m_PrefabInstance: {fileID: 695390949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1360251790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9c6f7bbaf8fac0d47a5bbfaeb0d74c89, type: 3}
@@ -158559,26 +158526,6 @@ Transform:
   - {fileID: 538691689}
   m_Father: {fileID: 244355513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1410472106 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7719824617320783906, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-  m_PrefabInstance: {fileID: 695390949}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1410472114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410472106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 40
-  healthBar: {fileID: 695390951}
-  healthBarCanvas: {fileID: 1359791720}
 --- !u!1 &1411457988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3838644669476144585, guid: 396a131326cd96842b7f15d2f447f828, type: 3}
@@ -166267,11 +166214,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474709618}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!223 &1474751950 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-  m_PrefabInstance: {fileID: 1571860500}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1475252059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f61d14f30c114d44386409b0e75d6398, type: 3}
@@ -177185,13 +177127,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit_Enemy (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1066466224223996410, guid: 1814821094684a3479c991463e8a1abb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7719824617320783906, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1869834822}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1814821094684a3479c991463e8a1abb, type: 3}
 --- !u!4 &1571860501 stripped
 Transform:
@@ -209605,26 +209545,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f61d14f30c114d44386409b0e75d6398, type: 3}
   m_PrefabInstance: {fileID: 1941326046}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1869834814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7719824617320783906, guid: 1814821094684a3479c991463e8a1abb, type: 3}
-  m_PrefabInstance: {fileID: 1571860500}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1869834822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869834814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 40
-  healthBar: {fileID: 1571860502}
-  healthBarCanvas: {fileID: 1474751950}
 --- !u!1 &1869891402
 GameObject:
   m_ObjectHideFlags: 0
