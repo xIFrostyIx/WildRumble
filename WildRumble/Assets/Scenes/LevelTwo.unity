@@ -104532,12 +104532,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6930367591964942135, guid: b5cace171931deb41acd95db274fc426, type: 3}
+    - {fileID: 1622560685389500696, guid: b5cace171931deb41acd95db274fc426, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7503211344923955287, guid: b5cace171931deb41acd95db274fc426, type: 3}
     - {fileID: 3084174712948712700, guid: b5cace171931deb41acd95db274fc426, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1541788533214414569, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1799538170}
   m_SourcePrefab: {fileID: 100100000, guid: b5cace171931deb41acd95db274fc426, type: 3}
 --- !u!114 &901938398 stripped
 MonoBehaviour:
@@ -121142,6 +121147,11 @@ Transform:
 --- !u!4 &1048630100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4286619452444929304, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 901938397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1048630101 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2501375099858019373, guid: b5cace171931deb41acd95db274fc426, type: 3}
   m_PrefabInstance: {fileID: 901938397}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1049440423
@@ -202835,6 +202845,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f61d14f30c114d44386409b0e75d6398, type: 3}
   m_PrefabInstance: {fileID: 1011399449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1799538168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1541788533214414569, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 901938397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1799538170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799538168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8387502cf9b5b9b4bbfdbda97c1733e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 1048630101}
+  HitPoint: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
 --- !u!1 &1799875189
 GameObject:
   m_ObjectHideFlags: 0
