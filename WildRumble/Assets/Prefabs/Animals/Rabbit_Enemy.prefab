@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1071886849524662012}
   m_Layer: 0
   m_Name: rabbit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,8 +1296,10 @@ GameObject:
   - component: {fileID: 2766210726438792650}
   - component: {fileID: 3648039553618472754}
   - component: {fileID: 7077017280657391625}
+  - component: {fileID: 201967733627376282}
   - component: {fileID: 3167981797330976155}
   - component: {fileID: 2512276199966854014}
+  - component: {fileID: 1066466224223996410}
   m_Layer: 0
   m_Name: Rabbit_Enemy
   m_TagString: Enemy
@@ -1390,7 +1392,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -1428,9 +1430,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 40
   healthBar: {fileID: 6835673251157227411}
   objectiveManager: {fileID: 0}
+--- !u!114 &201967733627376282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719824617320783906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 6835673251157227411}
+  healthBarCanvas: {fileID: 8429840879125206856}
 --- !u!65 &3167981797330976155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1451,7 +1468,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.31, y: 0.45618388, z: 0.29860517}
-  m_Center: {x: 0, y: 0.23430869, z: 0.05069732}
+  m_Center: {x: 0, y: 0.18, z: 0.05069732}
 --- !u!114 &2512276199966854014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,6 +1487,21 @@ MonoBehaviour:
   wanderRange: 10
   wanderTimer: 3
   speed: 5
+--- !u!114 &1066466224223996410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719824617320783906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  healthBar: {fileID: 6835673251157227411}
+  healthBarCanvas: {fileID: 8429840879125206856}
 --- !u!1 &7761648652477517007
 GameObject:
   m_ObjectHideFlags: 0

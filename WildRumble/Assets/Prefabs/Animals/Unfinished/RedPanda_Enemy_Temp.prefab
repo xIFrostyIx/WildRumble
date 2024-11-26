@@ -141,6 +141,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+--- !u!223 &5586380279217710434 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 4141623742857474602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6254019980813334577 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
@@ -179,15 +184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -311.99
+      value: 96.94537
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.566
+      value: -2.778638
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 274.94
+      value: 68.36764
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -253,6 +258,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6728080406993102692}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4601012543692608898}
   m_SourcePrefab: {fileID: 100100000, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
 --- !u!4 &8626252975173797921 stripped
 Transform:
@@ -407,3 +415,18 @@ MonoBehaviour:
   wanderRange: 5
   wanderTimer: 2
   speed: 3.5
+--- !u!114 &4601012543692608898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006438169848337051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 7468991571565364665}
+  healthBarCanvas: {fileID: 5586380279217710434}
