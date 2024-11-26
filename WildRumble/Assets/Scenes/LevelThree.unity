@@ -2199,12 +2199,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1606863115}
     m_Modifications:
+    - target: {fileID: 1126011160414054155, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 2108447586008054307, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6728080406993102692, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
       propertyPath: player
+      value: 
+      objectReference: {fileID: 37214990}
+    - target: {fileID: 8493068754566105264, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
+      propertyPath: cam
       value: 
       objectReference: {fileID: 37214990}
     - target: {fileID: 8626252975173797921, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
@@ -4188,6 +4196,10 @@ PrefabInstance:
       propertyPath: stoppingDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3902003070063808715, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 37214990}
     - target: {fileID: 5160076355050399939, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
       propertyPath: m_Name
       value: Squirrel_Enemy (1)
@@ -5117,6 +5129,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f28388f1e669004b959f842c7648e41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 980412768}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f28388f1e669004b959f842c7648e41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980412779}
   m_SourcePrefab: {fileID: 100100000, guid: 8f28388f1e669004b959f842c7648e41, type: 3}
 --- !u!1 &93878977 stripped
 GameObject:
@@ -10294,6 +10309,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
   m_PrefabInstance: {fileID: 2107179183}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &167614352 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 2107179183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167999383
 GameObject:
   m_ObjectHideFlags: 0
@@ -11883,14 +11903,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1606863115}
     m_Modifications:
     - target: {fileID: 1732449420233992853, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 198513282}
-    - target: {fileID: 1732449420233992853, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
-      propertyPath: maxHealth
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732449420233992853, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 538094713}
@@ -11902,10 +11914,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 37214990}
-    - target: {fileID: 2772172810298576483, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
-      propertyPath: stoppingDistance
-      value: 1.8
-      objectReference: {fileID: 0}
     - target: {fileID: 5599923150041842520, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11954,10 +11962,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8771688572600834791, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11968,17 +11972,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6557264266456786746, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
   m_PrefabInstance: {fileID: 198513280}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &198513282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3986646389676014786, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
-  m_PrefabInstance: {fileID: 198513280}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &198702704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24074,6 +24067,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 311452326}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 311452334}
   m_SourcePrefab: {fileID: 100100000, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
 --- !u!4 &311452324 stripped
 Transform:
@@ -24097,7 +24093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 100
   healthBar: {fileID: 568222080}
   objectiveManager: {fileID: 538094713}
 --- !u!114 &311452327
@@ -24206,6 +24202,21 @@ CapsuleCollider:
   m_Height: 1.8901402
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: 0.92072934, z: -0.09787005}
+--- !u!114 &311452334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311452325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 568222080}
+  healthBarCanvas: {fileID: 1674221363}
 --- !u!1 &312640869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c0dd246028aab1046976aa453836b82f, type: 3}
@@ -35486,6 +35497,10 @@ PrefabInstance:
       propertyPath: stoppingDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3902003070063808715, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 37214990}
     - target: {fileID: 5160076355050399939, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
       propertyPath: m_Name
       value: Squirrel_Enemy (2)
@@ -51242,6 +51257,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 556686248}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 556686256}
   m_SourcePrefab: {fileID: 100100000, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
 --- !u!4 &556686246 stripped
 Transform:
@@ -51265,7 +51283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 100
   healthBar: {fileID: 837609738}
   objectiveManager: {fileID: 538094713}
 --- !u!114 &556686249
@@ -51374,6 +51392,21 @@ CapsuleCollider:
   m_Height: 1.8901402
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: 0.92072934, z: -0.09787005}
+--- !u!114 &556686256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556686247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 837609738}
+  healthBarCanvas: {fileID: 837609742}
 --- !u!64 &557880078
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -74484,6 +74517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &837609742 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 837609736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &839063563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91197,7 +91235,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -91237,6 +91275,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &980412779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980412767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 1944426804}
+  healthBarCanvas: {fileID: 1369253511}
 --- !u!1 &981998873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c0dd246028aab1046976aa453836b82f, type: 3}
@@ -94620,7 +94673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 120
   healthBar: {fileID: 1205048352}
   objectiveManager: {fileID: 538094713}
 --- !u!114 &1024085997
@@ -94694,7 +94747,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -94729,6 +94782,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1024086004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024085994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 120
+  healthBar: {fileID: 1205048352}
+  healthBarCanvas: {fileID: 167614352}
 --- !u!1001 &1024426181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125785,6 +125853,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1163812271}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1163812279}
   m_SourcePrefab: {fileID: 100100000, guid: d40c676754d2e414ab998abe224ddd7b, type: 3}
 --- !u!4 &1163812269 stripped
 Transform:
@@ -125808,7 +125879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 100
   healthBar: {fileID: 1183612107}
   objectiveManager: {fileID: 538094713}
 --- !u!114 &1163812272
@@ -125917,6 +125988,21 @@ CapsuleCollider:
   m_Height: 1.8901402
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: 0.92072934, z: -0.09787005}
+--- !u!114 &1163812279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163812270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 1183612107}
+  healthBarCanvas: {fileID: 1730375049}
 --- !u!1 &1164867011
 GameObject:
   m_ObjectHideFlags: 0
@@ -128337,10 +128423,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 37214990}
-    - target: {fileID: 203154706502101619, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
-      propertyPath: stoppingDistance
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 3902003070063808715, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 37214990}
     - target: {fileID: 5160076355050399939, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
       propertyPath: m_Name
       value: Squirrel_Enemy
@@ -130324,6 +130410,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9659541f0b987934a8bfcbfb7b7ab526, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1218046441}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9659541f0b987934a8bfcbfb7b7ab526, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1218046449}
   m_SourcePrefab: {fileID: 100100000, guid: 9659541f0b987934a8bfcbfb7b7ab526, type: 3}
 --- !u!4 &1218046439 stripped
 Transform:
@@ -130456,6 +130545,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1218046449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218046440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  healthBar: {fileID: 2086714632}
+  healthBarCanvas: {fileID: 2086714637}
 --- !u!1 &1219970139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eadfb11b747139c498a09a8c8a620499, type: 3}
@@ -140211,7 +140315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 140
   healthBar: {fileID: 1960785304}
   objectiveManager: {fileID: 538094713}
 --- !u!114 &1290137708
@@ -140285,7 +140389,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -140325,6 +140429,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1290137718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290137706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 140
+  healthBar: {fileID: 1960785304}
+  healthBarCanvas: {fileID: 1871125691}
 --- !u!1 &1292021960
 GameObject:
   m_ObjectHideFlags: 0
@@ -140850,7 +140969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   healthBar: {fileID: 235106697}
   healthBarCanvas: {fileID: 1482210090}
 --- !u!1001 &1298042750
@@ -152536,6 +152655,11 @@ MeshCollider:
 --- !u!224 &1369253507 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 140257239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1369253511 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
   m_PrefabInstance: {fileID: 140257239}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1371307283
@@ -169888,6 +170012,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c39c3abddc0a7242999ebe859e0b678, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1290137707}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c39c3abddc0a7242999ebe859e0b678, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1290137718}
   m_SourcePrefab: {fileID: 100100000, guid: 7c39c3abddc0a7242999ebe859e0b678, type: 3}
 --- !u!64 &1480858370
 MeshCollider:
@@ -171552,12 +171679,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1606863115}
     m_Modifications:
+    - target: {fileID: 1126011160414054155, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 2108447586008054307, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6728080406993102692, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
       propertyPath: player
+      value: 
+      objectReference: {fileID: 37214990}
+    - target: {fileID: 8493068754566105264, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
+      propertyPath: cam
       value: 
       objectReference: {fileID: 37214990}
     - target: {fileID: 8626252975173797921, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
@@ -191955,6 +192090,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!223 &1674221363 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 568222078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1674452411
 GameObject:
   m_ObjectHideFlags: 0
@@ -199529,6 +199669,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 396394227}
   m_LocalEulerAnglesHint: {x: 0, y: 0.449, z: 0}
+--- !u!223 &1730375049 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 1183612105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1730960369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207018,9 +207163,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 378924945294618827, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1043565731264934428, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
       propertyPath: m_Name
       value: Elephant_Enemy_Temp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199107788028853696, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 37214990}
+    - target: {fileID: 2873836783133850216, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2873836783133850216, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
       propertyPath: objectiveManager
@@ -208558,7 +208715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   healthBar: {fileID: 320149534}
   healthBarCanvas: {fileID: 2099729483}
 --- !u!1 &1836242175
@@ -212581,6 +212738,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
   m_PrefabInstance: {fileID: 198702704}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1871125691 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 198702704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874679884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216369,6 +216531,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f28388f1e669004b959f842c7648e41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1024085996}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f28388f1e669004b959f842c7648e41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1024086004}
   m_SourcePrefab: {fileID: 100100000, guid: 8f28388f1e669004b959f842c7648e41, type: 3}
 --- !u!1001 &1907632561
 PrefabInstance:
@@ -249813,6 +249978,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &2086714637 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 2086714630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2087083839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2261041813173750900, guid: c2223047aa2897e4eba43e1da287ff89, type: 3}
