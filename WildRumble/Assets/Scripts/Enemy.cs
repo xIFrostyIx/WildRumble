@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Required for UI elements
+using UnityEngine.UI;
+
+
+//Edited by Joshua Guerrer
+//Lines 50-54
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 100;       // Maximum health of the enemy
-    private int currentHealth;       // Current health of the enemy
+    public int maxHealth = 100;
+    private int currentHealth;
 
-    public Slider healthBar;         // Reference to the UI Slider for the health bar
-    public Canvas healthBarCanvas;   // Canvas containing the health bar (optional, to destroy on death)
+    public Slider healthBar;
+    public Canvas healthBarCanvas;
+
+    public ObjectiveManager objectiveManager; // Reference to the ObjectiveManager
 
     void Start()
     {
         currentHealth = maxHealth;
 
-        // Initialize the health bar
         if (healthBar != null)
         {
             healthBar.maxValue = maxHealth;
@@ -27,7 +30,6 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= damage;
 
-        // Update the health bar
         if (healthBar != null)
         {
             healthBar.value = currentHealth;
@@ -45,12 +47,18 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} has died!");
 
+        // Notify the ObjectiveManager about the kill
+        if (objectiveManager != null)
+        {
+            objectiveManager.UpdateObjective("Eliminate 5 Animals");
+        }
+
         // Destroy the health bar canvas if it exists
         if (healthBarCanvas != null)
         {
             Destroy(healthBarCanvas.gameObject);
         }
 
-        Destroy(this.gameObject); // Destroy the enemy
+        Destroy(gameObject); // Destroy the enemy
     }
 }

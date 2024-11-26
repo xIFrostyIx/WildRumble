@@ -2301,6 +2301,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 49338022}
   healthBarCanvas: {fileID: 49338023}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &50477522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,6 +4350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6405920396211557995, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6825618644685873752, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12367,6 +12372,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 3202446694055602750, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 5599923150041842520, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -24767,6 +24776,7 @@ MonoBehaviour:
   maxHealth: 80
   healthBar: {fileID: 568222080}
   healthBarCanvas: {fileID: 1674221363}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &312640869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c0dd246028aab1046976aa453836b82f, type: 3}
@@ -31853,6 +31863,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 1175844809268020824, guid: b2e5f793375bafa4d87ed82c6452b2e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 2869399275376657857, guid: b2e5f793375bafa4d87ed82c6452b2e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.9655151
@@ -36219,6 +36233,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6405920396211557995, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6825618644685873752, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -52313,6 +52331,7 @@ MonoBehaviour:
   maxHealth: 80
   healthBar: {fileID: 837609738}
   healthBarCanvas: {fileID: 837609742}
+  objectiveManager: {fileID: 538094713}
 --- !u!64 &557880078
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60276,6 +60295,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6364750503260786370, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036077427
@@ -63232,6 +63255,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6364750503260786370, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036077427
@@ -68646,6 +68673,53 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c0dd246028aab1046976aa453836b82f, type: 3}
   m_PrefabInstance: {fileID: 1437407310}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &729494102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6553939976053791058, guid: b5cace171931deb41acd95db274fc426, type: 3}
+  m_PrefabInstance: {fileID: 2118233011563112359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &729494104
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729494102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.56
+  m_Center: {x: -0.35, y: 0.08, z: 1.01}
+--- !u!95 &729494105
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729494102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef56fdb435625df49ba6df181886c911, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &730002491
 Mesh:
   m_ObjectHideFlags: 0
@@ -76895,6 +76969,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 3202446694055602750, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 5599923150041842520, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -93434,6 +93512,7 @@ MonoBehaviour:
   maxHealth: 120
   healthBar: {fileID: 1944426804}
   healthBarCanvas: {fileID: 1369253511}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &981998873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c0dd246028aab1046976aa453836b82f, type: 3}
@@ -97173,6 +97252,7 @@ MonoBehaviour:
   maxHealth: 120
   healthBar: {fileID: 1205048352}
   healthBarCanvas: {fileID: 167614352}
+  objectiveManager: {fileID: 538094713}
 --- !u!1001 &1024426181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98742,6 +98822,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 8882204425304292931, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: cam
       value: 
@@ -99463,6 +99547,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6364750503260786370, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036077427
@@ -125497,6 +125585,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 7855150363225155507, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 8980203480611775579, guid: 36445c545996b464bb2228fd549a29e7, type: 3}
       propertyPath: cam
       value: 
@@ -128696,6 +128788,7 @@ MonoBehaviour:
   maxHealth: 80
   healthBar: {fileID: 1183612107}
   healthBarCanvas: {fileID: 1730375049}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &1164867011
 GameObject:
   m_ObjectHideFlags: 0
@@ -131271,6 +131364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6405920396211557995, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6825618644685873752, guid: a6c82b1c792574b4e8a444f0a3622eed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -133360,6 +133457,7 @@ MonoBehaviour:
   maxHealth: 200
   healthBar: {fileID: 2086714632}
   healthBarCanvas: {fileID: 2086714637}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &1219970139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eadfb11b747139c498a09a8c8a620499, type: 3}
@@ -143441,6 +143539,7 @@ MonoBehaviour:
   maxHealth: 160
   healthBar: {fileID: 1960785304}
   healthBarCanvas: {fileID: 1871125691}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &1292021960
 GameObject:
   m_ObjectHideFlags: 0
@@ -143973,6 +144072,7 @@ MonoBehaviour:
   maxHealth: 200
   healthBar: {fileID: 235106697}
   healthBarCanvas: {fileID: 1482210090}
+  objectiveManager: {fileID: 538094713}
 --- !u!1001 &1298042750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157652,6 +157752,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6364750503260786370, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036077427
@@ -175598,6 +175702,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 4601012543692608898, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6728080406993102692, guid: 2d3eb40a9ab9e0c4bbae0337ddafd5cf, type: 3}
       propertyPath: player
       value: 
@@ -192124,6 +192232,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 1175844809268020824, guid: b2e5f793375bafa4d87ed82c6452b2e7, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 2869399275376657857, guid: b2e5f793375bafa4d87ed82c6452b2e7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.198
@@ -192679,6 +192791,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6364750503260786370, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036077427
@@ -211431,6 +211547,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 378924945294618827, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 1043565731264934428, guid: 96d26fc94e4d1e3419be592c8cd5e7ec, type: 3}
       propertyPath: m_Name
       value: Elephant_Enemy_Temp
@@ -212986,6 +213106,7 @@ MonoBehaviour:
   maxHealth: 200
   healthBar: {fileID: 320149534}
   healthBarCanvas: {fileID: 2099729483}
+  objectiveManager: {fileID: 538094713}
 --- !u!1 &1836242175
 GameObject:
   m_ObjectHideFlags: 0
@@ -215391,66 +215512,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 412458188}
     m_Modifications:
-    - target: {fileID: 151112342050005667, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: clickFx
-      value: 
-      objectReference: {fileID: 8300000, guid: ed695d3135173b741b0a47e3c8d5f465, type: 3}
-    - target: {fileID: 151112342050005667, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: hoverFx
-      value: 
-      objectReference: {fileID: 8300000, guid: ed695d3135173b741b0a47e3c8d5f465, type: 3}
-    - target: {fileID: 151112342050005667, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: gunShotFx
-      value: 
-      objectReference: {fileID: 8300000, guid: 24aa3f3918993294a9333ed1ce90fa2c, type: 3}
-    - target: {fileID: 708994626060870247, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253889322797350203, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4435466342465767499, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: bgmAudioSource
-      value: 
-      objectReference: {fileID: 234911781}
-    - target: {fileID: 4435466342465767499, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: gunShotSoundSlider
-      value: 
-      objectReference: {fileID: 645137977}
-    - target: {fileID: 4492413880035278401, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: ambAudioSource
-      value: 
-      objectReference: {fileID: 758991060}
-    - target: {fileID: 4925922039193921967, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989628558634982856, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5282772509939456282, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_text
-      value: Music
-      objectReference: {fileID: 0}
-    - target: {fileID: 6003142205629295398, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6779439714875775063, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956757620934599416, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023305410980290945, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 541656461113325388, guid: 0cfc8b150bb80884e9cd20b69c886a47, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -215602,6 +215663,66 @@ PrefabInstance:
     - target: {fileID: 8729078561388926104, guid: 0cfc8b150bb80884e9cd20b69c886a47, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 151112342050005667, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: clickFx
+      value: 
+      objectReference: {fileID: 8300000, guid: ed695d3135173b741b0a47e3c8d5f465, type: 3}
+    - target: {fileID: 151112342050005667, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: hoverFx
+      value: 
+      objectReference: {fileID: 8300000, guid: ed695d3135173b741b0a47e3c8d5f465, type: 3}
+    - target: {fileID: 151112342050005667, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: gunShotFx
+      value: 
+      objectReference: {fileID: 8300000, guid: 24aa3f3918993294a9333ed1ce90fa2c, type: 3}
+    - target: {fileID: 708994626060870247, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2253889322797350203, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435466342465767499, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: bgmAudioSource
+      value: 
+      objectReference: {fileID: 234911781}
+    - target: {fileID: 4435466342465767499, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: gunShotSoundSlider
+      value: 
+      objectReference: {fileID: 645137977}
+    - target: {fileID: 4492413880035278401, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: ambAudioSource
+      value: 
+      objectReference: {fileID: 758991060}
+    - target: {fileID: 4925922039193921967, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989628558634982856, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282772509939456282, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_text
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003142205629295398, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779439714875775063, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956757620934599416, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023305410980290945, guid: 8412c9bff6b04e246b6acc5492aaa6b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3390398461042741697, guid: b84c0599b3296b8438c7f8702f6708d9, type: 3}
       propertyPath: ambAudioSource
@@ -226106,6 +226227,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 3202446694055602750, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 5599923150041842520, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -255130,6 +255255,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 3202446694055602750, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 5599923150041842520, guid: 57ba910450a05a64a965ee54269101cc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -255577,6 +255706,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 5524411738504223691, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 538094713}
     - target: {fileID: 6364750503260786370, guid: 992b8270921fda345a06244ac8cc7f1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036077427
@@ -261533,6 +261666,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ad5b2c364d7326f44aef95184e810978, type: 2}
+    - target: {fileID: 6553939976053791058, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6930367591964942135, guid: b5cace171931deb41acd95db274fc426, type: 3}
       propertyPath: GunDamage
       value: 40
@@ -261552,7 +261689,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 762064364982565725, guid: b5cace171931deb41acd95db274fc426, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1069393241}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6553939976053791058, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 729494105}
+    - targetCorrespondingSourceObject: {fileID: 6553939976053791058, guid: b5cace171931deb41acd95db274fc426, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 729494104}
   m_SourcePrefab: {fileID: 100100000, guid: b5cace171931deb41acd95db274fc426, type: 3}
 --- !u!114 &2118233011563112360 stripped
 MonoBehaviour:

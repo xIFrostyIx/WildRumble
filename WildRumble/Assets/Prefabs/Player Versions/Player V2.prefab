@@ -596,7 +596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180797405173232172}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.026799623, y: -0.013846746, z: 0.00020759081, w: 0.9995449}
+  m_LocalRotation: {x: -0.02679962, y: -0.013846768, z: 0.00020759145, w: 0.9995449}
   m_LocalPosition: {x: -0.035552558, y: -0.010394067, z: -0.030725824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -732,9 +732,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3142276368133078606}
   - {fileID: 392398029462178220}
   - {fileID: 8692713117130971069}
+  - {fileID: 3142276368133078606}
   m_Father: {fileID: 7341817397749007965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2501375099858019373
@@ -3116,6 +3116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7846132741543485793}
+  - component: {fileID: 7735589681289214616}
   m_Layer: 0
   m_Name: StopSign
   m_TagString: Untagged
@@ -3140,6 +3141,24 @@ Transform:
   - {fileID: 8410178365527256489}
   m_Father: {fileID: 392398029462178220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7735589681289214616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6553939976053791058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117a345055e7e214ca0c315ddf6fbc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StopSign: {fileID: 6553939976053791058}
+  CanAttack: 1
+  AttackCooldown: 1
+  StopSignAttackSound: {fileID: 0}
+  objectiveManager: {fileID: 0}
+  stopSignDamage: 20
 --- !u!1 &6691104286383000953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3351,6 +3370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392398029462178220}
   - component: {fileID: 4632675740500692501}
+  - component: {fileID: 3708753657252290181}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -3391,6 +3411,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWeapon: 0
+--- !u!114 &3708753657252290181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083270879790742405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117a345055e7e214ca0c315ddf6fbc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StopSign: {fileID: 6553939976053791058}
+  CanAttack: 1
+  AttackCooldown: 1
+  StopSignAttackSound: {fileID: 0}
+  objectiveManager: {fileID: 0}
+  stopSignDamage: 20
 --- !u!1 &7159582177728118063
 GameObject:
   m_ObjectHideFlags: 0
