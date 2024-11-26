@@ -34,27 +34,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalScale.x
-      value: 11.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalScale.y
-      value: 11.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalScale.z
-      value: 11.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -296.7673
+      value: -231.25157
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5790286
+      value: 2.8605022
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 275.34702
+      value: -315.98734
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       propertyPath: m_LocalRotation.w
@@ -460,6 +460,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
       insertIndex: -1
       addedObject: {fileID: 203154706502101619}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6405920396211557995}
   m_SourcePrefab: {fileID: 100100000, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
 --- !u!1 &5160076355050399939 stripped
 GameObject:
@@ -542,7 +545,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5160076355050399939}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.04
+  m_Radius: 0.02
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -551,8 +554,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.06
-  m_BaseOffset: 0
+  m_Height: 0.04
+  m_BaseOffset: 0.017
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8534191072352150451
@@ -567,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 40
   healthBar: {fileID: 2620235533913726402}
   objectiveManager: {fileID: 0}
 --- !u!65 &7929770169255656359
@@ -609,6 +612,21 @@ MonoBehaviour:
   wanderRange: 5
   wanderTimer: 2
   speed: 3.5
+--- !u!114 &6405920396211557995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160076355050399939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  healthBar: {fileID: 2620235533913726402}
+  healthBarCanvas: {fileID: 1044005338556546329}
 --- !u!4 &5537059982116893305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
@@ -755,6 +773,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+--- !u!223 &1044005338556546329 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 8827550939961698897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1527138222882168906 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
