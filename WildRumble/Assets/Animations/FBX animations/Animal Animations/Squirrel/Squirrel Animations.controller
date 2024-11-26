@@ -28,10 +28,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: deerUpMovment_Speed
+  m_Name: squirrelMovment_Speed
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 9067093048684652814, guid: 1d566b59fb3cb6f449108b75400b378c, type: 3}
+    m_Motion: {fileID: -998496362607748373, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
     m_Threshold: 0
     m_Position: {x: 1.36, y: 0.84}
     m_TimeScale: 1
@@ -39,9 +39,17 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1950896874197824025, guid: 1d566b59fb3cb6f449108b75400b378c, type: 3}
+    m_Motion: {fileID: 3060872287085348379, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
     m_Threshold: 1
     m_Position: {x: -1.3, y: -1.35}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Speed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 6641085478485924818, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
+    m_Threshold: 2
+    m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
@@ -49,7 +57,7 @@ BlendTree:
   m_BlendParameter: Speed
   m_BlendParameterY: Blend
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 2
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
@@ -59,34 +67,34 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: deerUp Animations 1
+  m_Name: Squirrel Animations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: deerUpAttack
+  - m_Name: squirrelAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerUpWalk
+  - m_Name: squirrelWalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerUpIdle
+  - m_Name: squirrelIdle
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerUpIdle_Index
+  - m_Name: squirrelIdle_Index
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerUpIdle_Bool
+  - m_Name: squirrelIdle_Bool
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -118,7 +126,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: deerUpAttack
+  m_Name: SquirrelAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -132,7 +140,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8481709605947105597, guid: 1d566b59fb3cb6f449108b75400b378c, type: 3}
+  m_Motion: {fileID: -5059006814000262888, guid: 62e8c8279d0f1064eb4e6eb1528e2136, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -170,7 +178,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: deerUpMovment_Speed
+  m_Name: squirrelMovment_Speed
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -199,7 +207,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: deerUpAttack
+    m_ConditionEvent: squirrelAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1545216088616660575}
@@ -215,3 +223,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!206 &7977267862044608644
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BlendTree
+  m_Childs: []
+  m_BlendParameter: Speed
+  m_BlendParameterY: Blend
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
