@@ -1605,7 +1605,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ca84ae4ad8b23a24594b9c92b2a6d3ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1645,7 +1645,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -304.97, y: 3.54, z: 279.32}
-  m_LocalScale: {x: 28.426958, y: 0.078057565, z: 33.02824}
+  m_LocalScale: {x: 172.75694, y: 0.078057565, z: 154.1494}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4307,24 +4307,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 546302544}
---- !u!111 &584396825
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5680610575612520294}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: -998496362607748373, guid: bd2cad5768440004a9aa27606baf0c45, type: 3}
-  - {fileID: 1827226128182048838, guid: bd2cad5768440004a9aa27606baf0c45, type: 3}
-  - {fileID: 1827226128182048838, guid: 5b9c8dabefd97294ba693bd5aba57af1, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &584396826
 Animator:
   serializedVersion: 5
@@ -15999,7 +15981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049846650031211856}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c74981c685b0af44d9cc5c58c348b8d2, type: 3}
   m_Name: 
@@ -27840,7 +27822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5016523537700519388}
   - component: {fileID: 584396826}
-  - component: {fileID: 584396825}
+  - component: {fileID: 5680610575612520296}
   - component: {fileID: 5680610575612520295}
   m_Layer: 0
   m_Name: Hunter First Person Body
@@ -27849,7 +27831,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5680610575612520295
+--- !u!111 &5680610575612520295
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680610575612520294}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: -998496362607748373, guid: bd2cad5768440004a9aa27606baf0c45, type: 3}
+  - {fileID: 1827226128182048838, guid: bd2cad5768440004a9aa27606baf0c45, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &5680610575612520296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

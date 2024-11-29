@@ -19,44 +19,61 @@ public class hunterMovmentAnimation : MonoBehaviour
 
     void Update()
     {
-        bool forwardPressed = Input.GetKey("w");
-        bool backwardPressed = Input.GetKey("s");
-        bool runPressed = Input.GetKey("left shift");
-        bool isWalking = myAnimator.GetBool("isWalking");
-        bool isRunning = myAnimator.GetBool("isRunning");
-        bool isBackWalking = myAnimator.GetBool("isBackWalking");
 
-        if (isWalking && forwardPressed)
+        //Walk forward
+        if (Input.GetKey("w"))
         {
             myAnimator.SetBool("isWalking", true);
         }
 
-        if (isWalking && !forwardPressed)
+        if (!Input.GetKey("w"))
         {
             myAnimator.SetBool("isWalking", false);
         }
 
-        if (!isRunning && (isWalking && forwardPressed))
+        //walk Left
+        if (Input.GetKey("a"))
+        {
+            myAnimator.SetBool("isWalkingLeft", true);
+        }
+
+        if (!Input.GetKey("a"))
+        {
+            myAnimator.SetBool("isWalkingLeft", false);
+        }
+
+        //walk Right
+        if (Input.GetKey("d"))
+        {
+            myAnimator.SetBool("isWalkingRight", true);
+        }
+
+        if (!Input.GetKey("d"))
+        {
+            myAnimator.SetBool("isWalkingRight", false);
+        }
+
+        //walk Back
+        if (Input.GetKey("s"))
+        {
+            myAnimator.SetBool("isWalkingBack", true);
+        }
+
+        if (!Input.GetKey("s"))
+        {
+            myAnimator.SetBool("isWalkingBack", false);
+        }
+
+        //Run
+        if (Input.GetKey("left shift"))
         {
             myAnimator.SetBool("isRunning", true);
         }
 
-        if (isRunning && (!isWalking || !forwardPressed))
+        if (!Input.GetKey("left shift"))
         {
             myAnimator.SetBool("isRunning", false);
         }
-
-        if (isBackWalking && backwardPressed)
-        {
-            myAnimator.SetBool("isBackWalking", true);
-        }
-
-        if (isBackWalking && !backwardPressed)
-        {
-            myAnimator.SetBool("isBackWalking", false);
-        }
-
-
 
     }
 }
