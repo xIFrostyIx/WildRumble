@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Playables; // Import PlayableDirector
 
 public class SceneLoader : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     public GameObject loadingScreen; // UI element for loading screen
     public Slider loadingBar; // Slider to show loading progress
     public GameObject[] uiToHide; // Array of other UI elements to hide
+    public PlayableDirector cutsceneDirector; // Reference to the PlayableDirector for the Timeline
 
     public void LoadScene(string sceneName)
     {
@@ -49,8 +51,22 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
 
-        // Hide loading screen (optional, depending on transition style)
-        if (loadingScreen != null)
-            loadingScreen.SetActive(false);
+        // Start the cutscene after the scene is loaded
+        PlayCutscene();
+
+        // Wait for the cutscene to finish before transitioning to the game
+        yield return new WaitForSeconds((float)cutsceneDirector.duration); // Duration of the cutscene
+
+        // Load the game level after cutscene is done
+        SceneManager.LoadScene("LevelOne");
+    }
+
+    private void PlayCutscene()
+    {
+        // Check if the cutsceneDirector is assigned and then play the timeline
+        if (cutsceneDirector != null)
+        {
+            cutsceneDirector.Play("CutsceneTest_Timeline"); // Start playing the cutscene Timeline
+        }
     }
 }
