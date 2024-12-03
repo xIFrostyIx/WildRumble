@@ -84,7 +84,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StopSignSwing
+  m_Name: chainsawAttack
   m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:
@@ -98,7 +98,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8481709605947105597, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_Motion: {fileID: 6641085478485924818, guid: 4ebb36858daa64e4ea26354428a0f614, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -141,7 +141,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: StopSignInt
+    m_ConditionEvent: chainsawInt
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1960984272647180947}
@@ -215,7 +215,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: StopSignInt
+    m_ConditionEvent: chainsawInt
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8921437601814697145}
@@ -237,34 +237,34 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StopSign_Animations
+  m_Name: Chainsaw_Animations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: StopSignShoot
+  - m_Name: chainsawShoot
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: StopSignUp
+  - m_Name: chainsawUp
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: StopSignDown
+  - m_Name: chainsawDown
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: StopSignInt
+  - m_Name: chainsawInt
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: StopSignIdle
+  - m_Name: chainsawIdle
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -298,7 +298,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: StopSignUp
+    m_ConditionEvent: chainsawUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7914050694409103618}
@@ -381,7 +381,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: StopSignDown
+    m_ConditionEvent: chainsawDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8611154076302787516}
@@ -411,7 +411,7 @@ AnimatorStateMachine:
     m_Position: {x: 660, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7914050694409103618}
-    m_Position: {x: 390, y: 0, z: 0}
+    m_Position: {x: 350, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8611154076302787516}
     m_Position: {x: 90, y: 0, z: 0}
@@ -446,7 +446,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: StopSignShoot
+    m_ConditionEvent: chainsawShoot
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6551934479756184407}
@@ -471,7 +471,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: StopSignShoot
+    m_ConditionEvent: chainsawShoot
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6595785897526203782}
@@ -494,7 +494,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StopSignUp
+  m_Name: chainsawUp
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -508,7 +508,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2529017216748528031, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_Motion: {fileID: 3060872287085348379, guid: 4ebb36858daa64e4ea26354428a0f614, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -521,7 +521,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StopSignDown
+  m_Name: chainsawDown
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -535,7 +535,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1950896874197824025, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_Motion: {fileID: -998496362607748373, guid: 4ebb36858daa64e4ea26354428a0f614, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -548,7 +548,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StopSignIdle
+  m_Name: chainsawIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -561,7 +561,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 9067093048684652814, guid: 084cf876b4ef8df4d9c0eae4e020f24c, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 4ebb36858daa64e4ea26354428a0f614, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
