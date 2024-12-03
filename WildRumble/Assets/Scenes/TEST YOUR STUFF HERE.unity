@@ -148,6 +148,12 @@ MonoBehaviour:
   healthBar: {fileID: 534459708}
   healthBarCanvas: {fileID: 1968860804}
   objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 0}
+  animalSounds: []
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
 --- !u!1 &6728027
 GameObject:
   m_ObjectHideFlags: 0
@@ -6967,6 +6973,126 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1482926687}
   m_LocalEulerAnglesHint: {x: 0.3138255, y: 0.2546621, z: -35.86023}
+--- !u!1001 &667393113
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20.003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20.003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 144.51
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.026
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.5035
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      propertyPath: m_Name
+      value: RedPanda_Animation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667393116}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667393115}
+  m_SourcePrefab: {fileID: 100100000, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+--- !u!1 &667393114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d7f81e959f7fe84987685f5b00353a1, type: 3}
+  m_PrefabInstance: {fileID: 667393113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &667393115
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667393114}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 1827226128182048838, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
+  - {fileID: 9067093048684652814, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
+  - {fileID: -3291206362154003629, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
+  - {fileID: 6641085478485924818, guid: 8c78d76413391fd4b9c4df47bb8cd3b5, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &667393116
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667393114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57ca809ce961306448c54953a90180d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &669674436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7817,6 +7943,12 @@ MonoBehaviour:
   healthBar: {fileID: 1252008135}
   healthBarCanvas: {fileID: 1189266947}
   objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 0}
+  animalSounds: []
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
 --- !u!1 &767264965
 GameObject:
   m_ObjectHideFlags: 0
@@ -15546,6 +15678,12 @@ MonoBehaviour:
   healthBar: {fileID: 1572973409}
   healthBarCanvas: {fileID: 928351836}
   objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 0}
+  animalSounds: []
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
 --- !u!54 &1716858130
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18961,6 +19099,12 @@ MonoBehaviour:
   healthBar: {fileID: 1918450243}
   healthBarCanvas: {fileID: 1011246615}
   objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 0}
+  animalSounds: []
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
 --- !u!223 &1968860804 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 4532407567332345450, guid: b2e5f793375bafa4d87ed82c6452b2e7, type: 3}
@@ -20536,3 +20680,4 @@ SceneRoots:
   - {fileID: 929419467107396189}
   - {fileID: 536048514}
   - {fileID: 4021017656192882203}
+  - {fileID: 667393113}
