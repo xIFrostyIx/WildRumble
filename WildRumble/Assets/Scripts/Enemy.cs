@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-//Edited by Joshua Guerrer
-//Lines 50-54
+// Edited by Joshua Guerrer
+// Added by Darcy: animal audio functionality
 
 public class Enemy : MonoBehaviour
 {
@@ -15,6 +14,17 @@ public class Enemy : MonoBehaviour
 
     public ObjectiveManager objectiveManager; // Reference to the ObjectiveManager
 
+    [Header("Audio Settings")]
+    public AudioSource animalAudioSource;
+    public AudioClip[] animalSounds;
+    public float minAnimalSoundInterval = 12f;
+    public float maxAnimalSoundInterval = 30f;
+    public float soundRange = 25f;
+    public GameObject player;
+
+    private bool isDead = false;
+    private float timeUntilNextSound = 0f;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -24,10 +34,38 @@ public class Enemy : MonoBehaviour
             healthBar.maxValue = maxHealth;
             healthBar.value = currentHealth;
         }
+
+        if (player == null)
+        {
+            Debug.LogError("Player object is not assigned in the Enemy script!");
+        }
+
+        if (animalAudioSource != null)
+        {
+            animalAudioSource.spatialBlend = 1.0f;
+        }
+    }
+
+    void Update()
+    {
+        if (!isDead && player != null && Vector3.Distance(transform.position, player.transform.position) <= soundRange)
+        {
+            if (timeUntilNextSound <= 0f)
+            {
+                PlayRandomAnimalSound();
+                timeUntilNextSound = Random.Range(minAnimalSoundInterval, maxAnimalSoundInterval);
+            }
+            else
+            {
+                timeUntilNextSound -= Time.deltaTime;
+            }
+        }
     }
 
     public void Damage(int damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
 
         if (healthBar != null)
@@ -45,7 +83,19 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
+
+        Debug.Log("Die method called!");
+
+        isDead = true;
+
         Debug.Log($"{gameObject.name} has died!");
+
+        
+        if (animalAudioSource != null && animalAudioSource.isPlaying)
+        {
+            animalAudioSource.Stop();
+        }
 
         // Notify the ObjectiveManager about the kill
         if (objectiveManager != null)
@@ -59,6 +109,17 @@ public class Enemy : MonoBehaviour
             Destroy(healthBarCanvas.gameObject);
         }
 
-        Destroy(gameObject); // Destroy the enemy
+        // Destroy the object after a delay (if you need to give time for any remaining effects)
+        Destroy(gameObject);
+    }
+
+    void PlayRandomAnimalSound()
+    {
+        if (animalAudioSource != null && animalSounds.Length > 0 && !animalAudioSource.isPlaying)
+        {
+            int randomIndex = Random.Range(0, animalSounds.Length);
+            animalAudioSource.clip = animalSounds[randomIndex];
+            animalAudioSource.Play();
+        }
     }
 }
