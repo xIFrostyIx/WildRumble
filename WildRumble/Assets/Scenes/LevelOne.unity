@@ -27666,6 +27666,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 3167981797330976155, guid: 1814821094684a3479c991463e8a1abb, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5523508612245633690, guid: 1814821094684a3479c991463e8a1abb, type: 3}
       propertyPath: cam
       value: 
@@ -27676,7 +27680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6947228185612843672, guid: 1814821094684a3479c991463e8a1abb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 43.1205
+      value: 43.207
       objectReference: {fileID: 0}
     - target: {fileID: 6947228185612843672, guid: 1814821094684a3479c991463e8a1abb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28493,11 +28497,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: LevelTwo
   loadingScreen: {fileID: 1348539925}
-  loadingBar: {fileID: 1172029308}
   uiToHide:
   - {fileID: 503651793}
   - {fileID: 533814518}
   - {fileID: 1374420076}
+  gameSceneName: 
+  loadingBar: {fileID: 1172029308}
 --- !u!114 &904456759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28510,7 +28515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f7ac2dbc21cfe4ea4d915ca358c492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoader: {fileID: 2001273493}
+  sceneLoader: {fileID: 0}
   interactionText: {fileID: 1184590312}
   objectiveManager: {fileID: 503651798}
 --- !u!4 &904456763 stripped
@@ -65527,8 +65532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: LevelTwo
   loadingScreen: {fileID: 1348539925}
-  loadingBar: {fileID: 1172029308}
   uiToHide: []
+  gameSceneName: 
+  loadingBar: {fileID: 1172029308}
 --- !u!4 &2001273494
 Transform:
   m_ObjectHideFlags: 0
@@ -67789,7 +67795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f7ac2dbc21cfe4ea4d915ca358c492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoader: {fileID: 2001273493}
+  sceneLoader: {fileID: 0}
   interactionText: {fileID: 1184590312}
   objectiveManager: {fileID: 0}
 --- !u!64 &2088430701
@@ -67833,11 +67839,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: LevelTwo
   loadingScreen: {fileID: 1348539925}
-  loadingBar: {fileID: 1172029308}
   uiToHide:
   - {fileID: 503651793}
   - {fileID: 533814518}
   - {fileID: 1374420076}
+  gameSceneName: 
+  loadingBar: {fileID: 1172029308}
 --- !u!1001 &2088742464
 PrefabInstance:
   m_ObjectHideFlags: 0
