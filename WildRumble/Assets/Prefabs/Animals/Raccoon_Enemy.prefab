@@ -180,15 +180,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.3816223
+      value: -5.1217766
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.26153064
+      value: -0.26152992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 110.05315
+      value: -16.094269
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
       propertyPath: m_LocalRotation.w
@@ -692,6 +692,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7855150363225155507}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5408898180222533742}
   m_SourcePrefab: {fileID: 100100000, guid: 05916cb98be9c484fb58a52230f3be77, type: 3}
 --- !u!4 &3805426606148552288 stripped
 Transform:
@@ -822,7 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  chaseRange: 10
+  chaseRange: 13
   stoppingDistance: 1
   wanderRange: 15
   wanderTimer: 4
@@ -879,3 +882,107 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 7987791684358170962}
   healthBarCanvas: {fileID: 4970752638085908873}
+  objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 0}
+  animalSounds:
+  - {fileID: 0}
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
+--- !u!82 &5408898180222533742
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576862262748142810}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
