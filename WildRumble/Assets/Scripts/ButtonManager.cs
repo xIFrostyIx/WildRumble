@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-//Made by Darcy
+using System.Collections;
+
+// Created by Darcy
 public class ButtonManager : MonoBehaviour
 {
     public GameObject optionsMenuUI;
@@ -24,15 +26,12 @@ public class ButtonManager : MonoBehaviour
 
     void Start()
     {
-
         InitializeVolumeSliders();
-
 
         if (combatMusicAudioSource != null)
         {
             combatMusicAudioSource.volume = bgmVolumeSlider.value;
         }
-
 
         if (mouseSensitivitySlider != null && cameraMovementScript != null)
         {
@@ -42,24 +41,19 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-
     private void SetMouseSensitivity(float sensitivity)
     {
         if (cameraMovementScript != null)
         {
-
             float sensitivityMultiplier = 5f;
             cameraMovementScript.UpdateSensitivity(sensitivity * sensitivityMultiplier, sensitivity * sensitivityMultiplier);
         }
         PlayerPrefs.SetFloat("MouseSensitivity", sensitivity);
     }
 
-
     void Update()
     {
-
         bool enemyInRange = CheckForEnemyInRange();
-
 
         if (enemyInRange)
         {
@@ -72,9 +66,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if (isInCombat)
         {
-
             combatExitTimer += Time.deltaTime;
-
 
             if (combatExitTimer >= combatExitDelay)
             {
@@ -88,11 +80,12 @@ public class ButtonManager : MonoBehaviour
     {
         if (bgmAudioSource != null)
         {
-            bgmAudioSource.Pause();
+            StartCoroutine(FadeOut(bgmAudioSource, 1f));
         }
         if (combatMusicAudioSource != null && !combatMusicAudioSource.isPlaying)
         {
             combatMusicAudioSource.Play();
+            StartCoroutine(FadeIn(combatMusicAudioSource, 1f));
         }
     }
 
@@ -100,11 +93,11 @@ public class ButtonManager : MonoBehaviour
     {
         if (combatMusicAudioSource != null && combatMusicAudioSource.isPlaying)
         {
-            combatMusicAudioSource.Stop();
+            StartCoroutine(FadeOut(combatMusicAudioSource, 1f, () => combatMusicAudioSource.Stop()));
         }
         if (bgmAudioSource != null)
         {
-            bgmAudioSource.UnPause();
+            StartCoroutine(FadeIn(bgmAudioSource, 1f));
         }
     }
 
@@ -113,7 +106,7 @@ public class ButtonManager : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(combatModeObject.transform.position, 10f);
         foreach (var collider in hitColliders)
         {
-            if (collider.GetComponent<EnemyAI>() != null || collider.GetComponent<EnemyAI_Rabbit>() != null)
+            if (collider.GetComponent<EnemyAI>() != null || collider.GetComponent<Enemy>() != null)
             {
                 return true;
             }
@@ -231,5 +224,37 @@ public class ButtonManager : MonoBehaviour
         {
             Debug.LogWarning("No next level found in build settings.");
         }
+    }
+
+    private IEnumerator FadeIn(AudioSource audioSource, float duration)
+    {
+        float initialVolume = 0f;
+        float targetVolume = bgmVolumeSlider.value;
+
+        float fadeMultiplier = initialVolume;
+        while (fadeMultiplier < 1f)
+        {
+            fadeMultiplier += Time.deltaTime / duration;
+            audioSource.volume = targetVolume * fadeMultiplier;
+            yield return null;
+        }
+
+        audioSource.volume = targetVolume;
+    }
+
+    private IEnumerator FadeOut(AudioSource audioSource, float duration, System.Action onComplete = null)
+    {
+        float targetVolume = bgmVolumeSlider.value;
+
+        float fadeMultiplier = 1f;
+        while (fadeMultiplier > 0f)
+        {
+            fadeMultiplier -= Time.deltaTime / duration;
+            audioSource.volume = targetVolume * fadeMultiplier;
+            yield return null;
+        }
+
+        audioSource.volume = 0f;
+        onComplete?.Invoke();
     }
 }
