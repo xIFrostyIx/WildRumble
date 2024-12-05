@@ -6,6 +6,7 @@ public class Shooter : MonoBehaviour
 {
     public Camera PlayerCamera; // Reference to the player's camera
     public GameObject HitPoint;
+    public int DamageAmount = 0;
 
     void Update()
     {
@@ -35,7 +36,7 @@ public class Shooter : MonoBehaviour
             Enemy enemy = hit.transform.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.Damage(40);
+                enemy.Damage(DamageAmount);
             }
         }
     }

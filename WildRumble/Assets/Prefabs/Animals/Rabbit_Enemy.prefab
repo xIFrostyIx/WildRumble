@@ -1295,11 +1295,12 @@ GameObject:
   - component: {fileID: 5756404328174113680}
   - component: {fileID: 2766210726438792650}
   - component: {fileID: 3648039553618472754}
+  - component: {fileID: 4761580581300804685}
   - component: {fileID: 7077017280657391625}
-  - component: {fileID: 201967733627376282}
   - component: {fileID: 3167981797330976155}
   - component: {fileID: 2512276199966854014}
   - component: {fileID: 6092621876726561769}
+  - component: {fileID: 5333463871452071999}
   m_Layer: 0
   m_Name: Rabbit_Enemy
   m_TagString: Enemy
@@ -1418,6 +1419,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4761580581300804685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719824617320783906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  healthBar: {fileID: 6835673251157227411}
+  healthBarCanvas: {fileID: 8429840879125206856}
+  objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 5333463871452071999}
+  animalSounds:
+  - {fileID: 0}
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
 --- !u!114 &7077017280657391625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,32 +1454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 60
+  maxHealth: 40
   healthBar: {fileID: 6835673251157227411}
   objectiveManager: {fileID: 0}
---- !u!114 &201967733627376282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719824617320783906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 60
-  healthBar: {fileID: 6835673251157227411}
-  healthBarCanvas: {fileID: 8429840879125206856}
-  objectiveManager: {fileID: 0}
-  animalAudioSource: {fileID: 0}
-  animalSounds:
-  - {fileID: 0}
-  minAnimalSoundInterval: 12
-  maxAnimalSoundInterval: 30
-  soundRange: 25
-  player: {fileID: 0}
 --- !u!65 &3167981797330976155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1496,6 +1497,102 @@ MonoBehaviour:
   wanderTimer: 3
   speed: 5
 --- !u!82 &6092621876726561769
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719824617320783906}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &5333463871452071999
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -7,6 +7,8 @@ public class RaycastRifle : MonoBehaviour
     // Created By Alex Wolfe for NVC fall 2024 Game sim
     // Followed this tutorial and adapted existing scripts
     // https://www.youtube.com/watch?v=AGd16aspnPA
+    // Followed for ammo system
+    // https://www.youtube.com/watch?v=cjNMQkODh1M
 
     public int GunDamage = 20;                                                                  //Dmg Amount
     public float FireRate = .25f;                                                               //Between Shots
@@ -19,9 +21,17 @@ public class RaycastRifle : MonoBehaviour
     private LineRenderer LaserLine;                                                             //Line between 2 points
     private float NextFire;                                                                     //Next shot available
 
+
+    public int CurrentMag;                                                                      //Current mag amount
+    public int MaxMagSize = 5;                                                                  //Max mag size
+    public int CurrentAmmo;                                                                     //current ammo stash
+    public int MaxAmmoSize = 20;                                                                //max stash size
+    //public int AmmoPickupAmount = 5;                                       //Not working
+
+
     // Added by Darcy
-    private bool isPaused = false;                                                               
-    private PauseManager pauseManager;                                                           
+    private bool isPaused = false;
+    private PauseManager pauseManager;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +39,7 @@ public class RaycastRifle : MonoBehaviour
         LaserLine = GetComponent<LineRenderer>();
         GunAudio = GetComponent<AudioSource>();
         Camera = GetComponentInParent<Camera>();
-        pauseManager = FindObjectOfType<PauseManager>();                                       
+        pauseManager = FindObjectOfType<PauseManager>();
     }
 
     // Update is called once per frame
@@ -38,11 +48,11 @@ public class RaycastRifle : MonoBehaviour
         // Added by Darcy
         if (pauseManager != null && PauseManager.isPausedGlobal)
         {
-            return; 
+            return;
         }
 
-        
-        if (Input.GetButtonDown("Fire1") && Time.time > NextFire)                             //Is it allowed to shoot again
+
+        if (Input.GetButtonDown("Fire1") && Time.time > NextFire && CurrentMag > 0)             //Is it allowed to shoot again, checks mag
         {
             NextFire = Time.time + FireRate;
             StartCoroutine(ShotEffect());
@@ -65,13 +75,20 @@ public class RaycastRifle : MonoBehaviour
                 {
                     hit.rigidbody.AddForce(-hit.normal * HitForce);
                 }
-
+                CurrentMag--;                                                                  //mag -1
             }
             else
             {
                 LaserLine.SetPosition(1, RayOrigin + (Camera.transform.forward * WeaponRange));//end point
             }
+
         }
+
+        if (Input.GetKeyDown(KeyCode.R))                                                      //Reload the Mag on R
+        {
+            Restock();
+        }
+
     }
 
     private IEnumerator ShotEffect()
@@ -86,13 +103,39 @@ public class RaycastRifle : MonoBehaviour
     // Added by Darcy
     private IEnumerator Reload()
     {
-       
-        if (PauseManager.isPausedGlobal)
-            yield break; 
 
-        
-        
-        yield return new WaitForSeconds(2f); 
-       
+        if (PauseManager.isPausedGlobal)
+            yield break;
+
+
+
+        yield return new WaitForSeconds(2f);
+
     }
+
+    public void Restock()                                                                       //Reload the Mag
+    {
+        int ReloadAmount = MaxMagSize - CurrentMag;                                             //how many bullets to refill mag
+        ReloadAmount = (CurrentAmmo - ReloadAmount) >= 0 ? ReloadAmount : CurrentAmmo;          //check how much can actually be refilled
+        CurrentMag += ReloadAmount;
+        CurrentAmmo -= ReloadAmount;
+    }
+
+    public void AddAmmo(int AmmoAmount)                                                         //Add from ammo to current mag
+    {
+        CurrentAmmo += AmmoAmount;                                                              //increase by amount
+        if (CurrentAmmo > MaxAmmoSize)
+        {
+            CurrentAmmo = MaxAmmoSize;
+        }
+    }
+/*    private void OnTriggerEnter(Collider other)                             //not working
+    {
+        if (other.gameObject.CompareTag("Ammo"))
+        {
+            AddAmmo(MaxAmmoSize);
+            Destroy(other.gameObject);
+        }
+
+    }*/
 }

@@ -9,9 +9,9 @@ public class Weapon : MonoBehaviour
     public float projectileSpeed = 20f;
     public float destroyTime = 3f;
 
+    public int currentAmmo;
     public int maxAmmo = 10;
     public float reloadTime = 2f;
-    private int currentAmmo;
     private bool isReloading = false;
 
     public AudioClip gunShotSound;

@@ -2164,6 +2164,7 @@ MonoBehaviour:
   firePoint: {fileID: 1504581071}
   projectileSpeed: 200
   destroyTime: 2
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.7
   gunShotSound: {fileID: 8300000, guid: 651aecae58e028c47b1f12469ebd1f9b, type: 3}
@@ -2794,6 +2795,7 @@ MonoBehaviour:
   firePoint: {fileID: 1664743838}
   projectileSpeed: 70
   destroyTime: 2
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
@@ -34051,6 +34053,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 856775777083468798, guid: bc0db5221312a1143930ba899cbc40fa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2118233011563112361}
+    - target: {fileID: 856775777083468798, guid: bc0db5221312a1143930ba899cbc40fa, type: 3}
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 538094713}
@@ -42778,6 +42784,7 @@ MonoBehaviour:
   firePoint: {fileID: 634002573}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
@@ -42800,6 +42807,7 @@ MonoBehaviour:
   firePoint: {fileID: 1621136257}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
@@ -42822,6 +42830,7 @@ MonoBehaviour:
   firePoint: {fileID: 477092512}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
@@ -42844,6 +42853,7 @@ MonoBehaviour:
   firePoint: {fileID: 989908550}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: 28dd1068c0f6faf4f9fa34ade1850a31, type: 3}
@@ -83832,6 +83842,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 538094713}
     - target: {fileID: 7043476951443242347, guid: fbc65be662f53bc4b847dc95f0690fc3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2118233011563112361}
+    - target: {fileID: 7043476951443242347, guid: fbc65be662f53bc4b847dc95f0690fc3, type: 3}
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 855168756}
@@ -108928,7 +108942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646927496812305083, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7646927496812305083, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: objectiveManager
@@ -108944,7 +108958,7 @@ PrefabInstance:
       objectReference: {fileID: 1767712114}
     - target: {fileID: 8060745590624761322, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8060745590624761322, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: soundRange
@@ -135892,6 +135906,10 @@ PrefabInstance:
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 538094713}
+    - target: {fileID: 7043476951443242347, guid: fbc65be662f53bc4b847dc95f0690fc3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2118233011563112361}
     - target: {fileID: 7043476951443242347, guid: fbc65be662f53bc4b847dc95f0690fc3, type: 3}
       propertyPath: healthBarCanvas
       value: 
@@ -202870,7 +202888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646927496812305083, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7646927496812305083, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: objectiveManager
@@ -202886,7 +202904,7 @@ PrefabInstance:
       objectReference: {fileID: 1643990351}
     - target: {fileID: 8060745590624761322, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8060745590624761322, guid: ece2d5b90b526924b9222bbf07a3b0c8, type: 3}
       propertyPath: soundRange
@@ -212493,6 +212511,10 @@ PrefabInstance:
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 538094713}
+    - target: {fileID: 7043476951443242347, guid: fbc65be662f53bc4b847dc95f0690fc3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2118233011563112361}
     - target: {fileID: 7043476951443242347, guid: fbc65be662f53bc4b847dc95f0690fc3, type: 3}
       propertyPath: healthBarCanvas
       value: 
@@ -225822,6 +225844,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 856775777083468798, guid: bc0db5221312a1143930ba899cbc40fa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2118233011563112361}
     - target: {fileID: 856775777083468798, guid: bc0db5221312a1143930ba899cbc40fa, type: 3}
       propertyPath: objectiveManager
       value: 
