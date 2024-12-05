@@ -1,17 +1,20 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;  
+using UnityEngine.UI;
 
-public class CustomSceneLoader : MonoBehaviour
+/*
+ * Created by: Joshua Guerrero
+ * This script adds asynchronous loading
+ * to allow the next scene to load in the background 
+ * to improve performance
+ */
+
+public class SceneLoader : MonoBehaviour
 {
-    public string sceneToLoad;
-    public GameObject loadingScreen;
-    public GameObject[] uiToHide;
-    public string gameSceneName;
-
-    
-    public Slider loadingBar;  
+    public string sceneToLoad; // Name of the scene to load
+    public GameObject loadingScreen; // UI element for loading screen
+    public Slider loadingBar; // a slider to show loading progress
 
     public void LoadScene(string sceneName)
     {
@@ -20,32 +23,34 @@ public class CustomSceneLoader : MonoBehaviour
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
-        foreach (GameObject ui in uiToHide)
-        {
-            if (ui != null)
-                ui.SetActive(false);
-        }
-
+        // Show loading screen
         if (loadingScreen != null)
             loadingScreen.SetActive(true);
 
+        // Start loading the scene asynchronously
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+
+        // Allow the scene to be loaded in the background
         asyncOperation.allowSceneActivation = false;
 
+        // While the scene is loading
         while (!asyncOperation.isDone)
         {
-            
+            // Update loading progress
             if (loadingBar != null)
                 loadingBar.value = asyncOperation.progress;
 
+            // Activate the scene when loading is complete
             if (asyncOperation.progress >= 0.9f)
             {
+                // Optionally wait for user input or a delay before activating
                 asyncOperation.allowSceneActivation = true;
             }
 
             yield return null;
         }
 
+        // Hide loading screen
         if (loadingScreen != null)
             loadingScreen.SetActive(false);
     }
