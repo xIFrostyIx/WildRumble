@@ -5734,6 +5734,7 @@ MonoBehaviour:
   firePoint: {fileID: 6882176702097864105}
   projectileSpeed: 30
   destroyTime: 2
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
@@ -6150,7 +6151,7 @@ MonoBehaviour:
   AttackCooldown: 1
   StopSignAttackSound: {fileID: 0}
   objectiveManager: {fileID: 0}
-  stopSignDamage: 30
+  stopSignDamage: 40
 --- !u!4 &5330968239009531779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7450156192682609494, guid: fadf92bd6ba545b4db29638bf0f28965, type: 3}
@@ -6466,6 +6467,7 @@ MonoBehaviour:
   firePoint: {fileID: 8692182701753434326}
   projectileSpeed: 30
   destroyTime: 2
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
@@ -6685,6 +6687,7 @@ MonoBehaviour:
   firePoint: {fileID: 8203599155566924674}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 8300000, guid: f84ed84d79d7d5d44b1dcf9b18c92cf4, type: 3}
@@ -6707,6 +6710,7 @@ MonoBehaviour:
   firePoint: {fileID: 7295272910340294121}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
@@ -6729,6 +6733,7 @@ MonoBehaviour:
   firePoint: {fileID: 5812301107101910206}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
@@ -6751,6 +6756,7 @@ MonoBehaviour:
   firePoint: {fileID: 4592150318968366495}
   projectileSpeed: 30
   destroyTime: 0.4
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 0.5
   gunShotSound: {fileID: 0}
@@ -6879,7 +6885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337769470765775008, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337769470765775008, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 4990040196031716064, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6925,6 +6935,14 @@ PrefabInstance:
       propertyPath: GunDamage
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 5687931053926957736, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
+      propertyPath: CurrentMag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687931053926957736, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
+      propertyPath: CurrentAmmo
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6641784291906560953, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
       propertyPath: m_Volume
       value: 0.1
@@ -6936,13 +6954,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8884982501711572099, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7959834430517809326}
   m_SourcePrefab: {fileID: 100100000, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
 --- !u!4 &2010829175063300946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4990040196031716064, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
   m_PrefabInstance: {fileID: 6820641599136453042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2732002613965077809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8884982501711572099, guid: fba5826e6fb0dda4d834a86558754d48, type: 3}
+  m_PrefabInstance: {fileID: 6820641599136453042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &7959834430517809326
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732002613965077809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3369316746193770658, guid: 40e78075523c5744786789d28eeb37df, type: 3}
 --- !u!1001 &7021839993563167049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7106,6 +7154,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1992272736996227250, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: reloadTime
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992272736996227250, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: currentAmmo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992272736996227250, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
       propertyPath: reloadSound
       value: 
       objectReference: {fileID: 8300000, guid: 2cd9b962738e6034aa38f29c76d353cd, type: 3}
@@ -7169,6 +7225,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9492b2066482c1448a7cadfeb743f522, type: 2}
+    - target: {fileID: 4610311869715398271, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: reloadTime
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610311869715398271, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: currentAmmo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4610311869715398271, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -7326,6 +7390,14 @@ PrefabInstance:
       value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8572481382453359104, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: reloadTime
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572481382453359104, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: currentAmmo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572481382453359104, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 6333833605364379393}
@@ -7337,6 +7409,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b19b90307e74ea8479b470e9f38849ef, type: 2}
+    - target: {fileID: 8823730785771144474, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: reloadTime
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823730785771144474, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
+      propertyPath: currentAmmo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8823730785771144474, guid: d67b9b049f2366645bd0f134dd1e604a, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -7577,7 +7657,7 @@ MonoBehaviour:
   AttackCooldown: 1
   StopSignAttackSound: {fileID: 0}
   objectiveManager: {fileID: 0}
-  stopSignDamage: 60
+  stopSignDamage: 80
 --- !u!65 &1454304389692364051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7810,6 +7890,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: 89414eff289f8a24eab090c77ee7829e, type: 2}
+    - target: {fileID: 445888671605754044, guid: 8d85c9cf4606ae7459de521546b5d982, type: 3}
+      propertyPath: DamageAmount
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 445888671605754044, guid: 8d85c9cf4606ae7459de521546b5d982, type: 3}
       propertyPath: PlayerCamera
       value: 
