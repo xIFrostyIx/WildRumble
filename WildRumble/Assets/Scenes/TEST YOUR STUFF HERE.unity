@@ -3529,6 +3529,7 @@ MonoBehaviour:
   firePoint: {fileID: 387803651}
   projectileSpeed: 150
   destroyTime: 3
+  currentAmmo: 0
   maxAmmo: 5
   reloadTime: 2
   gunShotSound: {fileID: 0}
@@ -8959,8 +8960,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: LevelThree
   loadingScreen: {fileID: 561421981}
-  uiToHide: []
-  gameSceneName: 
   loadingBar: {fileID: 347192980}
 --- !u!1 &910729652
 GameObject:
@@ -14896,6 +14895,7 @@ MonoBehaviour:
   firePoint: {fileID: 2036365978}
   projectileSpeed: 30
   destroyTime: 5
+  currentAmmo: 0
   maxAmmo: 1
   reloadTime: 1
   gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
@@ -20675,6 +20675,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 862842958}
     m_Modifications:
+    - target: {fileID: 445888671605754044, guid: 8d85c9cf4606ae7459de521546b5d982, type: 3}
+      propertyPath: DamageAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 445888671605754044, guid: 8d85c9cf4606ae7459de521546b5d982, type: 3}
+      propertyPath: PlayerCamera
+      value: 
+      objectReference: {fileID: 620277037}
     - target: {fileID: 3417413903711036697, guid: 8d85c9cf4606ae7459de521546b5d982, type: 3}
       propertyPath: m_Name
       value: r700 Rig Ethan

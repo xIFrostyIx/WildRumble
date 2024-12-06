@@ -5,8 +5,9 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public Camera PlayerCamera; // Reference to the player's camera
-    public GameObject HitPoint;
+    public GameObject HitPoint; // Hit effect prefab
     public int DamageAmount = 0;
+    public AudioSource ShootingAudio; // Audio source for gunfire sound
 
     void Update()
     {
@@ -18,6 +19,12 @@ public class Shooter : MonoBehaviour
 
     public void Shooting()
     {
+        // Play the shooting sound
+        if (ShootingAudio != null)
+        {
+            ShootingAudio.Play();
+        }
+
         RaycastHit hit;
 
         // Raycast from the center of the screen using the camera's forward direction
