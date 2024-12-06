@@ -29,7 +29,7 @@ public class RaycastRifle : MonoBehaviour
     public int MaxMagSize = 5;                                                                  //Max mag size
     public int CurrentAmmo;                                                                     //current ammo stash
     public int MaxAmmoSize = 20;                                                                //max stash size
-    //public int AmmoPickupAmount = 5;                                       //Not working
+    public int AmmoPickupAmount = 5;                                       //----------------------------------------------------------Not working
 
 
     // Added by Darcy
@@ -97,7 +97,7 @@ public class RaycastRifle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))                                                      //Reload the Mag on R
         {
-            Restock();
+            RestockMag();
             GunReloadAudio.Play();
         }
 
@@ -125,13 +125,31 @@ public class RaycastRifle : MonoBehaviour
 
     }
 
-    public void Restock()                                                                       //Reload the Mag
+    public void RestockMag()                                                                       //Reload the Mag
     {
         int ReloadAmount = MaxMagSize - CurrentMag;                                             //how many bullets to refill mag
         ReloadAmount = (CurrentAmmo - ReloadAmount) >= 0 ? ReloadAmount : CurrentAmmo;          //check how much can actually be refilled
         CurrentMag += ReloadAmount;
         CurrentAmmo -= ReloadAmount;
     }
+
+
+    //-----------------------------------------------------------------------------------------TEST AMMO RESTOCK-------------------------------Not working
+    public void RestockAmmo(int AmmoPickupAmount)
+    {
+        CurrentAmmo += AmmoPickupAmount;
+        CurrentAmmo = Mathf.Clamp(CurrentAmmo, 0, MaxAmmoSize);
+    }
+    private void OnTriggerEnter(Collider other)                             
+    {
+        if (other.gameObject.CompareTag("Ammo"))
+        {
+            RestockAmmo(AmmoPickupAmount);
+            Destroy(other.gameObject);
+        }
+
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
 
     public void AddAmmo(int AmmoAmount)                                                         //Add from ammo to current mag
     {
@@ -141,13 +159,4 @@ public class RaycastRifle : MonoBehaviour
             CurrentAmmo = MaxAmmoSize;
         }
     }
-/*    private void OnTriggerEnter(Collider other)                             //not working
-    {
-        if (other.gameObject.CompareTag("Ammo"))
-        {
-            AddAmmo(MaxAmmoSize);
-            Destroy(other.gameObject);
-        }
-
-    }*/
 }
