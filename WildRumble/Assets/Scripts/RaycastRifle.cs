@@ -20,6 +20,7 @@ public class RaycastRifle : MonoBehaviour
     public AudioSource GunAudio;                                                                //Shot Sound
     public AudioSource GunEmptyAudio;                                                           //Click Sound
     public AudioSource GunReloadAudio;                                                          //reload Sound
+    public AudioSource AmmoPickupAudio;                                                         //ammo pickup Sound
     public GameObject HitPoint;                                                                 //effect at spot
     private LineRenderer LaserLine;                                                             //Line between 2 points
     private float NextFire;                                                                     //Next shot available
@@ -29,7 +30,7 @@ public class RaycastRifle : MonoBehaviour
     public int MaxMagSize = 5;                                                                  //Max mag size
     public int CurrentAmmo;                                                                     //current ammo stash
     public int MaxAmmoSize = 20;                                                                //max stash size
-    //public int AmmoPickupAmount = 5;                                       //Not working
+    public int AmmoPickupAmount = 5;                                       //----------------------------------------------------------Not working
 
 
     // Added by Darcy
@@ -97,7 +98,7 @@ public class RaycastRifle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))                                                      //Reload the Mag on R
         {
-            Restock();
+            RestockMag();
             GunReloadAudio.Play();
         }
 
@@ -125,12 +126,29 @@ public class RaycastRifle : MonoBehaviour
 
     }
 
-    public void Restock()                                                                       //Reload the Mag
+    public void RestockMag()                                                                       //Reload the Mag
     {
         int ReloadAmount = MaxMagSize - CurrentMag;                                             //how many bullets to refill mag
         ReloadAmount = (CurrentAmmo - ReloadAmount) >= 0 ? ReloadAmount : CurrentAmmo;          //check how much can actually be refilled
         CurrentMag += ReloadAmount;
         CurrentAmmo -= ReloadAmount;
+    }
+
+
+    public void RestockAmmo(int AmmoPickupAmount)                                               //Ammo Pickup
+    {
+        CurrentAmmo += AmmoPickupAmount;
+        CurrentAmmo = Mathf.Clamp(CurrentAmmo, 0, MaxAmmoSize);
+    }
+    private void OnTriggerEnter(Collider other)                                                 //Ammo Pickup
+    {
+        if (other.gameObject.CompareTag("Ammo"))
+        {
+            RestockAmmo(AmmoPickupAmount);
+            AmmoPickupAudio.Play();
+            Destroy(other.gameObject);
+        }
+
     }
 
     public void AddAmmo(int AmmoAmount)                                                         //Add from ammo to current mag
@@ -141,13 +159,4 @@ public class RaycastRifle : MonoBehaviour
             CurrentAmmo = MaxAmmoSize;
         }
     }
-/*    private void OnTriggerEnter(Collider other)                             //not working
-    {
-        if (other.gameObject.CompareTag("Ammo"))
-        {
-            AddAmmo(MaxAmmoSize);
-            Destroy(other.gameObject);
-        }
-
-    }*/
 }

@@ -9,9 +9,8 @@ public class PauseManager : MonoBehaviour
     public GameObject losePanel;
     public btnFX buttonFX;
 
-    public GameObject crosshairUI; 
+    public GameObject crosshairUI;
 
-    
     public static bool isPausedGlobal = false;
 
     void Update()
@@ -19,10 +18,18 @@ public class PauseManager : MonoBehaviour
         if (HealthBar.isGameOver)
             return;
 
+        // If Esc is pressed, toggle the menus depending on current state
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PlayClickSound();
-            TogglePause();
+            if (optionsMenuUI.activeSelf) // If options menu is active
+            {
+                BackToPauseMenu(); // Go back to the pause menu
+            }
+            else
+            {
+                TogglePause(); // Toggle pause (pause/resume game)
+            }
         }
     }
 
@@ -51,11 +58,11 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         ShowCursor(false);
         pauseMenuUI.SetActive(false);
-        ToggleCrosshair(true); 
+        ToggleCrosshair(true);
 
         ToggleAudioSources(true);
         ToggleParticleSystems(true);
-        Physics.autoSimulation = true; 
+        Physics.autoSimulation = true;
     }
 
     private void PauseGame()
@@ -63,11 +70,11 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         ShowCursor(true);
         pauseMenuUI.SetActive(true);
-        ToggleCrosshair(false); 
+        ToggleCrosshair(false);
 
         ToggleAudioSources(false);
         ToggleParticleSystems(false);
-        Physics.autoSimulation = false; 
+        Physics.autoSimulation = false;
     }
 
     private void ToggleCrosshair(bool isActive)
@@ -100,7 +107,6 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    
     public void RestartLevel()
     {
         Time.timeScale = 1f;
@@ -109,40 +115,35 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    
     private void PlayClickSound()
     {
         if (buttonFX != null)
             buttonFX.ClickSound();
     }
 
-    
     private void ShowCursor(bool show)
     {
         Cursor.lockState = show ? CursorLockMode.Confined : CursorLockMode.Locked;
         Cursor.visible = show;
     }
 
-    
     public void OpenOptions()
     {
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(true);
     }
 
-    
     public void BackToPauseMenu()
     {
         optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
     }
 
-    
     public void BackToMenu()
     {
         Time.timeScale = 1f;
         isPausedGlobal = false;
         HealthBar.isGameOver = false;
-        SceneManager.LoadScene("MainMenu"); 
+        SceneManager.LoadScene("MainMenu");
     }
 }
