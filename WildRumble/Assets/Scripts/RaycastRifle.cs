@@ -18,6 +18,8 @@ public class RaycastRifle : MonoBehaviour
     public Camera Camera;                                                                       //Camera
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);                              //How long particle lasts
     public AudioSource GunAudio;                                                                //Shot Sound
+    public AudioSource GunEmptyAudio;                                                           //Click Sound
+    public GameObject HitPoint;                                                                 //effect at spot
     private LineRenderer LaserLine;                                                             //Line between 2 points
     private float NextFire;                                                                     //Next shot available
 
@@ -65,6 +67,11 @@ public class RaycastRifle : MonoBehaviour
             if (Physics.Raycast(RayOrigin, Camera.transform.forward, out hit, WeaponRange))    //does it hit anything
             {
                 LaserLine.SetPosition(1, hit.point);                                           //end point
+                                                                                               // Instantiate hit effect at the hit point
+                GameObject b = Instantiate(HitPoint, hit.point, Quaternion.identity);
+                Destroy(b, 1);
+
+
 
                 ObjectWithHealthBar health = hit.collider.GetComponent<ObjectWithHealthBar>();
                 if (health != null)                                                            //if there is health do dmg
@@ -81,7 +88,10 @@ public class RaycastRifle : MonoBehaviour
             {
                 LaserLine.SetPosition(1, RayOrigin + (Camera.transform.forward * WeaponRange));//end point
             }
-
+        }
+        if (CurrentMag == 0 && Input.GetButtonDown("Fire1")) 
+        {
+            GunEmptyAudio.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.R))                                                      //Reload the Mag on R
