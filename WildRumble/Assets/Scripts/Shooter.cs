@@ -6,6 +6,8 @@ public class Shooter : MonoBehaviour
 {
     public Camera PlayerCamera; // Reference to the player's camera
     public GameObject HitPoint; // Hit effect prefab
+    public GameObject MuzzleFlash; // Muzzle flash prefab
+    public Transform MuzzleFlashPoint; // Position for muzzle flash
     public int DamageAmount = 0;
     public AudioSource ShootingAudio; // Audio source for gunfire sound
 
@@ -23,6 +25,13 @@ public class Shooter : MonoBehaviour
         if (ShootingAudio != null)
         {
             ShootingAudio.Play();
+        }
+
+        // Create muzzle flash
+        if (MuzzleFlash != null && MuzzleFlashPoint != null)
+        {
+            GameObject flash = Instantiate(MuzzleFlash, MuzzleFlashPoint.position, MuzzleFlashPoint.rotation);
+            Destroy(flash, 0.1f); // Destroy the muzzle flash shortly after creation
         }
 
         RaycastHit hit;
