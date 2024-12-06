@@ -19,6 +19,7 @@ public class RaycastRifle : MonoBehaviour
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);                              //How long particle lasts
     public AudioSource GunAudio;                                                                //Shot Sound
     public AudioSource GunEmptyAudio;                                                           //Click Sound
+    public AudioSource GunReloadAudio;                                                          //reload Sound
     public GameObject HitPoint;                                                                 //effect at spot
     private LineRenderer LaserLine;                                                             //Line between 2 points
     private float NextFire;                                                                     //Next shot available
@@ -97,6 +98,7 @@ public class RaycastRifle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))                                                      //Reload the Mag on R
         {
             Restock();
+            GunReloadAudio.Play();
         }
 
     }
