@@ -11,7 +11,7 @@ using UnityEngine.AI;
  * NOTE: Stats can be changed based off enemy type
  */
 
-public class EnemyAI_LionF : MonoBehaviour
+public class EnemyAI_FemaleLion : MonoBehaviour
 {
     Animator myAnimator; // Used for animations
     public Transform player; // Assign the player object in the Inspector
@@ -35,8 +35,8 @@ public class EnemyAI_LionF : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("lionFIdle_Index", Random.Range(0, 3));
-            myAnimator.SetTrigger("lionFIdle");
+            myAnimator.SetInteger("lionIdle_Index", Random.Range(0, 3));
+            myAnimator.SetTrigger("lionIdle");
         }
     }
 
@@ -53,18 +53,18 @@ public class EnemyAI_LionF : MonoBehaviour
             {
                 navMeshAgent.SetDestination(player.position);
 
-                myAnimator.SetBool("lionFWalk", true);
-                myAnimator.SetBool("lionFAttack", false);
-                myAnimator.SetBool("lionFIdle_Bool", false);
+                myAnimator.SetBool("lionWalk", true);
+                myAnimator.SetBool("lionAttack", false);
+                myAnimator.SetBool("lionIdle_Bool", false);
             }
             else
             {
                 navMeshAgent.SetDestination(transform.position); // Stop moving
 
-                myAnimator.SetBool("lionFAttack", true);
-                myAnimator.SetBool("lionFWalk", false);
-                myAnimator.SetBool("lionFIdle", false);
-                myAnimator.SetBool("lionFIdle_Bool", false);
+                myAnimator.SetBool("lionAttack", true);
+                myAnimator.SetBool("lionWalk", false);
+                myAnimator.SetBool("lionIdle", false);
+                myAnimator.SetBool("lionIdle_Bool", false);
             }
         }
         else

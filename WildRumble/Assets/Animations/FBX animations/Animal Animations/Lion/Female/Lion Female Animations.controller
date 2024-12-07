@@ -15,8 +15,8 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.8125001
+  m_TransitionOffset: 0.0040795007
+  m_ExitTime: 0.8920506
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -33,7 +33,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: 45c9806f67fc0f043855a5ab2647d01d, type: 3}
     m_Threshold: 0
-    m_Position: {x: 1.36, y: 0.84}
+    m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
@@ -41,7 +41,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: 08d02105aa3394e4ba7b290e5159ee08, type: 3}
     m_Threshold: 1
-    m_Position: {x: -1.3, y: -1.35}
+    m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
@@ -70,31 +70,31 @@ AnimatorController:
   m_Name: Lion Female Animations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: lionFAttack
+  - m_Name: lionAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionFWalk
+  - m_Name: lionWalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionFtIdle
+  - m_Name: lionIdle
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionFIdle_Index
+  - m_Name: lionIdle_Index
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionFIdle_Bool
+  - m_Name: lionIdle_Bool
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -207,7 +207,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: lionFAttack
+    m_ConditionEvent: lionAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1545216088616660575}
@@ -215,9 +215,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.2499999
   m_TransitionOffset: 0
-  m_ExitTime: 0.8214286
+  m_ExitTime: 0.025230356
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

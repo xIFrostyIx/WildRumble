@@ -28,36 +28,36 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DeerMovment_Speed
+  m_Name: mooseMovment_Speed
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -998496362607748373, guid: c93a0af98292ffd48b879e47b1ba91c4, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
     m_Threshold: 0
     m_Position: {x: 1.36, y: 0.84}
-    m_TimeScale: 1
+    m_TimeScale: 6
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 6641085478485924818, guid: c93a0af98292ffd48b879e47b1ba91c4, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: 08d02105aa3394e4ba7b290e5159ee08, type: 3}
     m_Threshold: 1
-    m_Position: {x: -1.3, y: -1.35}
-    m_TimeScale: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 10
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -5059006814000262888, guid: c93a0af98292ffd48b879e47b1ba91c4, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: 706adb69e42b9e94999226d061211a90, type: 3}
     m_Threshold: 2
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_Position: {x: -1.3, y: -1.35}
+    m_TimeScale: 10
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   m_BlendParameter: Speed
   m_BlendParameterY: Blend
   m_MinThreshold: 0
-  m_MaxThreshold: 2
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
@@ -70,31 +70,31 @@ AnimatorController:
   m_Name: Moose Animations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: deerAttack
+  - m_Name: mooseAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerWalk
+  - m_Name: mooseWalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deertIdle
+  - m_Name: mooseIdle
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerIdle_Index
+  - m_Name: mooseIdle_Index
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: deerIdle_Bool
+  - m_Name: moosedle_Bool
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -126,8 +126,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DeerAttack
-  m_Speed: 1
+  m_Name: mooseAttack
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1236052110005936847}
@@ -140,7 +140,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6234510843852800090, guid: c93a0af98292ffd48b879e47b1ba91c4, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 60824c290d30aca4da2de3d1d1b91a28, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -178,7 +178,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DeerMovment_Speed
+  m_Name: mooseMovment_Speed
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -207,7 +207,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: deerAttack
+    m_ConditionEvent: mooseAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1545216088616660575}
