@@ -11,7 +11,7 @@ using UnityEngine.AI;
  * NOTE: Stats can be changed based off enemy type
  */
 
-public class EnemyAI_lionF : MonoBehaviour
+public class EnemyAI_Moose : MonoBehaviour
 {
     Animator myAnimator; // Used for animations
     public Transform player; // Assign the player object in the Inspector
@@ -35,8 +35,8 @@ public class EnemyAI_lionF : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("deerIdle_Index", Random.Range(0, 3));
-            myAnimator.SetTrigger("deerIdle");
+            myAnimator.SetInteger("mooseIdle_Index", Random.Range(0, 3));
+            myAnimator.SetTrigger("mooseIdle");
         }
     }
 
@@ -53,18 +53,18 @@ public class EnemyAI_lionF : MonoBehaviour
             {
                 navMeshAgent.SetDestination(player.position);
 
-                myAnimator.SetBool("deerWalk", true);
-                myAnimator.SetBool("deerAttack", false);
-                myAnimator.SetBool("deerIdle_Bool", false);
+                myAnimator.SetBool("mooseWalk", true);
+                myAnimator.SetBool("mooseAttack", false);
+                myAnimator.SetBool("mooseIdle_Bool", false);
             }
             else
             {
                 navMeshAgent.SetDestination(transform.position); // Stop moving
 
-                myAnimator.SetBool("deerAttack", true);
-                myAnimator.SetBool("deerWalk", false);
-                myAnimator.SetBool("deerIdle", false);
-                myAnimator.SetBool("deerIdle_Bool", false);
+                myAnimator.SetBool("mooseAttack", true);
+                myAnimator.SetBool("mooseWalk", false);
+                myAnimator.SetBool("mooseIdle", false);
+                myAnimator.SetBool("mooseIdle_Bool", false);
             }
         }
         else
