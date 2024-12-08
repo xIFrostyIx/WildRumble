@@ -34,12 +34,12 @@ public class SceneSwitcher : MonoBehaviour
                         if (hitInteractable.collider.CompareTag("SwitchTwo"))
                         {
                             Debug.Log("Scene is Switching");
-                            sceneLoader.LoadScene("LevelTwo");
+                            sceneLoader.LoadScene("Cutscene 2");
                         }
                         else if (hitInteractable.collider.CompareTag("SwitchThree"))
                         {
                             Debug.Log("Scene is Switching");
-                            sceneLoader.LoadScene("LevelThree");
+                            sceneLoader.LoadScene("Cutscene 3");
                         }
                         else if (hitInteractable.collider.CompareTag("SwitchMain"))
                         {

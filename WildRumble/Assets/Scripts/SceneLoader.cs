@@ -21,6 +21,18 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneName));
     }
 
+    public void LoadNextSceneAfterCutscene()
+    {
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            LoadScene(sceneToLoad);
+        }
+        else
+        {
+            Debug.LogError("Scene to load is not set");
+        }
+    }
+
     private IEnumerator LoadSceneAsync(string sceneName)
     {
         // Show loading screen
