@@ -22,7 +22,7 @@ public class r700_Animations : MonoBehaviour
     private float NextFire;
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);
 
-    // Reference to the RaycastRifle script
+    //Reference to the RaycastRifle script
     private RaycastRifle raycastRifle;
 
     // Start is called before the first frame update
@@ -32,24 +32,26 @@ public class r700_Animations : MonoBehaviour
         raycastRifle = GetComponentInParent<RaycastRifle>();
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         if (raycastRifle == null) return;
 
-        AnimatorStateInfo stateInfo = myAnimator.GetCurrentAnimatorStateInfo(0);
+        //bools for ads and ads firing 
+        bool rifleADSin = myAnimator.GetBool("rifleADSin");
+        bool adsPress = Input.GetButton("Fire2");
+        bool shootPress = Input.GetButton("Fire1");
 
-        // Animation states
-        bool isReloading = stateInfo.IsName("rifleReload"); // Replace with the actual reload animation state name
-        bool isShooting = stateInfo.IsName("rifleShoot");   // Replace with the actual shoot animation state name
-
-        // Handle shooting
-        if (Input.GetButtonDown("Fire1") && Time.time > NextFire && !isReloading && !isShooting)
+        //rifle animations
+        if (Input.GetButtonDown("Fire1") && Time.time > NextFire)
         {
             if (raycastRifle.CurrentMag > 0)
             {
                 NextFire = Time.time + FireRate;
                 StartCoroutine(ShotEffect());
+
                 myAnimator.SetTrigger("rifleShoot");
             }
             else
@@ -58,27 +60,23 @@ public class r700_Animations : MonoBehaviour
             }
         }
 
-        // Handle reloading
-        if (Input.GetKeyDown(KeyCode.R) && !isShooting && !isReloading)
+        if (Input.GetKeyDown(KeyCode.R))
         {
             myAnimator.SetTrigger("rifleReload");
         }
 
-        // Handle rifle animations
-        if (Input.GetKeyDown(KeyCode.Q) && !isShooting && !isReloading)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             myAnimator.SetTrigger("rifleDown");
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && !isShooting && !isReloading)
+        if (Input.GetKeyDown(KeyCode.P))
         {
             myAnimator.SetTrigger("rifleUp");
         }
 
-        // ADS animations
-        bool rifleADSin = myAnimator.GetBool("rifleADSin");
-        bool adsPress = Input.GetButton("Fire2");
 
+        //ADS aniamtions
         if (!rifleADSin && adsPress)
         {
             myAnimator.SetBool("rifleADSin", true);
@@ -89,11 +87,12 @@ public class r700_Animations : MonoBehaviour
             myAnimator.SetBool("rifleADSin", false);
         }
 
-        // ADS shooting
-        if (Input.GetButton("Fire1") && adsPress && !isShooting && !isReloading)
+        if (shootPress && adsPress)
         {
             myAnimator.SetTrigger("rifleADSshoot");
         }
+
+
     }
 
     private IEnumerator ShotEffect()
