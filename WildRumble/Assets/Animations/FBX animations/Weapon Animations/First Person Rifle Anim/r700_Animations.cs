@@ -2,6 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Created by
+ * This script handles the animations for
+ * the rifle
+ *  
+ * edited by Joshua
+ * lines:
+ * 24, 39, 49-60
+ * These edits stop the animmation from
+ * playing when there is no ammo left in the rifle
+ */
+
 public class r700_Animations : MonoBehaviour
 {
 
@@ -10,10 +22,14 @@ public class r700_Animations : MonoBehaviour
     private float NextFire;
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);
 
+    //Reference to the RaycastRifle script
+    private RaycastRifle raycastRifle;
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        raycastRifle = GetComponentInParent<RaycastRifle>();
     }
 
 
@@ -21,6 +37,8 @@ public class r700_Animations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (raycastRifle == null) return;
+
         //bools for ads and ads firing 
         bool rifleADSin = myAnimator.GetBool("rifleADSin");
         bool adsPress = Input.GetButton("Fire2");
@@ -29,11 +47,17 @@ public class r700_Animations : MonoBehaviour
         //rifle animations
         if (Input.GetButtonDown("Fire1") && Time.time > NextFire)
         {
-            NextFire = Time.time + FireRate;
-            StartCoroutine(ShotEffect());
+            if (raycastRifle.CurrentMag > 0)
+            {
+                NextFire = Time.time + FireRate;
+                StartCoroutine(ShotEffect());
 
-            myAnimator.SetTrigger("rifleShoot");
-
+                myAnimator.SetTrigger("rifleShoot");
+            }
+            else
+            {
+                Debug.Log("No ammo to shoot");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
