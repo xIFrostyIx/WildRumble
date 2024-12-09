@@ -2,6 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Created by
+ * This script handles the animations for
+ * the rifle
+ *  
+ * edited by Joshua
+ * lines:
+ * 24, 39, 49-60
+ * These edits stop the animmation from
+ * playing when there is no ammo left in the rifle
+ */
+
 public class r700_Animations : MonoBehaviour
 {
 
@@ -10,49 +22,63 @@ public class r700_Animations : MonoBehaviour
     private float NextFire;
     public WaitForSeconds ShotDuration = new WaitForSeconds(.03f);
 
+    // Reference to the RaycastRifle script
+    private RaycastRifle raycastRifle;
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        raycastRifle = GetComponentInParent<RaycastRifle>();
     }
-
-
 
     // Update is called once per frame
     void Update()
     {
-        //bools for ads and ads firing 
-        bool rifleADSin = myAnimator.GetBool("rifleADSin");
-        bool adsPress = Input.GetButton("Fire2");
-        bool shootPress = Input.GetButton("Fire1");
+        if (raycastRifle == null) return;
 
-        //rifle animations
-        if (Input.GetButtonDown("Fire1") && Time.time > NextFire)
+        AnimatorStateInfo stateInfo = myAnimator.GetCurrentAnimatorStateInfo(0);
+
+        // Animation states
+        bool isReloading = stateInfo.IsName("rifleReload"); 
+        bool isShooting = stateInfo.IsName("rifleShoot");   
+
+        // Handle shooting
+        if (Input.GetButtonDown("Fire1") && Time.time > NextFire && !isReloading && !isShooting)
         {
-            NextFire = Time.time + FireRate;
-            StartCoroutine(ShotEffect());
-
-            myAnimator.SetTrigger("rifleShoot");
-
+            if (raycastRifle.CurrentMag > 0)
+            {
+                NextFire = Time.time + FireRate;
+                StartCoroutine(ShotEffect());
+                myAnimator.SetTrigger("rifleShoot");
+            }
+            else
+            {
+                Debug.Log("No ammo to shoot");
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        // Handle reloading
+        if (Input.GetKeyDown(KeyCode.R) && !isShooting && !isReloading)
         {
             myAnimator.SetTrigger("rifleReload");
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        // Handle rifle animations
+        if (Input.GetKeyDown(KeyCode.Q) && !isShooting && !isReloading)
         {
             myAnimator.SetTrigger("rifleDown");
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !isShooting && !isReloading)
         {
             myAnimator.SetTrigger("rifleUp");
         }
 
+        // ADS animations
+        bool rifleADSin = myAnimator.GetBool("rifleADSin");
+        bool adsPress = Input.GetButton("Fire2");
 
-        //ADS aniamtions
         if (!rifleADSin && adsPress)
         {
             myAnimator.SetBool("rifleADSin", true);
@@ -63,12 +89,11 @@ public class r700_Animations : MonoBehaviour
             myAnimator.SetBool("rifleADSin", false);
         }
 
-        if (shootPress && adsPress)
+        // ADS shooting
+        if (Input.GetButton("Fire1") && adsPress && !isShooting && !isReloading)
         {
             myAnimator.SetTrigger("rifleADSshoot");
         }
-
-
     }
 
     private IEnumerator ShotEffect()
