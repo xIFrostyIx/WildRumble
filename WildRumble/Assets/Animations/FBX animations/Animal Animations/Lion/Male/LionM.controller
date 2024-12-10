@@ -28,10 +28,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lionFMovment_Speed
+  m_Name: lionMMovment_Speed
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: 45c9806f67fc0f043855a5ab2647d01d, type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: aa673f348b74d614ba727addef5964d7, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -39,7 +39,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: 08d02105aa3394e4ba7b290e5159ee08, type: 3}
+    m_Motion: {fileID: -998496362607748373, guid: aa673f348b74d614ba727addef5964d7, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -47,7 +47,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: 8b93d7a3ae533c14da6ca70b437927ce, type: 3}
+    m_Motion: {fileID: 3060872287085348379, guid: aa673f348b74d614ba727addef5964d7, type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -70,25 +70,31 @@ AnimatorController:
   m_Name: LionM
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: lionWalk
+  - m_Name: lionMWalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionIdle
+  - m_Name: lionMAttack
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: lionMIdle
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionIdle_Index
+  - m_Name: lionMIdle_Index
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: lionIdle_Bool
+  - m_Name: lionMIdle_Bool
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -120,7 +126,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lionFAttack
+  m_Name: lionMAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -172,7 +178,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lionFMovment_Speed
+  m_Name: lionMMovment_Speed
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -201,7 +207,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: lionAttack
+    m_ConditionEvent: lionMAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1545216088616660575}
