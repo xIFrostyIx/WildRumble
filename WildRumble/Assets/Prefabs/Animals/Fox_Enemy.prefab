@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 364075155090460863}
   m_Layer: 0
   m_Name: Fox_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1693,7 +1693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7102335758849160335}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 119.19, y: 43.99, z: 25.877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1764,7 +1764,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1852,8 +1852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
-  healthBar: {fileID: 0}
-  healthBarCanvas: {fileID: 0}
+  healthBar: {fileID: 4505805848711762704}
+  healthBarCanvas: {fileID: 656999794034838572}
   objectiveManager: {fileID: 0}
   animalAudioSource: {fileID: 0}
   animalSounds:

@@ -43,8 +43,11 @@ public class SceneSwitcher : MonoBehaviour
                         }
                         else if (hitInteractable.collider.CompareTag("SwitchMain"))
                         {
-                            Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
-                            Application.Quit();
+                            Debug.Log("Scene is Switching");
+                            sceneLoader.LoadScene("Cutscene 4");
+                            //sceneLoader.LoadScene("MainMenu");
+                            //Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeQ-pE-3Fk9g7x_3E20kTP95STGiwg681mYpJRIM9yRPZ2LJQ/viewform?usp=sf_link");
+                            //Application.Quit();
                         }
                     }
                 }
