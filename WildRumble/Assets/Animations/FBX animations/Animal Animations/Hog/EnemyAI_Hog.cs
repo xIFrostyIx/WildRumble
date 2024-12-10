@@ -35,7 +35,7 @@ public class EnemyAI_Hog : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
 
-            myAnimator.SetInteger("hogIdle_Index", Random.Range(0, 3));
+            myAnimator.SetInteger("hogIdle_Index", Random.Range(0, 3));dd
             myAnimator.SetTrigger("hogIdle");
         }
     }
