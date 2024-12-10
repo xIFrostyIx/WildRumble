@@ -61,8 +61,9 @@ public class MeleeSystem : MonoBehaviour
 
     IEnumerator EnableColliderTemporarily(Collider collider)
     {
+        yield return new WaitForSeconds(0.5f); // Duration of the attack
         collider.enabled = true;
-        yield return new WaitForSeconds(0.2f); // Duration of the attack
+        yield return new WaitForSeconds(0.5f); // Duration of the attack
         collider.enabled = false;
     }
 
