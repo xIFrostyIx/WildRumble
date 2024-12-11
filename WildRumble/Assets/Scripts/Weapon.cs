@@ -19,6 +19,8 @@ public class Weapon : MonoBehaviour
     private AudioSource audioSource;
     public float gunShotVolume = 1f; // Gunshot volume
 
+    public bool isWand = false;
+
     public FleeingEnemyManager fleeingEnemyManager;
 
     void Start()
@@ -50,12 +52,22 @@ public class Weapon : MonoBehaviour
         {
             if (currentAmmo > 0)
             {
-                Shoot();
+                if (isWand == true)
+                {
+                    Wait();
+                    Shoot();
+                    StartCoroutine(Reload());
+                }
+                else
+                {
+                    Shoot();
+                    StartCoroutine(Reload());
+                }
             }
-            else
-            {
-                StartCoroutine(Reload());
-            }
+            /* else
+             {
+                 StartCoroutine(Reload());
+             }*/
         }
     }
 
@@ -63,7 +75,7 @@ public class Weapon : MonoBehaviour
 
 
     void Shoot()
-    {
+    { 
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
@@ -93,11 +105,11 @@ public class Weapon : MonoBehaviour
 
     IEnumerator Reload()
     {
+        yield return new WaitForSeconds(reloadTime);
         isReloading = true;
         Debug.Log("Reloading...");
         PlayReloadSound();
 
-        yield return new WaitForSeconds(reloadTime);
 
         currentAmmo = maxAmmo;
         isReloading = false;
@@ -110,5 +122,10 @@ public class Weapon : MonoBehaviour
         {
             audioSource.PlayOneShot(reloadSound, gunShotVolume);
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3f);
     }
 }

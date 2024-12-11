@@ -1534,6 +1534,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2020503486386490776}
   - component: {fileID: 8697169641129983953}
+  - component: {fileID: 1534537000466771259}
+  - component: {fileID: 3806954435444819219}
   m_Layer: 5
   m_Name: Sniper_Bullet
   m_TagString: Untagged
@@ -1541,21 +1543,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2020503486386490776
-Transform:
+--- !u!224 &2020503486386490776
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2268496640334883018}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 2.5243543e-29, w: 1}
-  m_LocalPosition: {x: 706, y: -439, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 12.1, y: 12.1, z: 12.1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7490918068419547469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 740.5, y: -434.3}
+  m_SizeDelta: {x: 10.24, y: 10.24}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &8697169641129983953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1563,7 +1569,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2268496640334883018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1608,6 +1614,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &1534537000466771259
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268496640334883018}
+  m_CullTransparentMesh: 1
+--- !u!114 &3806954435444819219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268496640334883018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c8386d6061c5cce4ea5c4b63fb67f984, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2471001354420537230
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,6 +6228,7 @@ MonoBehaviour:
   gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
   reloadSound: {fileID: 0}
   gunShotVolume: 0.2
+  isWand: 0
   fleeingEnemyManager: {fileID: 0}
 --- !u!65 &7270337276180172937
 BoxCollider:
@@ -6917,6 +6962,7 @@ MonoBehaviour:
   gunShotSound: {fileID: 8300000, guid: 2398d4068eeb7404b92956aa55f14c30, type: 3}
   reloadSound: {fileID: 0}
   gunShotVolume: 0.2
+  isWand: 0
   fleeingEnemyManager: {fileID: 0}
 --- !u!1001 &5403618279468129996
 PrefabInstance:
@@ -7137,6 +7183,7 @@ MonoBehaviour:
   gunShotSound: {fileID: 8300000, guid: f84ed84d79d7d5d44b1dcf9b18c92cf4, type: 3}
   reloadSound: {fileID: 8300000, guid: 2cd9b962738e6034aa38f29c76d353cd, type: 3}
   gunShotVolume: 0.1
+  isWand: 0
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &6372986391857713627
 MonoBehaviour:
@@ -7160,6 +7207,7 @@ MonoBehaviour:
   gunShotSound: {fileID: 0}
   reloadSound: {fileID: 0}
   gunShotVolume: 0.05
+  isWand: 0
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &9019587700746420391
 MonoBehaviour:
@@ -7183,6 +7231,7 @@ MonoBehaviour:
   gunShotSound: {fileID: 0}
   reloadSound: {fileID: 0}
   gunShotVolume: 0.05
+  isWand: 0
   fleeingEnemyManager: {fileID: 0}
 --- !u!114 &644574595892865250
 MonoBehaviour:
@@ -7206,6 +7255,7 @@ MonoBehaviour:
   gunShotSound: {fileID: 0}
   reloadSound: {fileID: 0}
   gunShotVolume: 0.1
+  isWand: 0
   fleeingEnemyManager: {fileID: 0}
 --- !u!65 &1605418355394138410
 BoxCollider:
