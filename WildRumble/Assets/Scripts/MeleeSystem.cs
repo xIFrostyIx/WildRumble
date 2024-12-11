@@ -15,9 +15,10 @@ public class MeleeSystem : MonoBehaviour
     public GameObject StopSign;
     public bool CanAttack = true;
     public float AttackCooldown = 1.0f;
-    public AudioClip StopSignAttackSound;
+    public AudioSource AttackSound; 
+    public AudioSource SwitchSound;
     public ObjectiveManager objectiveManager;
-    public bool ismace = false;
+    public bool isMaceOrSaw = false;
 
     public int stopSignDamage = 20; // Damage dealt by the Stop Sign
 
@@ -44,11 +45,11 @@ public class MeleeSystem : MonoBehaviour
         }
 
         // Play the attack sound
-        AudioSource ac = GetComponent<AudioSource>();
-        if (ac != null && StopSignAttackSound != null)
+        /*AudioSource ac = GetComponent<AudioSource>();
+        if (ac != null && AttackSound != null)
         {
-            ac.PlayOneShot(StopSignAttackSound);
-        }
+            ac.PlayOneShot(AttackSound);
+        }*/
 
         // Enable the Stop Sign's trigger temporarily to detect collisions
         Collider stopSignCollider = StopSign.GetComponent<Collider>();
@@ -62,10 +63,11 @@ public class MeleeSystem : MonoBehaviour
 
     IEnumerator EnableColliderTemporarily(Collider collider)
     {
-        if(ismace == true)
+        if(isMaceOrSaw == true)
         {
             yield return new WaitForSeconds(0.1f); // Duration of the attack
             collider.enabled = true;
+            AttackSound.Play();
             yield return new WaitForSeconds(0.3f); // Duration of the attack
             collider.enabled = false;
         }
@@ -73,6 +75,7 @@ public class MeleeSystem : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f); // Duration of the attack
             collider.enabled = true;
+            AttackSound.Play();
             yield return new WaitForSeconds(0.3f); // Duration of the attack
             collider.enabled = false;
 
