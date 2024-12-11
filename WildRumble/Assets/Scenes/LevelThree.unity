@@ -28657,6 +28657,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fab07b1d76ab3274fb47464a02167310, type: 3}
   m_PrefabInstance: {fileID: 333045894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &315193353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7395636750246232105, guid: aef544385b034484f8bb87d28f131605, type: 3}
+  m_PrefabInstance: {fileID: 1569299188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &315494988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4229447506877617160, guid: 3ae14a0b7736add43b737143afd9f4e7, type: 3}
@@ -38978,17 +38989,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 635122630}
   m_SourcePrefab: {fileID: 100100000, guid: cf08eb9db88544f4f82fdfb6efebd01d, type: 3}
---- !u!114 &355909962 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3272062897197552454, guid: aef544385b034484f8bb87d28f131605, type: 3}
-  m_PrefabInstance: {fileID: 1569299188}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &356255480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168184,7 +168184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070e5a49851cd0f46a5886ed2b76814a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveText: {fileID: 355909962}
+  objectiveText: {fileID: 0}
   truckMiniMapIcon: {fileID: 0}
   truckTransform: {fileID: 0}
   zooKeeperMiniMapIcon: {fileID: 0}
@@ -205405,6 +205405,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2116202051}
     - target: {fileID: 3004112363594037812, guid: aef544385b034484f8bb87d28f131605, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004112363594037812, guid: aef544385b034484f8bb87d28f131605, type: 3}
+      propertyPath: objectiveText
+      value: 
+      objectReference: {fileID: 315193353}
+    - target: {fileID: 3004112363594037812, guid: aef544385b034484f8bb87d28f131605, type: 3}
       propertyPath: truckTransform
       value: 
       objectReference: {fileID: 1246046547}
@@ -205609,7 +205617,8 @@ PrefabInstance:
       value: 463
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4123700785341507202, guid: aef544385b034484f8bb87d28f131605, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7779723904286832567, guid: aef544385b034484f8bb87d28f131605, type: 3}
       insertIndex: -1
