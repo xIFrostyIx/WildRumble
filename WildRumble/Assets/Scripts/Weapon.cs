@@ -54,7 +54,7 @@ public class Weapon : MonoBehaviour
             {
                 if (isWand == true)
                 {
-                    Wait();
+                    //Wait();
                     Shoot();
                     StartCoroutine(Reload());
                 }
