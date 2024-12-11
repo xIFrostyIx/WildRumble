@@ -17,6 +17,7 @@ public class MeleeSystem : MonoBehaviour
     public float AttackCooldown = 1.0f;
     public AudioClip StopSignAttackSound;
     public ObjectiveManager objectiveManager;
+    public bool ismace = false;
 
     public int stopSignDamage = 20; // Damage dealt by the Stop Sign
 
@@ -61,10 +62,21 @@ public class MeleeSystem : MonoBehaviour
 
     IEnumerator EnableColliderTemporarily(Collider collider)
     {
-        yield return new WaitForSeconds(0.5f); // Duration of the attack
-        collider.enabled = true;
-        yield return new WaitForSeconds(0.3f); // Duration of the attack
-        collider.enabled = false;
+        if(ismace == true)
+        {
+            yield return new WaitForSeconds(0.1f); // Duration of the attack
+            collider.enabled = true;
+            yield return new WaitForSeconds(0.3f); // Duration of the attack
+            collider.enabled = false;
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f); // Duration of the attack
+            collider.enabled = true;
+            yield return new WaitForSeconds(0.3f); // Duration of the attack
+            collider.enabled = false;
+
+        }
     }
 
     IEnumerator ResetAttackCooldown()
