@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RaycastRifle : MonoBehaviour
@@ -24,13 +25,14 @@ public class RaycastRifle : MonoBehaviour
     public GameObject HitPoint;                                                                 //effect at spot
     private LineRenderer LaserLine;                                                             //Line between 2 points
     private float NextFire;                                                                     //Next shot available
+    public TextMeshProUGUI ReloadText;                                                          //Reload Text
 
 
     public int CurrentMag;                                                                      //Current mag amount
     public int MaxMagSize = 5;                                                                  //Max mag size
     public int CurrentAmmo;                                                                     //current ammo stash
     public int MaxAmmoSize = 20;                                                                //max stash size
-    public int AmmoPickupAmount = 5;                                       //----------------------------------------------------------Not working
+    public int AmmoPickupAmount = 5;                                       
 
 
     // Added by Darcy
@@ -44,6 +46,7 @@ public class RaycastRifle : MonoBehaviour
         GunAudio = GetComponent<AudioSource>();
         Camera = GetComponentInParent<Camera>();
         pauseManager = FindObjectOfType<PauseManager>();
+        ReloadText.enabled = false;
     }
 
     // Update is called once per frame
@@ -93,6 +96,7 @@ public class RaycastRifle : MonoBehaviour
         }
         if (CurrentMag == 0 && Input.GetButtonDown("Fire1")) 
         {
+            ReloadText.enabled = true;
             GunEmptyAudio.Play();
         }
 
@@ -100,6 +104,7 @@ public class RaycastRifle : MonoBehaviour
         {
             RestockMag();
             GunReloadAudio.Play();
+            ReloadText.enabled = false;
         }
 
     }
