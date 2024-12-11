@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Created by Joshua Guerrero
+ * Makes cursor visable in main menu
+ */
+
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Ensure the cursor is visible and unlocked
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
