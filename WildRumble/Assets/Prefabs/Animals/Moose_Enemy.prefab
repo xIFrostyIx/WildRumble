@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.51
+      value: 0.685
       objectReference: {fileID: 0}
     - target: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
       propertyPath: m_LocalRotation.w
@@ -157,6 +157,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8048142336229968411, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
   m_PrefabInstance: {fileID: 219847802618452900}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &8642902416484338924 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8429840879125206856, guid: 165c05197dd996a43a710512bd42bf62, type: 3}
+  m_PrefabInstance: {fileID: 219847802618452900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4407990972335120015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,15 +184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -303.22403
+      value: 300.7446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.65
+      value: 42.539497
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 279.34
+      value: 190.39256
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalRotation.w
@@ -195,15 +200,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -253,6 +258,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6859327555321371926}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6620663601536405605}
   m_SourcePrefab: {fileID: 100100000, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
 --- !u!1 &3597599566463296478 stripped
 GameObject:
@@ -359,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091d2eb22c64e5b41ad404ba905b7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 120
   healthBar: {fileID: 6759972257241803831}
   objectiveManager: {fileID: 0}
 --- !u!65 &1202693917643087189
@@ -396,11 +404,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  chaseRange: 10
-  stoppingDistance: 3
-  wanderRange: 5
-  wanderTimer: 2
-  speed: 3.5
+  chaseRange: 15
+  stoppingDistance: 1.5
+  wanderRange: 7
+  wanderTimer: 4
+  speed: 7
+--- !u!114 &6620663601536405605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597599566463296478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666f4cd44af37fd4a9804a6c4663df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 120
+  healthBar: {fileID: 6759972257241803831}
+  healthBarCanvas: {fileID: 8642902416484338924}
+  objectiveManager: {fileID: 0}
+  animalAudioSource: {fileID: 0}
+  animalSounds: []
+  minAnimalSoundInterval: 12
+  maxAnimalSoundInterval: 30
+  soundRange: 25
+  player: {fileID: 0}
 --- !u!4 &4226325962730813796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d58d3f66b1dc0cb488e699adf6ed6b38, type: 3}
