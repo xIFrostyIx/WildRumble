@@ -96,7 +96,7 @@ public class MeleeSystem : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Damage(stopSignDamage); // Apply damage to the enemy
-                objectiveManager.UpdateObjective("Eliminate 5 Animals");
+                objectiveManager.UpdateObjective("Eliminate 13 Animals");
             }
         }
     }
