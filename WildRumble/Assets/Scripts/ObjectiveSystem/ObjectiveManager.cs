@@ -50,7 +50,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         objectives.Clear(); // Clear any pre-existing objectives
 
-        objectives.Add(new Objective("Eliminate 5 Animals", 5)); // First objective is common across levels
+        objectives.Add(new Objective("Eliminate 13 Animals", 13)); // First objective is common across levels
 
         // Level-specific second objective
         switch (level)

@@ -59,7 +59,7 @@ public class ObjectWithHealthBar : MonoBehaviour
         if (gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Animal eliminated!");
-            objectiveManager.UpdateObjective("Eliminate 5 Animals");  // Update the objective progress
+            objectiveManager.UpdateObjective("Eliminate 13 Animals");  // Update the objective progress
         }
 
         // Destroy the object after death
