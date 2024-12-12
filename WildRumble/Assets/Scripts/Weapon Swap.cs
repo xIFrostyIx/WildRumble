@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-//Created by Alex Wolfe for NVC Fall 2024 Game Sim 
+// Created by Alex Wolfe for NVC Fall 2024 Game Sim 
 public class WeaponSwap : MonoBehaviour
 {
     public int CurrentWeapon = 0;
+
+    // Reference to the ButtonManager to call the volume setting method
+    public ButtonManager buttonManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,17 +69,26 @@ public class WeaponSwap : MonoBehaviour
             SelectWeapon();
         }
     }
+
     void SelectWeapon()                                          //weapon loop
     {
         int i = 0;
-        foreach (Transform weapon in transform) 
+        foreach (Transform weapon in transform)
         {
             if (i == CurrentWeapon)
+            {
                 weapon.gameObject.SetActive(true);
+                //Added by Darcy
+                if (buttonManager != null)
+                {
+                    buttonManager.SetGunShotVolume(PlayerPrefs.GetFloat("GunShotVolume", 1f));  // Ensure the global volume is applied
+                }
+            }
             else
+            {
                 weapon.gameObject.SetActive(false);
+            }
             i++;
-
         }
     }
 }

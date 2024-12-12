@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class RaycastRifle : MonoBehaviour
 {
     // Created By Alex Wolfe for NVC fall 2024 Game sim
@@ -32,10 +32,12 @@ public class RaycastRifle : MonoBehaviour
     public int MaxMagSize = 5;                                                                  //Max mag size
     public int CurrentAmmo;                                                                     //current ammo stash
     public int MaxAmmoSize = 20;                                                                //max stash size
-    public int AmmoPickupAmount = 5;                                       
-
+    public int AmmoPickupAmount = 5;
+    public Slider gunShotSoundSlider;
+    public Slider sfxVolumeSlider;
 
     // Added by Darcy
+
     private bool isPaused = false;
     private PauseManager pauseManager;
 
@@ -47,6 +49,17 @@ public class RaycastRifle : MonoBehaviour
         Camera = GetComponentInParent<Camera>();
         pauseManager = FindObjectOfType<PauseManager>();
         ReloadText.enabled = false;
+        if (gunShotSoundSlider != null)
+        {
+            gunShotSoundSlider.onValueChanged.AddListener(SetGunShotVolume);
+            gunShotSoundSlider.value = GunAudio.volume;
+        }
+
+        if (sfxVolumeSlider != null)
+        {
+            sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
+            sfxVolumeSlider.value = AmmoPickupAudio.volume;
+        }
     }
 
     // Update is called once per frame
@@ -163,5 +176,31 @@ public class RaycastRifle : MonoBehaviour
         {
             CurrentAmmo = MaxAmmoSize;
         }
+    }
+    public void SetGunShotVolume(float volume)
+    {
+        ApplyGunShotVolume(volume);
+        PlayerPrefs.SetFloat("GunShotVolume", volume);
+    }
+
+    
+    public void ApplyGunShotVolume(float volume)
+    {
+        GunAudio.volume = volume;
+        GunEmptyAudio.volume = volume;
+        GunReloadAudio.volume = volume;
+    }
+
+
+
+    public void SetSFXVolume(float volume)
+    {
+        ApplySFXVolume(volume);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+    }
+
+    public void ApplySFXVolume(float volume)
+    {
+        AmmoPickupAudio.volume = volume;
     }
 }

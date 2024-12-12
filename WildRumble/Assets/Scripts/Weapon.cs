@@ -22,9 +22,10 @@ public class Weapon : MonoBehaviour
     public bool isWand = false;
 
     public FleeingEnemyManager fleeingEnemyManager;
-
+    private AudioSource gunshotAudioSource;
     void Start()
     {
+        gunshotAudioSource = GetComponent<AudioSource>();
         currentAmmo = maxAmmo;
 
         audioSource = GetComponent<AudioSource>();
@@ -33,8 +34,18 @@ public class Weapon : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        // Load gunShotVolume from PlayerPrefs
+        
         gunShotVolume = PlayerPrefs.GetFloat("GunShotVolume", 1f);
+    }
+    public void UpdateGunShotVolume(float volume)
+    {
+        gunShotVolume = volume;
+        PlayerPrefs.SetFloat("GunShotVolume", volume);
+
+        if (audioSource != null)
+        {
+            audioSource.volume = volume;
+        }
     }
 
     void Update()

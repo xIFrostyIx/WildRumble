@@ -26,6 +26,8 @@ public class ButtonManager : MonoBehaviour
 
     void Start()
     {
+        gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f);
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
         InitializeVolumeSliders();
 
         if (combatMusicAudioSource != null)
@@ -114,7 +116,7 @@ public class ButtonManager : MonoBehaviour
         return false;
     }
 
-    private void InitializeVolumeSliders()
+    public void InitializeVolumeSliders()
     {
         if (sfxVolumeSlider != null && buttonFXScript != null)
         {
@@ -141,12 +143,31 @@ public class ButtonManager : MonoBehaviour
             healthBar.bgmAudioSource = bgmAudioSource;
             healthBar.combatMusicAudioSource = combatMusicAudioSource;
         }
+        if (gunShotSoundSlider != null)
+        {
+            gunShotSoundSlider.value = PlayerPrefs.GetFloat("GunShotVolume", 1f);
+            gunShotSoundSlider.onValueChanged.AddListener(SetGunShotVolume);
+        }
+
+        if (sfxVolumeSlider != null)
+        {
+            sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+            sfxVolumeSlider.onValueChanged.AddListener(SetButtonFXVolume);
+        }
     }
 
     public void SetButtonFXVolume(float volume)
     {
         buttonFXScript.SetVolume(volume);
         PlayerPrefs.SetFloat("ButtonFXVolume", volume);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.Save();
+
+        RaycastRifle rifle = FindObjectOfType<RaycastRifle>();
+        if (rifle != null)
+        {
+            rifle.AmmoPickupAudio.volume = volume;
+        }
     }
 
     public void SetBGMVolume(float volume)
@@ -164,16 +185,22 @@ public class ButtonManager : MonoBehaviour
 
     public void SetGunShotVolume(float volume)
     {
-        Weapon weaponScript = FindObjectOfType<Weapon>();
-        if (weaponScript != null)
+        
+        PlayerPrefs.SetFloat("GunShotVolume", volume);
+        PlayerPrefs.Save();
+
+        
+        Weapon[] weapons = FindObjectsOfType<Weapon>();
+        foreach (Weapon weapon in weapons)
         {
-            weaponScript.gunShotVolume = volume;
-            PlayerPrefs.SetFloat("GunShotVolume", volume);
+            weapon.UpdateGunShotVolume(volume);  
         }
 
-        if (healthBar != null)
+        
+        RaycastRifle rifle = FindObjectOfType<RaycastRifle>();
+        if (rifle != null)
         {
-            healthBar.SetDamageAndLoseVolume(volume);
+            rifle.ApplyGunShotVolume(volume);  
         }
     }
 
