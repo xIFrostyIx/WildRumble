@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/*
+ * Created by Joshua Guerrero
+ * This script switches scenes
+ * based off the game object's
+ * tag using async loading
+ */
+
 public class SceneSwitcher : MonoBehaviour
 {
     public SceneLoader sceneLoader; // Reference to the SceneLoader script
@@ -18,13 +25,25 @@ public class SceneSwitcher : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInteractable, 3.75f)) // Interaction distance
         {
             // Check if the player has completed the "Eliminate 5 Animals" objective
-            if (objectiveManager.IsObjectiveComplete("Eliminate 5 Animals"))
+            if (objectiveManager.IsObjectiveComplete("Eliminate 13 Animals"))
             {
-                Debug.Log("Objective 'Eliminate 5 Animals' is complete!");
+                Debug.Log("Objective 'Eliminate 13 Animals' is complete!");
                 // Show the interaction text if the object has the Scene Switch tags
                 if (hitInteractable.collider.CompareTag("SwitchTwo") || hitInteractable.collider.CompareTag("SwitchThree") || hitInteractable.collider.CompareTag("SwitchMain"))
                 {
-                    interactionText.text = "(E) Enter Truck"; // Set the interaction text
+                    // Get the current scene name
+                    string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+                    // Set the interaction text based on the current level
+                    if (currentSceneName == "LevelThree") // Replace "Level3" with the actual scene name for level 3
+                    {
+                        interactionText.text = "(E) Finish Him";
+                    }
+                    else
+                    {
+                        interactionText.text = "(E) Enter Truck";
+                    }
+
                     interactionText.gameObject.SetActive(true); // Show the text
 
                     // Handle the interaction when pressing E
@@ -53,7 +72,6 @@ public class SceneSwitcher : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Objective 'Eliminate 5 Animals' is not complete!");
                     interactionText.gameObject.SetActive(false); // Hide the text if not interactable
                 }
             }
